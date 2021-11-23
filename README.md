@@ -6,6 +6,7 @@
 ## Table of Content 
 
 * [Description](#description)
+* [User-story](#user)
 * [Technlogies](#technologies)
 * [Usage](#usage)
 * [Installation](#installation)
@@ -19,6 +20,23 @@
 
 
 ![app-demo]()
+
+<a name="user"></a>
+## 🕹 User-story
+`As a user,` <br>
+`WHEN I am create an account,` <br>
+`THEN I am able to create a new event and view previous events made.`<br>
+`WHEN I create an account,` <br>
+`THEN I am prompted with questions regarding my event.` <br>
+`WHEN I complete the prompts,` <br>
+`THEN I am presented with potential venues, bands, florists and other relevant options depending on my budget. `<br>
+`WHEN I set an event date, `<br>
+`THEN I can see a countdown timer for that event.` <br>
+`WHEN I click back to my current event,` <br>
+`THEN I am able to adjust and update any of my details.` <br>
+`WHEN I click on previous events,` <br>
+`THEN I can see all the booked in details for that event along with user reviews regarding their event.` <br>
+
 
 <a name="technologies"></a>
 ## 🕹 Technologies used 
