@@ -34,8 +34,8 @@ User.init(
     event_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'event',
-        key: 'id',
+        model: "event",
+        key: "id",
       },
     },
   },
