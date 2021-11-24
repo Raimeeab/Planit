@@ -25,6 +25,10 @@ Venue.init(
       type: DataTypes.INTEGER,
       allowNull:false,
     },
+    venue_capacity: {
+        type: DataTypes.INTEGER,
+        allowNull:false,
+      },
     venue_price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true
