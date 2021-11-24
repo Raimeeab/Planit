@@ -17,6 +17,10 @@ Caterer.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    caterer_description: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
     caterer_phoneNumber: {
       type: DataTypes.INTEGER,
       allowNull:false,
@@ -31,8 +35,25 @@ Caterer.init(
       unique: true,
       validate: {
         isEmail: true
-      }
-    }
+      },
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        references: {
+          model: 'user',
+          key: 'id',
+        },
+      },
+    event_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        references: {
+          model: "event",
+          key: "id",
+          unique: false,
+        },
+      },
   },
   {
     sequelize,

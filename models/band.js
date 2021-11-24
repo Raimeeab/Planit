@@ -13,30 +13,51 @@ Band.init(
       primaryKey: true,
       autoIncrement: true
     },
-    name: {
+    band_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    phoneNumber: {
+    band_description: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    band_phoneNumber: {
       type: DataTypes.INTEGER,
       allowNull:false,
     },
-    price: {
+    band_price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true
     },
-    season: {
+    band_season: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    email: {
+    band_email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
       validate: {
         isEmail: true
-      }
-    }
+      },
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+  event_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: "event",
+        key: "id",
+        unique: false,
+      },
+    },
   },
   {
     sequelize,
