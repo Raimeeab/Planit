@@ -13,23 +13,23 @@ Venue.init(
       primaryKey: true,
       autoIncrement: true
     },
-    name: {
+    venue_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    phoneNumber: {
+    venue_phoneNumber: {
       type: DataTypes.INTEGER,
       allowNull:false,
     },
-    price: {
+    venue_price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true
     },
-    season: {
+    venue_season: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    email: {
+    venue_email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
