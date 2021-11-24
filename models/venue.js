@@ -17,6 +17,10 @@ Venue.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    venue_description: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
     venue_phoneNumber: {
       type: DataTypes.INTEGER,
       allowNull:false,
@@ -35,8 +39,25 @@ Venue.init(
       unique: true,
       validate: {
         isEmail: true
-      }
-    }
+      },
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        references: {
+          model: 'user',
+          key: 'id',
+        },
+      },
+    event_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        references: {
+          model: "event",
+          key: "id",
+          unique: false,
+        },
+      },
   },
   {
     sequelize,
