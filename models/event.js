@@ -17,14 +17,14 @@ Event.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    eventtype: {
+    event_type: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    event_description: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
+    // event_description: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false
+    //   },
     budget: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true,

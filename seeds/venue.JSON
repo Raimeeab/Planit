@@ -1,0 +1,65 @@
+[
+    {
+        "venue_name": "Watsons Bay Hotel",
+        "venue_description": "Grounded on the sandy shoreline of one of Sydney’s most iconic harbour beaches, Watsons Bay Boutique Hotel sings out to those in search of endless summers, postcard panoramas and our specialty: unhurried happiness.",
+        "venue_phoneNumber": "0293375444",
+        "venue_capacity": "200",
+        "venue_price": "1500",
+        "venue_season": "Summer",
+        "venue_email": "info@watsonsbayhotel.com.au"
+    },
+    {
+        "venue_name": "12-Micron Barangaroo",
+        "venue_description": "Light-filled space, stylish finishes and sublime views delivering a premium experience for all types of events.",
+        "venue_phoneNumber": "0282188877",
+        "venue_capacity": "120",
+        "venue_price": "1000",
+        "venue_season": "All seasons",
+        "venue_email": "info@12micron.com.au"
+    },
+    {
+        "venue_name": "Royal Randwick",
+        "venue_description": "Royal Randwick is the jewel in the crown of Sydney's venues. Enjoy modern, luxurious facilities and world-class service in a prestigious and historic setting.",
+        "venue_phoneNumber": "0279071299",
+        "venue_capacity": "90",
+        "venue_price": "600",
+        "venue_season": "All seasons",
+        "venue_email": "info@12micron.com.au"
+    },
+    {
+        "venue_name": "Binbadgen",
+        "venue_description": "Located in the heart of Pokolbin, offering a visually spectacular location, Bimbadgen provides the perfect backdrop for your special day.",
+        "venue_phoneNumber": " 0249984650",
+        "venue_capacity": "350",
+        "venue_price": "1500",
+        "venue_season": "Spring",
+        "venue_email": "info@12micron.com.au"
+    },
+    {
+        "venue_name": "Q Station Manly",
+        "venue_description": "Q Station offers a range of incredible experiences, from boutique hotel accommodation, stunning venues, modern conference facilities and an amazing restaurant, as well as Sydney's best ghost and history tours.",
+        "venue_phoneNumber": "0294661500",
+        "venue_capacity": "60",
+        "venue_price": "400",
+        "venue_season": "Autumn",
+        "venue_email": "manly@qstation.com.au"
+    },
+    {
+        "venue_name": " San Martin Akuna Bay",
+        "venue_description": "San Martin is a premium venue location nestles in preistine national park surrounds.",
+        "venue_phoneNumber": "18003252672",
+        "venue_capacity": "90",
+        "venue_price": "550",
+        "venue_season": "Spring",
+        "venue_email": "www.sanmartin.com.au"
+    },
+    {
+        "venue_name": "Park Hyatt Sydney",
+        "venue_description": "Park Hyatt Sydney offers contemporary luxury in an iconic location for the discerning meeting and event planner.",
+        "venue_phoneNumber": "0292561234",
+        "venue_capacity": "120",
+        "venue_price": "1000",
+        "venue_season": "Winter",
+        "venue_email": "sydney@parkhyatt.com.au"
+    }
+]
