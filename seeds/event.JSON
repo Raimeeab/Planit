@@ -1,0 +1,51 @@
+[
+    {
+        "event_name": "Koren & Troy's Wedding",
+        "event_type": "Wedding",
+        "budget": "7000",
+        "attendees": "80",
+        "date": "21/1/2022" 
+    },
+    {
+        "event_name": "Newton's 21st",
+        "event_type": "Birthday",
+        "budget": "2000",
+        "attendees": "40",
+        "date": "7/2/2022"
+    },
+    {
+        "event_name": "Afia & Ron's Engagement",
+        "event_type": "Engagement",
+        "budget": "4000",
+        "attendees": "65",
+        "date": "5/7/2021"
+    },
+    {
+        "event_name": "Lanc's 50th",
+        "event_type": "Birthday",
+        "budget": "3000",
+        "attendees": "46",
+        "date": "5/3/2021"
+    },
+    {
+        "event_name": "Jeda's Christening",
+        "event_type": "Christening",
+        "budget": "4000",
+        "attendees": "68",
+        "date": "7/11/2021"
+    },
+    {
+        "event_name": "Holly & Micheal's Wedding",
+        "event_type": "Wedding",
+        "budget": "10000",
+        "attendees": "400",
+        "date": "20/11/2022"
+    },
+    {
+        "event_name": "Beet Party",
+        "event_type": "Other",
+        "budget": "300",
+        "attendees": "10",
+        "date": "20/4/2021"
+    }
+]
