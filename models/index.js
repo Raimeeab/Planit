@@ -1,42 +1,37 @@
 const Vendor = require('./vendor');
 const Event = require('./event');
-const User = require('./user')
+const User = require('./user');
+const Options = require('./options')
 
 
-Venue.belongsToMany(User, {
+User.belongsto(Event, {
+    foreignKey: 'user_id'
+});
+
+User.hasMany(Options, {
+ foreignKey: 'user_id'
+});
+
+User.hasMany(Event, {
+    foreignKey: 'user_id'
+});
+
+Vendor.belongstoMany(Event, {
     through: {
-        model: Event,
+        model: Options,
         unique: false
     },
-    as: 'booked_venues'
+    as: 'suitable_vendors'
 });
 
-Caterer.belongsToMany(User, {
+
+Event.belongstoMany(Vendor, {
     through: {
-        model: Event,
+        model: Options,
         unique: false
     },
-    as: 'booked_caterers'
+    as: 'booked_events'
 });
 
-Event.hasOne(Band, {
-    foreignKey: 'event_id',
-});
-
-Event.hasOne(Florist, {
-    foreignKey: 'event_id',
-});
-
-Event.hasOne(Venue, {
-    foreignKey: 'event_id',
-});
-
-Event.hasOne(Caterer, {
-    foreignKey: 'event_id',
-});
-
-Event.hasOne(User, {
-    foreignKey: 'user_id',
-});
-
-module.exports = { User, Band, Event, Caterer, Florist, Venue };
+   
+module.exports = { User, Vendor, Event, Options };
