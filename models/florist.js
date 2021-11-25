@@ -12,23 +12,23 @@ Florist.init(
       primaryKey: true,
       autoIncrement: true
     },
-    florist_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    florist_description: {
+    description: {
         type: DataTypes.STRING,
         allowNull: false
       },
-    florist_phoneNumber: {
+    phoneNumber: {
       type: DataTypes.INTEGER,
       allowNull:false,
     },
-    florist_price: {
+    price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true
     },
-    florist_email: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,

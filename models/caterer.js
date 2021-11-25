@@ -13,23 +13,23 @@ Caterer.init(
       primaryKey: true,
       autoIncrement: true
     },
-    caterer_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    caterer_description: {
+    description: {
         type: DataTypes.STRING,
         allowNull: false
       },
-    caterer_phoneNumber: {
+    phoneNumber: {
       type: DataTypes.INTEGER,
       allowNull:false,
     },
-    caterer_price: {
+    price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true
     },
-    caterer_email: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
