@@ -12,11 +12,29 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-// const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({});
 
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 
+// app.use(routes);
+
+app.get('/login', async (req, res) => {
+  try {
+    res.render('login')
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  })
+
+
+
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 // app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
