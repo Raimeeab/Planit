@@ -13,27 +13,27 @@ Band.init(
       primaryKey: true,
       autoIncrement: true
     },
-    band_name: {
+   name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    band_description: {
+   description: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    band_phoneNumber: {
+   phoneNumber: {
       type: DataTypes.INTEGER,
       allowNull:false,
     },
-    band_price: {
+   price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true
     },
-    band_season: {
+   season: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    band_email: {
+   email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
