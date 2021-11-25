@@ -33,6 +33,10 @@ Event.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     option_id: {
       type: DataTypes.INTEGER,
       references: {
