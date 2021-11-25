@@ -37,38 +37,6 @@ Event.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    band_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "band",
-        key: "id",
-        unique: false,
-      },
-    },
-    venue_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "venue",
-        key: "id",
-        unique: false,
-      },
-    },
-    caterer_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "caterer",
-        key: "id",
-        unique: false,
-      },
-    },
-    florist_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "florist",
-        key: "id",
-        unique: false,
-      },
-    },
     user_id: {
         type: DataTypes.INTEGER,
         references: {

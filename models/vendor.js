@@ -2,16 +2,20 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our Bandmodel
-class Caterer extends Model {}
+class Vendor extends Model {}
 
 // create fields/columns for Band model
-Caterer.init(
+Vendor.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
+    },
+    type: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     name: {
       type: DataTypes.STRING,
@@ -25,8 +29,16 @@ Caterer.init(
       type: DataTypes.INTEGER,
       allowNull:false,
     },
+    capacity: {
+        type: DataTypes.INTEGER,
+        allowNull:true,
+      },
     price: {
       type: DataTypes.DECIMAL(10, 2),
+      allowNull: false
+    },
+    season: {
+      type: DataTypes.STRING,
       allowNull: true
     },
     email: {
@@ -60,8 +72,8 @@ Caterer.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'caterer'
+    modelName: 'venue'
   }
 );
 
-module.exports = Caterer;
+module.exports = Vendor;

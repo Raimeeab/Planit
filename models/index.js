@@ -1,25 +1,7 @@
-const Band = require('./band');
-const Caterer = require('./caterer');
-const Venue = require('./venue');
+const Vendor = require('./vendor');
 const Event = require('./event');
-const Florist = require('./florist');
 const User = require('./user')
 
-Band.belongsToMany(User, {
-    through: {
-        model: Event,
-        unique: false
-    },
-    as: 'booked_bands'
-});
-
-Florist.belongsToMany(User, {
-    through: {
-        model: Event,
-        unique: false
-    },
-    as: 'booked_florists'
-});
 
 Venue.belongsToMany(User, {
     through: {
