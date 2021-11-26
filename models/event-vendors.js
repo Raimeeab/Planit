@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require("../config/connection");
 
-class Options extends Model {}
+class EventVendors extends Model {}
 
 Options.init(
     {
@@ -38,8 +38,8 @@ Options.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "options",
+        modelName: "event vendor",
     }
 );
 
-module.exports = Options;
+module.exports = EventVendors;
