@@ -40,7 +40,7 @@ Event.init(
     option_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'option',
+        model: 'event vendor',
         key: 'id',
       },
     },
