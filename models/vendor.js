@@ -26,7 +26,7 @@ Vendor.init(
         allowNull: false
       },
     phoneNumber: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull:false,
     },
     price: {
@@ -41,13 +41,30 @@ Vendor.init(
         isEmail: true
       },
     },
+    user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        references: {
+          model: 'user',
+          key: 'id',
+        },
+      },
+    event_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        references: {
+          model: "event",
+          key: "id",
+          unique: false,
+        },
+      },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'venue'
+    modelName: 'vendor'
   }
 );
 
