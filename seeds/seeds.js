@@ -1,11 +1,11 @@
 const sequelize = require('../config/connection');
 const { User, Venue, Vendor } = require('../models');
-// const Event = require('../models/event');
+const Event = require('../models/event');
 const userData = require('./user.json');
 const vendorData = require('./vendor.json');
 const venueData = require('./venue.json');
-// const eventData = require('./event.json');
-// const eventVendorData = require('./eventVendors.json');
+const eventData = require('./event.json');
+const eventVendorData = require('./eventVendors.json');
 
 const seedDatabase = async () => {
     try {
@@ -26,12 +26,12 @@ const seedDatabase = async () => {
             returning: true,
         });
 
-        console.log(vendorData)
+        // console.log(vendorData)
 
-        // const events = await Event.bulkCreate(eventData, {
-        //     individualHooks: true, 
-        //     returning: true,
-        // });
+        const events = await Event.bulkCreate(eventData, {
+            individualHooks: true, 
+            returning: true,
+        });
 
 
         
