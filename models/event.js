@@ -33,16 +33,13 @@ Event.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    image: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    option_id: {
+    venue_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'event vendor',
+        model: 'venue',
         key: 'id',
-      },
+        allowNull: true
+      }
     },
     user_id: {
         type: DataTypes.INTEGER,

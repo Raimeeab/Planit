@@ -18,7 +18,7 @@ Venue.init(
       allowNull: false
     },
     description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false
       },
     phoneNumber: {
@@ -40,6 +40,10 @@ Venue.init(
       validate: {
         isEmail: true
       },
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
   },
   {

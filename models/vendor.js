@@ -22,7 +22,7 @@ Vendor.init(
       allowNull: false
     },
     description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false
       },
     phoneNumber: {
@@ -41,23 +41,6 @@ Vendor.init(
         isEmail: true
       },
     },
-    user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-          model: 'user',
-          key: 'id',
-        },
-      },
-    event_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-          model: "event",
-          key: "id",
-          unique: false,
-        },
-      },
   },
   {
     sequelize,

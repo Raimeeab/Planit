@@ -1,39 +1,42 @@
-const Vendor = require('./vendor');
-const Event = require('./event');
 const User = require('./user');
-const EventVendors = require('./event-vendors')
 const Venue = require('./venue');
-const EventVendors = require('./event-vendors');
+const Vendor = require('./vendor');
+// const Event = require('./event');
+// const EventVendors = require('./event-vendors');
+
+// User.belongsTo(Event, {
+//     foreignKey: "user_id"
+// });
+
+// Vendor.belongsToMany(Event, {
+//     through: {
+//         model: EventVendors,
+//         unique: false    
+//     }, 
+//     as:"suitable_vendors"
+// });
+
+// Event.hasOne(Venue, {
+//     foreignKey: 'venue_id'
+// });
+
+// Vendor.belongsToMany(Event, {
+//     through: {
+//         model: EventVendors,
+//         unique: false
+//     },
+//     as: 'suitable_vendors'
+// });
 
 
-User.belongsto(Event, {
-    foreignKey: 'user_id'
-});
-
-User.hasMany(Event, {
-    foreignKey: 'user_id'
-});
-
-Venue.hasMany(Event, {
-    foreignKey: 'venue_id'
-});
-
-Vendor.belongstoMany(Event, {
-    through: {
-        model: EventVendors,
-        unique: false
-    },
-    as: 'suitable_vendors'
-});
-
-
-Event.belongstoMany(Vendor, {
-    through: {
-        model: EventVendors,
-        unique: false
-    },
-    as: 'booked_events'
-});
+// Event.belongsToMany(Vendor, {
+//     through: {
+//         model: EventVendors,
+//         unique: false
+//     },
+//     as: 'booked_events'
+// });
 
    
-module.exports = { User, Vendor, Event, EventVendors };
+module.exports = { User, Venue, Vendor };
+// Vendor, Event, EventVendors
