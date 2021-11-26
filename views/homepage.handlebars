@@ -5,13 +5,13 @@
     <button class="btn btn-primary" type="submit">New Event</button>
   </div>
 
-{{#each events as |event| }}
+{{#each venues as |venue| }}
 <div>
   <div class="col-md-5">
     <h2>
-      <a href="/event/{{event.id}}">{{event.name}}</a>
+      <a href="/event/{{venue.id}}">{{venue.name}}</a>
     </h2>
-    <img src="{{event.image}}"/>
+    <img src="{{venue.image}}"/>
   </div>
 {{/each}}
 

@@ -19,6 +19,20 @@ const hbs = exphbs.create({});
 
 // app.use(routes);
 
+const sess = {
+  secret: '3ruqpirpiqu29334fj',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));
+
+
+
 app.get('/login', async (req, res) => {
   try {
     res.render('login')
