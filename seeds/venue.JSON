@@ -4,16 +4,18 @@
         "description": "Grounded on the sandy shoreline of one of Sydney’s most iconic harbour beaches, Watsons Bay Boutique Hotel sings out to those in search of endless summers, postcard panoramas and our specialty: unhurried happiness.",
         "phoneNumber": "0293375444",
         "capacity": "200",
-        "price": "1500",
-        "email": "info@watsonsbayhotel.com.au"
+        "price": "4000",
+        "email": "info@watsonsbayhotel.com.au",
+        "image": "../public/assets/watsons-bay.jpeg"
     },
     {
         "name": "12-Micron Barangaroo",
         "description": "Light-filled space, stylish finishes and sublime views delivering a premium experience for all types of events.",
         "phoneNumber": "0282188877",
-        "capacity": "120",
+        "capacity": "150",
         "price": "1000",
-        "email": "info@12micron.com.au"
+        "email": "info@12micron.com.au",
+        "image": "../public/assets/12-Micron-Barangaroo.jpeg"
     },
     {
         "name": "Royal Randwick",
@@ -21,7 +23,8 @@
         "phoneNumber": "0279071299",
         "capacity": "90",
         "price": "600",
-        "email": "info@12micron.com.au"
+        "email": "info@royalrandwick.com.au",
+        "image": "../public/assets/Royal-Randwick.jpeg"
     },
     {
         "name": "Binbadgen",
@@ -29,7 +32,8 @@
         "phoneNumber": " 0249984650",
         "capacity": "350",
         "price": "1500",
-        "email": "info@12micron.com.au"
+        "email": "info@binbadgen.com.au",
+        "image": "../public/assets/Binbadgen.jpeg"
     },
     {
         "name": "Q Station Manly",
@@ -37,15 +41,17 @@
         "phoneNumber": "0294661500",
         "capacity": "60",
         "price": "400",
-        "email": "manly@qstation.com.au"
+        "email": "manly@qstation.com.au",
+        "image": "../public/assets/Q-Station-Manly.jpeg"
     },
     {
-        "name": " San Martin Akuna Bay",
+        "name": "San Martin Akuna Bay",
         "description": "San Martin is a premium venue location nestles in preistine national park surrounds.",
-        "phoneNumber": "18003252672",
+        "phoneNumber": "0218964392",
         "capacity": "90",
         "price": "550",
-        "email": "www.sanmartin.com.au"
+        "email": "www.sanmartin.com.au",
+        "image": "../public/assets/San-Martin-Akuna-Bay.jpeg"
     },
     {
         "name": "Park Hyatt Sydney",
@@ -53,6 +59,7 @@
         "phoneNumber": "0292561234",
         "capacity": "120",
         "price": "1000",
-        "email": "sydney@parkhyatt.com.au"
+        "email": "sydney@parkhyatt.com.au",
+        "image": "../public/assets/Park-Hyatt-Sydney.jpeg"
     }
 ]
