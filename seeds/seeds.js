@@ -33,20 +33,11 @@ const seedDatabase = async () => {
             returning: true,
         });
 
-
+        // const eventVendors = await 
         
     } catch (err) {
         console.log("message", err);
     }
-
-
-
-//    for (const users of userData) {
-//        await User.create({
-//            ...users,
-//            event_id: events[Math.floor(Math.random() * events.length)].id
-//        });
-//    };
 
    process.exit(0);
 };

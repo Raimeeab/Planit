@@ -1,37 +1,37 @@
 [
     {
-        "user_name": "Koren Blair",
-        "user_email": "koren@yahoo.com",
+        "name": "Koren Blair",
+        "email": "koren@yahoo.com",
         "password": "Shishkabab334"
     },
     {
-        "user_name": "Newton Glessner",
-        "user_email": "glessner@gmail.com",
+        "name": "Newton Glessner",
+        "email": "glessner@gmail.com",
         "password": "Potatofry!"
     },
     {
-        "user_name": "Afia Hoyt",
-        "user_email": "afia_hoyt@hotmail.com",
+        "name": "Afia Hoyt",
+        "email": "afia_hoyt@hotmail.com",
         "password": "PinkBathrobe7"
     },
     {
-        "user_name": "Lancer Compton",
-        "user_email": "lanc_comp@hotmail.com",
+        "name": "Lancer Compton",
+        "email": "lanc_comp@hotmail.com",
         "password": "BananachoLate20"
     },
     {
-        "user_name": "Valerie Felder",
-        "user_email": "vfelder@gmail.com",
+        "name": "Valerie Felder",
+        "email": "vfelder@gmail.com",
         "password": "BlueBoy03"
     },
     {
-        "user_name": "Micheal Scott",
-        "user_email": "mscott@dudnermifflin.com",
+        "name": "Micheal Scott",
+        "email": "mscott@dudnermifflin.com",
         "password": "CathrineZeta69"
     }, 
     {
-        "user_name": "Dwight Schrute",
-        "user_email": "dschrute@dudnermifflin.com",
+        "name": "Dwight Schrute",
+        "email": "dschrute@dudnermifflin.com",
         "password": "assitantRegionalManager"
     }
 ]

@@ -12,11 +12,12 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    user_name: {
+   name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_email: {
+    // changed user_email to email/ commented our user_name
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
