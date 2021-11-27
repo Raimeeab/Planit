@@ -6,7 +6,7 @@
         "capacity": 200,
         "price": 4000,
         "email": "info@watsonsbayhotel.com.au",
-        "image": "../public/assets/watsons-bay.jpeg"
+        "image": "watsons-bay.jpeg"
     },
     {
         "name": "12-Micron Barangaroo",
@@ -15,9 +15,17 @@
         "capacity": 150,
         "price": 1000,
         "email": "info@12micron.com.au",
-        "image": "../public/assets/12-Micron-Barangaroo.jpeg"
+        "image": "12-Micron-Barangaroo.jpeg"
     },
-
+    {
+        "name": "Royal Randwick",
+        "description": "Royal Randwick is the jewel in the crown of Sydney's venues. Enjoy modern, luxurious facilities and world-class service in a prestigious and historic setting.",
+        "phoneNumber": "0279071299",
+        "capacity": 90,
+        "price": 600,
+        "email": "info@royalrandwick.com.au",
+        "image": "Royal-Randwick.jpeg"
+    },
     {
         "name": "Binbadgen",
         "description": "Located in the heart of Pokolbin, offering a visually spectacular location, Bimbadgen provides the perfect backdrop for your special day.",
@@ -25,7 +33,7 @@
         "capacity": 350,
         "price": 1500,
         "email": "info@binbadgen.com.au",
-        "image": "../public/assets/Binbadgen.jpeg"
+        "image": "Binbadgen.jpeg"
     },
     {
         "name": "Q Station Manly",
@@ -34,7 +42,7 @@
         "capacity": 60,
         "price": 400,
         "email": "manly@qstation.com.au",
-        "image": "../public/assets/Q-Station-Manly.jpeg"
+        "image": "Q-Station-Manly.jpeg"
     },
     {
         "name": "San Martin Akuna Bay",
@@ -43,7 +51,7 @@
         "capacity": 90,
         "price": 550,
         "email": "www.sanmartin.com.au",
-        "image": "../public/assets/San-Martin-Akuna-Bay.jpeg"
+        "image": "San-Martin-Akuna-Bay.jpeg"
     },
     {
         "name": "Park Hyatt Sydney",
@@ -52,6 +60,6 @@
         "capacity": 120,
         "price": 1000,
         "email": "sydney@parkhyatt.com.au",
-        "image": "../public/assets/Park-Hyatt-Sydney.jpeg"
+        "image": "Park-Hyatt-Sydney.jpeg"
     }
 ]

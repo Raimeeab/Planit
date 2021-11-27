@@ -12,21 +12,34 @@
   <div class="">
     <header class="">
       <h1>
-        <a href="/">Planit!</a>
+       Plan your next Event!
       </h1>
+    </header>
       <nav>
+        <a href="/">Home</a>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
+        <a href="/homepage">logout</a> |
         <button class="" id="logout">logout</button>
         {{else}}
         <a href="/login">login</a>
         {{/if}}
       </nav>
-    </header>
     <main class="">
       <!-- Render the sub layout -->
       {{{ body }}}
+      
+      <div class="row">
+  <div class="column">
+<img src="/assets/12-Micron-Barangaroo.jpeg"/><h3>Newton's 21st</h3>
+<img src="/assets/12-Micron-Barangaroo.jpeg"/><h3>Newton's 21st</h3>
+  </div>
+  <div class="column">
+    <img src="/assets/12-Micron-Barangaroo.jpeg"/><h3>Newton's 21st</h3>
+    <img src="/assets/12-Micron-Barangaroo.jpeg"/><h3>Newton's 21st</h3>
+  </div>
+</div>
+      
     </main>
     <footer>
       
