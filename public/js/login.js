@@ -1,4 +1,5 @@
 const loginFormHandler = async (event) => {
+  console.log("check")
     event.preventDefault();
   
     // Collect values from the login form
@@ -35,7 +36,8 @@ const loginFormHandler = async (event) => {
         body: JSON.stringify({ name, email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
+      
+      console.log("line 39")
       if (response.ok) {
         document.location.replace('/profile');
       } else {

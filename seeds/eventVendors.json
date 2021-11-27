@@ -2,5 +2,13 @@
     {
         "vendor_id": "1",
         "event_id": "2"
+    },
+    {
+        "vendor_id": ["6", "2", "3"],
+        "event_id": "3"
+    },
+    {
+        "vendor_id": ["1", "5", "12"],
+        "event_id": "4"
     }
 ]
