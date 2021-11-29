@@ -27,7 +27,7 @@
     </form>
   </div>
 
-  {{!-- {{#if events.length}}
+  {{#if events.length}}
   <div class="col-md-6 event-list">
     <h3>Current events:</h3>
 
@@ -37,12 +37,16 @@
         <h4><a href="/event/{{event.id}}">{{event.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{event.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger delete-event-btn" data-id="{{event.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
   </div>
-  {{/if}} --}}
+  {{/if}}
+
+  <div>
+    <h3></h3>
+  </div>
 </div>
 
 <script src="./js/profile.js"></script>

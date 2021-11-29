@@ -38,15 +38,15 @@ const delButtonHandler = async (event) => {
   }
 };
 
-let test = getElementByClassName('new-event-form');
-
-console.log(test);
-
 document
   .querySelector('.new-event-form')
   .addEventListener('submit', newFormHandler);
 
 
 document
-  .querySelector('.event-list')
-  .addEventListener('click', delButtonHandler);
+  .querySelectorAll('.delete-event-btn') 
+  .forEach((button) => {
+    button.addEventListener('click', delButtonHandler);
+  });
+  
+
