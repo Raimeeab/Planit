@@ -10,7 +10,12 @@
 
     <form class="form new-event-form">
       <div class="form-group">
-        <label for="event-name">event name:</label>
+        <label for="event-name">Event name:</label>
+        <input class="form-input" type="text" id="event-name" name="event-name" />
+      </div>
+      <div class="form-group">
+        {{!-- TODO: Add scroll (and include other as well => wedding, engagement, hens, birthday, christening, anniversary, other ) --}}
+        <label for="event-type">Event type:</label>
         <input class="form-input" type="text" id="event-name" name="event-name" />
       </div>
       <div class="form-group">
@@ -18,8 +23,15 @@
         <input class="form-input" type="number" id="event-budget" name="event-budget" />
       </div>
       <div class="form-group">
-        <label for="event-desc">description:</label>
-        <textarea class="form-input" id="event-desc" name="event-desc"></textarea>
+        <label for="event-guest">Number of guests:</label>
+        {{!-- TODO: Need to be edited in front end js --}}
+        <textarea class="form-input" id="event-guest" name="event-guest"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="event-venue">Does your event need a venue?</label>
+        {{!-- TODO: Need to be edited in front end js --}}
+        <button type="yes" class="btn btn-primary">Yes</button>
+        <button type="no" class="btn btn-primary">No</button>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -43,10 +55,5 @@
     {{/each}}
   </div>
   {{/if}}
-
-  <div>
-    <h3></h3>
-  </div>
-</div>
 
 <script src="./js/profile.js"></script>

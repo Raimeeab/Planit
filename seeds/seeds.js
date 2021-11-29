@@ -32,8 +32,6 @@ const seedDatabase = async () => {
             returning: true,
         });
 
-        // const eventVendors = await 
-
         const eventVendors = await EventVendors.bulkCreate(eventVendorData, {
             individualHooks: true, 
             returning: true,
