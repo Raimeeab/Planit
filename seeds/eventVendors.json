@@ -4,11 +4,27 @@
         "event_id": "2"
     },
     {
-        "vendor_id": ["6", "2", "3"],
+        "vendor_id": "6",
         "event_id": "3"
     },
     {
-        "vendor_id": ["1", "5", "12"],
+        "vendor_id": "2",
+        "event_id": "3"
+    },
+    {
+        "vendor_id": "3",
+        "event_id": "3"
+    },
+    {
+        "vendor_id": "1",
+        "event_id": "4"
+    },
+    {
+        "vendor_id": "5",
+        "event_id": "4"
+    },
+    {
+        "vendor_id": "12",
         "event_id": "4"
     }
 ]

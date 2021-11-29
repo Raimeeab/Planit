@@ -9,6 +9,15 @@
         "user_id": "1"
     },
     {
+        "name": "Koren's Hens Party",
+        "type": "Hens",
+        "budget": "1000",
+        "attendees": "30",
+        "date": "4/12/2021",
+        "venue_id": null,
+        "user_id": "1"
+    },
+    {
         "name": "Newton's 21st",
         "type": "Birthday",
         "budget": "2000",
