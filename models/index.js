@@ -9,9 +9,13 @@ User.hasMany(Event, {
     onDelete: 'CASCADE'
 })
 
-// User.belongsTo(Event, {
-//     foreignKey: "user_id"
-// });
+User.hasMany(Event, {
+    foreignKey: "user_id"
+});
+
+Event.belongsTo(User, {
+    foreignKey: "user_id"
+});
 
 // Event has one Venue 
 // Event can have many Vendors 
