@@ -30,7 +30,9 @@ router.get('/profile', withAuth, async (req, res) => {
         ...user,
         logged_in: true
       });
+
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
 });
@@ -44,26 +46,6 @@ router.get('/login', (req, res) => {
   
     res.render('login');
 });
-
-
-
-
-// router.get('/vendors', async (req, res) => {
-//     try {
-//         const vendorData = await Vendor.findAll();
-//         const vendors = vendorData.map((vendor) => vendor.get({ plain: true }));
-
-//         res.render('vendors', {
-//             vendors,
-//         });
-
-//     } catch (err) {
-//         res.status(500).json({
-//             message: "Error occurred:",
-//             err
-//         });
-//     };
-// });
 
 module.exports = router;
 
