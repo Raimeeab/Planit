@@ -31,7 +31,7 @@ EventVendors.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "event vendor",
+        modelName: "event_vendor",
     }
 );
 
