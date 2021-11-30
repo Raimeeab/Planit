@@ -58,10 +58,17 @@ const loginFormHandler = async (event) => {
   // LOGIN/REGISTER TOGGLE ----------------------------------------------------------------------
   const toggle = document.querySelector('.register-login-toggle');
   
-  toggle.addEventListener('click', () =>{
+  toggle.addEventListener('click', (submit) =>{
+    submit.preventDefault()
     console.log('clicked!')
-    const content = document.querySelector('.toggle-content')
-    const ariaHidden = content.getAttribute('aria-hidden')
+    const contents = document.querySelectorAll('.toggle-content')
+    console.log(contents)
+    contents.forEach(content => {
+      console.log(content)
+      const ariaHidden = content.getAttribute('aria-hidden')
 
-    content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
+      console.log(content)
+      content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
+    })
+
   });  

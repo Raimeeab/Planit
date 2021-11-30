@@ -2,7 +2,7 @@
 
 <div id="login/register-handlebar">
   <div id="login-container" class="toggle-content" aria-hidden="false">
-    <h2>Login</h2>
+    <h2 class="text-center">Login</h2>
     <form class="form login-form">
       <div class="mb-3">
         <label for="email-login" class="form-label">Email address</label>
@@ -16,7 +16,7 @@
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Keep Me Logged In</label>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-outline-primary d-flex justify-content-center align-item-center">Submit</button>
     </form>
     <div>
       <a class="register-login-toggle" aria-controls="toggle-content" href="">Register New Account</a>
@@ -37,10 +37,11 @@
       </div>
     </form>
   </div> --}}
+  
   <div class="toggle-content" aria-hidden="true">
     <h2>Signup</h2>
 
-    <form class="form signup-form">
+    <form class="logout-form signup-form">
       <div class="form-group">
         <label for="name-signup">name:</label>
         <input class="form-input" type="text" id="name-signup" />
@@ -57,6 +58,9 @@
         <button class="btn btn-primary" type="submit">signup</button>
       </div>
     </form>
+    <div>
+      <a class="register-login-toggle" aria-controls="toggle-content" href="">Register New Account</a>
+    </div>
   </div>
 </div>
 
