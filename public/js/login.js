@@ -56,9 +56,9 @@ const loginFormHandler = async (event) => {
 
 
   // LOGIN/REGISTER TOGGLE ----------------------------------------------------------------------
-  const toggle = document.querySelector('#register-login-toggle');
+  const toggle = document.querySelector('.register-login-toggle');
   
-  register-login-toggle.addEventListener('click', () =>{
+  toggle.addEventListener('click', () =>{
     console.log('clicked!')
     const content = document.querySelector('.toggle-content')
     const ariaHidden = content.getAttribute('aria-hidden')
