@@ -4,7 +4,7 @@
     const venueDesc = document.querySelector('#event-desc');
     const venueNo = document.querySelector('venue-no');
     const venueEmail = document.querySelector('venue-email');
-    const venuePrice = document.querySelector('venue-price')
+    const venuePrice = document.querySelector('venue-price');
 
     const response = await fetch(`/venues`, {
         method: 'GET',

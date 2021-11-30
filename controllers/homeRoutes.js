@@ -49,9 +49,15 @@ router.get('/login', (req, res) => {
 });
 
 
-router.get('/vendors', (req, res) => {
+router.get('/vendors', async (req, res) => {
   try {
-    res.render('vendors')
+    const budget = req.query.budget;
+
+    const vendorData = await Vendor.findAll();
+
+    const vendors = vendorData.map((vendor) => vendor.get({ plain: true })); 
+
+    res.render('vendors', { vendors }); 
   } catch {
     console.log(err);
       res.status(500).json(err);
@@ -59,14 +65,23 @@ router.get('/vendors', (req, res) => {
 });
 
 
-router.get('/venues', (req, res) => {
+router.get('/venues', async (req, res) => {
   try {
-    res.render('venues')
+    const budget = req.query.budget;
+
+    const venueData = await Venue.findAll();
+
+    // We use map() to iterate over venueData and then add .get({ plain: true }) each object to serialize it. 
+    const venues = venueData.map((venues) => venues.get({ plain: true })); 
+
+    res.render('venues', { venues }); 
   } catch {
     console.log(err);
       res.status(500).json(err);
   };
 });
+
+
 
 module.exports = router;
 
