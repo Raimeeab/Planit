@@ -1,0 +1,31 @@
+const router = require('express').Router();
+const Venue = require('../../models/venue');
+
+router.get('/', async (req, res) => {
+    try {
+        const budget = req.query.budget;
+
+        const venueData = await Venue.findAll();
+
+        const venues = venueData.map((venues) => venues.get({ plain: true })); 
+
+        res.render('all', { venues }); 
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    };
+});
+
+router.get('/:id', async (req, res) => {
+    try {
+        const venueData = await Venue.findByPk({
+            where: req.params.id
+        });
+
+        res.status(200).json(venueData);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    };
+});

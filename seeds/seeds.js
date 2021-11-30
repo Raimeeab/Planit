@@ -1,6 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Venue, Vendor } = require('../models');
-const Event = require('../models/event');
+const { User, Venue, Vendor, EventVendors, Event } = require('../models');
 const userData = require('./user.json');
 const vendorData = require('./vendor.json');
 const venueData = require('./venue.json');
@@ -34,6 +33,11 @@ const seedDatabase = async () => {
         });
 
         // const eventVendors = await 
+
+        const eventVendors = await EventVendors.bulkCreate(eventVendorData, {
+            individualHooks: true, 
+            returning: true,
+        })
         
     } catch (err) {
         console.log("message", err);
