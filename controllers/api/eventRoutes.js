@@ -29,13 +29,13 @@ router.get('/:id', withAuth, async (req, res) => {
     };
 });
 
-router.post('/:id', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newEvent = await Event.create({
             ...req.body, 
             user_id: req.session.user_id
         });
-
+        console.log(newEvent);
         res.status(200).json(newEvent);
         
     } catch (err) {

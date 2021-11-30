@@ -14,9 +14,21 @@
         <input class="form-input" type="text" id="event-name" name="event-name" />
       </div>
       <div class="form-group">
-        {{!-- TODO: Add scroll (and include other as well => wedding, engagement, hens, birthday, christening, anniversary, other ) --}}
         <label for="event-type">Event type:</label>
-        <input class="form-input" type="text" id="event-name" name="event-name" />
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="event-type" data-bs-toggle="dropdown" aria-expanded="false">
+          Select type
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownEventType">
+          <li><a class="dropdown-item" id="wedding">Wedding</a></li>
+          <li><a class="dropdown-item" id="engagement">Engagement</a></li>
+          <li><a class="dropdown-item" id="birthday">Birthday</a></li>
+          <li><a class="dropdown-item" id="christening">Christening</a></li>
+          <li><a class="dropdown-item" id="hens">Hens party</a></li>
+          <li><a class="dropdown-item" id="bachelor">Bachelor party</a></li>
+          <li><a class="dropdown-item" id="other">Other</a></li>
+        </ul>
+      </div>
       </div>
       <div class="form-group">
         <label for="event-budget">Buget ($):</label>
@@ -25,13 +37,13 @@
       <div class="form-group">
         <label for="event-guest">Number of guests:</label>
         {{!-- TODO: Need to be edited in front end js --}}
-        <textarea class="form-input" id="event-guest" name="event-guest"></textarea>
+        <input class="form-input" id="event-guest" name="event-guest"></input>
       </div>
       <div class="form-group">
         <label for="event-venue">Does your event need a venue?</label>
         {{!-- TODO: Need to be edited in front end js --}}
-        <button type="yes" class="btn btn-primary">Yes</button>
-        <button type="no" class="btn btn-primary">No</button>
+        <button type="yes" class="btn btn-primary" id="venue-yes">Yes</button>
+        <button type="no" class="btn btn-primary" id="venue-no">No</button>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -54,6 +66,19 @@
     </div>
     {{/each}}
   </div>
+  {{/if}}
+
+  {{!-- If event selected --}}
+  {{#if event.id }}
+  {{!-- Display event details --}}
+  <h2>{{event-name}}</h2>
+  <ul>
+    <li>{{event.type}}</li>
+    <li>{{event.budget}}</li>
+    <li>{{event.guests}}</li>
+    <li>{{event.vendors}}</li>
+    <li>{{event.venue}}</li>
+  </ul>
   {{/if}}
 
 <script src="./js/profile.js"></script>

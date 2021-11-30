@@ -48,5 +48,15 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+
+router.get('/vendors', (req, res) => {
+  try {
+    res.render('/vendors')
+  } catch {
+    console.log(err);
+      res.status(500).json(err);
+  };
+});
+
 module.exports = router;
 
