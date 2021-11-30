@@ -58,5 +58,14 @@ router.get('/vendors', (req, res) => {
   };
 });
 
+
+router.get('/venues', (req, res) => {
+  try {
+    res.render('/venues')
+  } catch {
+    console.log(err);
+      res.status(500).json(err);
+  };
+});
 module.exports = router;
 
