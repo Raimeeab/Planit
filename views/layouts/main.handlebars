@@ -35,19 +35,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link px-4" href="/homepage">Home</a>
+                        <a class="nav-link px-4" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-4" href="#Gallery">Gallery</a>
+                        <a class="nav-link px-4" href="/venues">Venues</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-4" href="#Example">Example</a>
+                        <a class="nav-link px-4" href="/vendors">Vendors</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-4"></a>
                         {{#if logged_in}}
-                            <a href="/homepage">logout</a>
-                            <button id="logout" class="btn-no-style">Logout</button>
+                            <button id="logout" class="btn-no-style"><a href="/">logout</a></button>
                         {{else}}
                             <a href="/login">Login</a>
                         {{/if}}
@@ -80,7 +79,7 @@
  
   {{!-- PAGE SCRIPTS ---------------------------------------------------------------------------------------------------------------------}}
    <!-- Render script for logged in users only -->
-  {{#if loggedIn}}
+  {{#if logged_in}}
     <script src="/js/logout.js"></script>
   {{/if}}
 
