@@ -16,71 +16,88 @@
     vertical-align: middle;
     width: 100%;
   } */
-
-  *{
-    margin: 0;
-    padding: 0;
+/* MAIN HANDLEBAR --------------------------------------------------------------------------------------- */
+*{
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: white ;
-    background-image: url("../../assets/backgrounds/wedding-venue.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    width: auto;
-    position: relative;
-    background-attachment: fixed;
-    z-index: -1;
+  background-color: white ;
+  background-image: url("../../assets/backgrounds/wedding-venue.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: auto;
+  position: relative;
+  background-attachment: fixed;
+  z-index: -1;
 }
 
 /* Navbar */
 .navbar{
-    position: sticky;
-    top: 0;
-    z-index: 1;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .navbar-brand{
-    /* color:#028090; */
-    font-size: 60px;
-    backdrop-filter: blur(2px);
-    border-radius: 30px;
+  font-size: 60px;
+  backdrop-filter: blur(2px);
+  border-radius: 30px;
 }
 .navbar-brand:hover{
-    transform: scale(1.1);
-    transition: all 0.5s ease;
+  transform: scale(1.1);
+  transition: all 0.5s ease;
 }
 .navbar-nav{
-    font-size: 30px;
-    backdrop-filter: blur(4px);
-    border-radius: 30px;
+  font-size: 30px;
+  backdrop-filter: blur(4px);
+  border-radius: 30px;
 }
 .nav-item:hover{
-    transform: scale(1.2);
-    transition: all 0.5s ease;
+  transform: scale(1.2);
+  transition: all 0.5s ease;
 }
 
+/* HOMEPAGE HANDLEBAR -------------------------------------------------------------------------------------- */
 /* Section Header */
 h1 {
-    margin-top: 15%;
-    font-size: 75px;
-    /* color:#028090; */
-    backdrop-filter: blur(3px);
-    /* width: 30%; */
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    border-radius: 30px;
-}
-
-p {
-  font-size: 25px;
-  /* color:#028090; */
+  margin-top: 15%;
+  font-size: 75px;
   backdrop-filter: blur(3px);
-  /* width: 30%; */
   display: flex;
   justify-content: center;
   align-content: center;
   border-radius: 30px;
 }
+
+p {
+  font-size: 25px;
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-content: center;
+  border-radius: 30px;
+}
+
+/* LOGIN/REGISTER HANDLEBAR ------------------------------------------------------------------- */
+
+.toggle-content {
+   /* display:none; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

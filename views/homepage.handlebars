@@ -1,10 +1,10 @@
-{{!-- car/ create button --}}
-{{!-- create button checks if you're logged in/ if--}}
-{{!--  --}}
+{{!-- car/ create button
+create button checks if you're logged in/ if --}}
 
-<div class="form-group">
-    <button class="btn btn-primary" type="submit">New Event</button>
-  </div>
+
+{{!-- <div class="form-group">
+  <button class="btn btn-primary" type="submit">New Event</button>
+</div>
 
 {{#each venues as |venue| }}
 <div>
@@ -12,8 +12,26 @@
     <h2>
       <a href="/event/{{venue.id}}">{{venue.name}}</a>
     </h2>
-    <img src="{{venue.image}}"/>
+    <img src="{{venue.image}}" />
   </div>
-{{/each}}
+  {{/each}} --}}
 
-
+  <section id="plan-your-event">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+          <h1 class="fw-bold text-center px-4">PLAN YOUR EVENT</h1>
+          <hr>
+        </div>
+        <div class="row d-flex justify-content-center align-self-normal">
+          <div class="col-sm-12 col-md-8 col-lg-8">
+            <div class="p-4 my-2">
+              <p class="slogan text-center">
+                Easily, In One Place & Stress-free with<span class="fw-bold">&nbsp;PlanIT </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
