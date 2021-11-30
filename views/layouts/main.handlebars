@@ -23,55 +23,37 @@
 </head>
 
 <body>
-  <!-- navbar --->
-  <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold">PlanIT</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link px-4" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-4" href="/venues">Venues</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link px-4" href="/vendors">Vendors</a>
-          </li>
-          <li class="nav-item">
-            {{#if logged_in}}
-            <a class="nav-link px-4" href="/">logout</a>
-            {{else}}
-            <a class="nav-link px-4" href="/login">Login</a>
-            {{/if}}
-            </a>
-          </li>
-        </ul>
-        </li>
-      </div>
-    </div>
-  </nav>
-  <main class="">
-    <!-- Render the sub layout -->
-    {{{ body }}}
-    <section id="plan-your-event">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 d-flex justify-content-center align-items-center">
-            <h1 class="fw-bold text-center px-4">PLAN YOUR EVENT</h1>
-            <hr>
-          </div>
-          <div class="row d-flex justify-content-center align-self-normal">
-            <div class="col-sm-12 col-md-8 col-lg-8">
-              <div class="p-4 my-2">
-                <p class="slogan text-center">
-                  Easily, In One Place & Stress-free with <span class="fw-bold"> PlanIT </span>
-                </p>
-              </div>
+     <!-- navbar --->
+    <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold">PlanIT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-venues" class="nav-link px-4" href="/venues">Venues</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="/vendors">Vendors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4"></a>
+                        {{#if logged_in}}
+                            <button id="logout" class="btn-no-style"><a href="/">logout</a></button>
+                        {{else}}
+                            <a href="/login">Login</a>
+                        {{/if}}
+                        </a>
+                    </li>
+                </ul>
+                </li>
             </div>
           </div>
         </div>

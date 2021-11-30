@@ -51,7 +51,7 @@ router.get('/login', (req, res) => {
 
 router.get('/vendors', (req, res) => {
   try {
-    res.render('/vendors')
+    res.render('vendors')
   } catch {
     console.log(err);
       res.status(500).json(err);
@@ -61,11 +61,12 @@ router.get('/vendors', (req, res) => {
 
 router.get('/venues', (req, res) => {
   try {
-    res.render('/venues')
+    res.render('venues')
   } catch {
     console.log(err);
       res.status(500).json(err);
   };
 });
+
 module.exports = router;
 

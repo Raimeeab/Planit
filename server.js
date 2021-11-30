@@ -25,21 +25,9 @@ const sess = {
 };
 
 app.use(session(sess));
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// app.get('/login', async (req, res) => {
-//   try {
-//     res.render('login');
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
   
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);

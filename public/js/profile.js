@@ -1,6 +1,6 @@
 const eventName = document.querySelector('#event-name').value.trim();
 const eventType = document.querySelector('#event-type');
-const eventBuget = document.querySelector('#event-budget').value.trim();
+const eventBudget = document.querySelector('#event-budget').value.trim();
 const attendees = document.querySelector('#event-guest').value.trim();
 
 // Used to dictate if event needs venue
@@ -14,21 +14,21 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
 
-  // if (name && event_buget && attendees) {
-  //   const response = await fetch(`/api/events`, {
-  //     method: 'POST',
-  //     body: JSON.stringify({ name, event_buget, attendees }),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //   });
+  if (eventName && eventBudget && attendees) {
+    const response = await fetch(`/api/events`, {
+      method: 'POST',
+      body: JSON.stringify({ eventName, eventBudget, attendees }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-  //   if (response.ok) {
-  //     document.location.replace('/profile');
-  //   } else {
-  //     alert('Failed to create event');
-  //   };
-  // };
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to create event');
+    };
+  };
 };
 
 const viewEvent = async (event) => {
