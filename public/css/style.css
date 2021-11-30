@@ -83,10 +83,12 @@ p {
 /* LOGIN/REGISTER HANDLEBAR ------------------------------------------------------------------- */
 
 .toggle-content {
-   /* display:none; */
+   display:none;
 }
 
-
+.toggle-content[aria-hidden="false"] {
+  display: block
+}
 
 
 

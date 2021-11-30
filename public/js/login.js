@@ -54,7 +54,14 @@ const loginFormHandler = async (event) => {
     .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
 
-  // LOGIN/REGISTER TOGGLE
+
+  // LOGIN/REGISTER TOGGLE ----------------------------------------------------------------------
   const toggle = document.querySelector('#register-login-toggle');
-  const content = document.querySelector('.toggle-content')
   
+  register-login-toggle.addEventListener('click', () =>{
+    console.log('clicked!')
+    const content = document.querySelector('.toggle-content')
+    const ariaHidden = content.getAttribute('aria-hidden')
+
+    content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
+  });  
