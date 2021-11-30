@@ -7,6 +7,7 @@ router.get('/', async (req, res) => {
 
         const venueData = await Venue.findAll();
 
+        // We use map() to iterate over venueData and then add .get({ plain: true }) each object to serialize it. 
         const venues = venueData.map((venues) => venues.get({ plain: true })); 
 
         res.render('all', { venues }); 
@@ -29,3 +30,5 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
     };
 });
+
+module.exports = router;

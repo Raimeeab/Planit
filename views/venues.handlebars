@@ -1,0 +1,30 @@
+<div class="row">
+    <div class ="col-auto">
+        <h2>Venues</h2>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class-"col-md-6">
+        {{#each venues as |venue|}}
+        <div class="row mb-2">
+            <div class="col-md-8">
+                 <img src="{{venue.image}}"/>
+                <h4><a href="/venues">{{venue.name}}</h4>
+                <h5>Capacity: {{venue.cap}}</h5>
+            </div>
+            <div class="col-md-4">
+                <label for="venue-desc">
+                    <p id="venue-desc">{{venue.description}}</p>    
+                </label>
+                <label for="venue-no">Venue number:</label>
+                    <p id="event-no">{{venue.number}}</p>
+                <label for="venue-email">Venue email:</label>
+                    <p id="venue-email">{{venue.email}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+<script src="./js/venue.js"></script>
