@@ -1,11 +1,11 @@
 const loginFormHandler = async (event) => {
-  console.log("check")
     event.preventDefault();
   
     // Collect values from the login form
     const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
-
+    console.log(email)
+    console.log(password);
     if (email && password) {
       // Send a POST request to the API endpoint
       const response = await fetch('/api/users/login', {
@@ -36,8 +36,7 @@ const loginFormHandler = async (event) => {
         body: JSON.stringify({ name, email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-      
-      console.log("line 39")
+    
       if (response.ok) {
         document.location.replace('/profile');
       } else {
@@ -58,7 +57,8 @@ const loginFormHandler = async (event) => {
   // LOGIN/REGISTER TOGGLE ----------------------------------------------------------------------
   const toggle = document.querySelector('.register-login-toggle');
   
-  toggle.addEventListener('click', () =>{
+  toggle.addEventListener('click', (submit) =>{
+    submit.preventDefault();
     console.log('clicked!')
     const content = document.querySelector('.toggle-content')
     const ariaHidden = content.getAttribute('aria-hidden')
