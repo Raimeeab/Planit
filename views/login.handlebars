@@ -25,42 +25,42 @@
 
   {{!-- REGISTER ACCOUNT --}}
 
-  <div id="login/register-handlebar" class="toggle-content" aria-hidden="true">
-    <div id="login-container" >
-      <h2 class="text-center">Register</h2>
-      <form class="logout-form signup-form">
-        <div class="mb-3">
-          <label for="email-login" class="form-label">Name</label>
-          <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-          <label for="email-login" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp">
-        </div>
 
-        <div class="col-auto">
-          <label for="inputPassword6" class="col-form-label">Password</label>
-        </div>
-        <div class="col-auto">
-          <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-        </div>
-        <div class="col-auto">
-          <span id="passwordHelpInline" class="form-text">
-            Must be 8 characters minimum
-          </span>
-        </div>
-
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Keep Me Logged In</label>
-        </div>
-        <button type="submit"
-          class="btn btn-outline-primary d-flex justify-content-center align-item-center">Submit</button>
-      </form>
-      <div>
-        <a class="register-login-toggle" aria-controls="toggle-content" href="">Register New Account</a>
+  <div id="Register-container" class="toggle-content" aria-hidden="true">
+    <h2 class="text-center">Register</h2>
+    <form class="logout-form signup-form">
+      <div class="mb-3">
+        <label for="name-signup" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name-signup" aria-describedby="nameHelp">
       </div>
+      <div class="mb-3">
+        <label for="email-signup" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp">
+      </div>
+
+      <div class="col-auto">
+        <label for="password-signup" class="col-form-label">Password</label>
+      </div>
+      <div class="col-auto">
+        <input type="password" id="password-signup" class="form-control" aria-describedby="passwordHelpInline">
+      </div>
+      <div class="col-auto">
+        <span id="passwordHelpInline" class="form-text">
+          Must be 8 characters minimum
+        </span>
+      </div>
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Keep Me Logged In</label>
+      </div>
+      <button type="submit"
+        class="btn btn-outline-primary d-flex justify-content-center align-item-center">Submit</button>
+    </form>
+    <div>
+      <a class="register-login-toggle" aria-controls="toggle-content" href="">Register New Account</a>
     </div>
+</div>
 
 
 
@@ -88,7 +88,7 @@
       <div>
         <a class="register-login-toggle" aria-controls="toggle-content" href="">Register New Account</a>
       </div>
-    </div>
-  </div> --}}
+    </div> --}}
+  
 
   <script src="./js/login.js"></script>
