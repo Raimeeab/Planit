@@ -1,10 +1,11 @@
  loadVenues = async (venue) => {
     const venueName = document.querySelector('.venue-name');
-    const venueCap = document.querySelector('venue-cap');
-    const venueDesc = document.querySelector('#event-desc');
-    const venueNo = document.querySelector('venue-no');
-    const venueEmail = document.querySelector('venue-email');
-    const venuePrice = document.querySelector('venue-price');
+    const venueImage = document.querySelector('.venue-img')
+    const venueCap = document.querySelector('.venue-cap');
+    const venueDesc = document.querySelector('.event-desc');
+    const venueNo = document.querySelector('.venue-no');
+    const venueEmail = document.querySelector('.venue-email');
+    const venuePrice = document.querySelector('.venue-price');
 
     const response = await fetch(`/venues`, {
         method: 'GET',
