@@ -83,7 +83,7 @@ p {
 /* LOGIN/REGISTER HANDLEBAR ------------------------------------------------------------------- */
 
 .toggle-content {
-   display:hidden;
+   display:none;
 }
 
 .toggle-content[aria-hidden="false"] {
