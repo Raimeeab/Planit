@@ -1,25 +1,28 @@
 <div class="row">
     <div class ="col-auto">
-        <h2>vendors</h2>
+        <h2>Vendors</h2>
     </div>
 </div>
 
 <div class="row mt-4">
     <div class-"col-md-6">
         {{#each vendors as |vendor|}}
+                <p class="vendor-type">{{vendor.type}}</p>
         <div class="row mb-2">
             <div class="col-md-8">
-                 {{!-- <img src="{{vendor.image}}"/> --}}
-                <h4><a href="/vendors" class="vendor-name">{{vendor.vendorName}}</h4>
+                <h4 class="vendor-name">{{vendor.name}}</h4>
+                {{!-- <img class="vendor-img" src="../public/assets/vendors/{{vendor.image}}" alt="{{vendor.name}}"/> --}}
             </div>
             <div class="col-md-4">
                 <label for="vendor-desc">
-                    <p id="vendor-desc">{{vendor.description}}</p>    
+                    <p class="vendor-desc">{{vendor.description}}</p>    
                 </label>
-                <label for="vendor-no">vendor number:</label>
-                    <p id="event-no">{{vendor.number}}</p>
-                <label for="vendor-email">vendor email:</label>
-                    <p id="vendor-email">{{vendor.email}}</p>
+                <label for="vendor-no">Number:</label>
+                    <p class="event-no">{{vendor.number}}</p>
+                <label for="vendor-email">Email:</label>
+                    <p class="vendor-email">{{vendor.email}}</p>
+                <label for="vendor-price"></label>
+                    <p>Starting from: $<span class="vendor-price">{{vendor.price}}</span></p>
             </div>
         </div>
     </div>

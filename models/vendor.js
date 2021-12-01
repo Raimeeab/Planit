@@ -25,7 +25,7 @@ Vendor.init(
         type: DataTypes.TEXT,
         allowNull: false
       },
-    phoneNumber: {
+    number: {
       type: DataTypes.STRING,
       allowNull:false,
     },

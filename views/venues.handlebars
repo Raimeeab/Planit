@@ -9,22 +9,27 @@
         {{#each venues as |venue|}}
         <div class="row mb-2">
             <div class="col-md-8">
-                 <img src="{{venue.image}}"/>
-                <h4><a href="/venues" class="venue-name">{{venue.venueName}}</h4>
-                <h5>Capacity: {{venue.cap}}</h5>
+                <h4 class="venue-name">{{venue.name}}</h4>
+                <img class="venue-img" src="../public/assets/venues/{{venue.image}}" alt="{{venue.name}}"/>
+                <h5>Capacity: </h5>
+                <p class="venue-cap">{{venue.capacity}}</p>
             </div>
             <div class="col-md-4">
                 <label for="venue-desc">
-                    <p id="venue-desc">{{venue.description}}</p>    
+                    <p class="venue-desc">{{venue.description}}</p>    
                 </label>
-                <label for="venue-no">Venue number:</label>
-                    <p id="event-no">{{venue.number}}</p>
-                <label for="venue-email">Venue email:</label>
-                    <p id="venue-email">{{venue.email}}</p>
+                <label for="venue-no">Number:</label>
+                    <p class="event-no">{{venue.number}}</p>
+                <label for="venue-email">Email:</label>
+                    <p class="venue-email">{{venue.email}}</p>
+                <label for="venue-price"></label>
+                    <p>Starting from: $<span class="venue-price">{{venue.price}}</span></p>
             </div>
         </div>
     </div>
 </div>
 {{/each}}
+{{!-- 
+{{if}} --}}
 
 <script src="./js/venue.js"></script>
