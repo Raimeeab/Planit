@@ -68,6 +68,6 @@ const loginFormHandler = async (event) => {
 
       console.log(content)
       content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
-    })
+    });
+});  
 
-  });  
