@@ -81,6 +81,22 @@ router.get('/venues', async (req, res) => {
   };
 });
 
+router.get('/:id', async (req, res) => {
+  try {
+      const venueData = await Venue.findByPk({
+          where: req.params.id
+      });
+
+      // res.status(200).json(venueData);
+      res.render('venues', { venues})
+  } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+  };
+});
+
+
+
 
 
 module.exports = router;

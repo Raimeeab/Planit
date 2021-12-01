@@ -1,9 +1,10 @@
 const loadVendors = async (venue) => {
+    const vendorType = document.querySelector('.vendor-type');
     const vendorName = document.querySelector('.vendor-name');
-    const vendorDesc = document.querySelector('#vendor-desc');
-    const vendorNo = document.querySelector('#vendor-no');
-    const vendorEmail = document.querySelector('#vendor-email');
-    const vendorPrice = document.querySelector('#vendor-price');
+    const vendorDesc = document.querySelector('.vendor-desc');
+    const vendorNo = document.querySelector('.vendor-no');
+    const vendorEmail = document.querySelector('.vendor-email');
+    const vendorPrice = document.querySelector('.vendor-price');
 
     const response = await fetch(`/venues`, {
         method: 'GET',
