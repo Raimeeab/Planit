@@ -1,11 +1,12 @@
  loadVenues = async (venue) => {
+    const venueId = document.querySelector('.venue-id')
     const venueName = document.querySelector('.venue-name');
     const venueImage = document.querySelector('.venue-img')
-    const venueCap = document.querySelector('.venue-cap');
+    // const venueCap = document.querySelector('.venue-cap');
     const venueDesc = document.querySelector('.event-desc');
-    const venueNo = document.querySelector('.venue-no');
-    const venueEmail = document.querySelector('.venue-email');
-    const venuePrice = document.querySelector('.venue-price');
+    // const venueNo = document.querySelector('.venue-no');
+    // const venueEmail = document.querySelector('.venue-email');
+    // const venuePrice = document.querySelector('.venue-price');
 
     const response = await fetch(`/venues`, {
         method: 'GET',
@@ -21,9 +22,32 @@
     // };
 };
 
+loadVenueById = async (venue) => {
+    const venueName = document.querySelector('.venue-name');
+    const venueImage = document.querySelector('.venue-img')
+    const venueDesc = document.querySelector('.event-desc');
+    const venueCap = document.querySelector('.venue-cap');
+    const venueNo = document.querySelector('.venue-no');
+    const venueEmail = document.querySelector('.venue-email');
+    const venuePrice = document.querySelector('.venue-price');
+
+    const response = await fetch ('/venues/:id', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    
+    console.log(response);
+};
+
 document
     .querySelector('#nav-venues')
     .addEventListener('click', loadVenues);
+
+document
+    .querySelector('.venue-id')
+    .addEventListener('click', loadVenueById);
 
 
 // If event venue_id = null, then ignore the cost of venue 
