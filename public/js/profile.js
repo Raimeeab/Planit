@@ -79,7 +79,7 @@ document
   
 
 // ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
-const toggle = document.querySelector('.register-login-toggle');
+const toggle = document.querySelector('.add-event-toggle');
   
 toggle.addEventListener('click', (submit) =>{
   submit.preventDefault();
