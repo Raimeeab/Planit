@@ -4,10 +4,41 @@
     <!-- For each painting that belongs to this gallery, the painting-details partial is used to render each painting's data -->
     {{#each vendors as |vendor|}}
     <h1 class="vendor-type">{{vendor.type}}</h1>
-    <span class="vendor-id" href="/vendors/{{id}}"><h3 class="vendor-name">{{vendor.name}}</h3></span>
-    {{> vendor-details}}
+    <a class="vendor-id" href="/vendors/{{id}}"><h3 class="vendor-name">{{vendor.name}}</h3></a>
+    <p class="vendor-description">{{vendor.description}}</p>
     {{/each}}
   </section>
 </section>
+
+{{!-- <div class="row">
+    <div class ="col-auto">
+        <h2>Vendors</h2>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class-"col-md-6">
+        {{#each vendors as |vendor|}}
+                <p class="vendor-type">{{vendor.type}}</p>
+        <div class="row mb-2">
+            <div class="col-md-8">
+                <h4 class="vendor-name">{{vendor.name}}</h4>
+                <img class="vendor-img" src="../public/assets/vendors/{{vendor.image}}" alt="{{vendor.name}}"/> 
+            </div>
+            <div class="col-md-4">
+                <label for="vendor-desc">
+                    <p class="vendor-desc">{{vendor.description}}</p>    
+                </label>
+                <label for="vendor-no">Number:</label>
+                    <p class="event-no">{{vendor.number}}</p>
+                <label for="vendor-email">Email:</label>
+                    <p class="vendor-email">{{vendor.email}}</p>
+                <label for="vendor-price"></label>
+                    <p>Starting from: $<span class="vendor-price">{{vendor.price}}</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}} --}}
 
 <script src="./js/vendor.js"></script>

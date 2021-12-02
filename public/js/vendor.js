@@ -35,3 +35,10 @@ const loadVendorById = async (vendor) => {
     })
     
 }
+document
+    .querySelector('#nav-vendors')
+    .addEventListener('click', loadVendors);
+
+document
+    .querySelector('.vendor-id')
+    .addEventListener('click', loadVendorById);
