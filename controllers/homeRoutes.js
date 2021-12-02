@@ -15,7 +15,6 @@ router.get('/', async (req, res) => {
     };
 });
 
-
 router.get('/profile', withAuth, async (req, res) => {
     try {
       // Find the logged in user based on the session ID
@@ -48,7 +47,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-
+// GET all vendors
 router.get('/vendors', async (req, res) => {
   try {
     const budget = req.query.budget;
@@ -64,7 +63,21 @@ router.get('/vendors', async (req, res) => {
   };
 });
 
+// GET one vendor
+router.get('/vendors/:id', async (req, res) => {
+  try {
+      const vendorData = await Vendor.findByPk(req.params.id);
 
+      const vendor = vendorData.get({ plain: true });
+      res.render('vendors', { vendor });
+
+  } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+  };
+});
+
+// GET all venues
 router.get('/venues', async (req, res) => {
   try {
     const budget = req.query.budget;
@@ -81,23 +94,19 @@ router.get('/venues', async (req, res) => {
   };
 });
 
-router.get('/:id', async (req, res) => {
+// GET one venue
+router.get('/venues/:id', async (req, res) => {
   try {
-      const venueData = await Venue.findByPk({
-          where: req.params.id
-      });
+      const venueData = await Venue.findByPk(req.params.id);
 
-      // res.status(200).json(venueData);
-      res.render('venues', { venues})
+      const venue = venueData.get({ plain: true });
+      res.render('venues', { venue });
+
   } catch (err) {
       console.log(err);
       res.status(500).json(err);
   };
 });
-
-
-
-
 
 module.exports = router;
 
