@@ -78,6 +78,7 @@ document
   });
   
 
+
 // If event venue_id = null, then ignore the cost of venue 
 // && the event should always get all the vendors that belong to this event 
 // Only conditionally does it get the cost from the venue 
@@ -86,8 +87,9 @@ document
 // Conditionally state does the user want to include venues or not and if so, 
 // include the cost of venues with vendors as a whole 
 
+
 // ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
-const toggle = document.querySelector('.register-login-toggle');
+const toggle = document.querySelector('.add-event-toggle');
   
 toggle.addEventListener('click', (submit) =>{
   submit.preventDefault();
@@ -103,3 +105,4 @@ toggle.addEventListener('click', (submit) =>{
   })
 
 });  
+
