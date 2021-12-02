@@ -40,20 +40,3 @@ loadVenueById = async (venue) => {
     
     console.log(response);
 };
-
-document
-    .querySelector('#nav-venues')
-    .addEventListener('click', loadVenues);
-
-document
-    .querySelector('.venue-id')
-    .addEventListener('click', loadVenueById);
-
-
-// If event venue_id = null, then ignore the cost of venue 
-// && the event should always get all the vendors that belong to this event 
-// Only conditionally does it get the cost from the venue 
-
-// Front end - when you have all venues rendered (cost information will be provided)
-// Conditionally state does the user want to include venues or not and if so, 
-// include the cost of venues with vendors as a whole 
