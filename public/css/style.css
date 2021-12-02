@@ -89,6 +89,7 @@ p {
 .toggle-content[aria-hidden="false"] {
   display: block
 }
+
 /* LOGIN */
 #login-container {
   margin-top: 45%;
@@ -124,9 +125,9 @@ p {
 }
 
 /* THIS WILL DISPLAY CARDS NEXT TO EACH OTHER HOWEVER THEY ARE A WEIRD SIZE */
-.profile-card-container {
+/* .profile-card-container {
   display:flex
-}
+} */
 
 .add {
   /* font-size: larger; */
