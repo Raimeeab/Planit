@@ -48,15 +48,20 @@
 
 
 
-    {{#each events as |event|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/events/{{event.id}}">{{event.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger delete-event-btn" data-id="{{event.id}}">DELETE</button>
-      </div>
-
+    {{!-- TODO - THIS DOES NOT WORK AND IT NEEDS FIXING (IF CLICKED TAKES YOU TO AN EMPTY PAGE)!!!!
+    -------------------}}
+    {{!-- If event selected --}}
+    {{#if event.id }}
+    {{!-- Display event details --}}
+    <h2>{{event-name}}</h2>
+    <ul>
+      <li>{{event.type}}</li>
+      <li>{{event.budget}}</li>
+      <li>{{event.guests}}</li>
+      <li>{{event.vendors}}</li>
+      <li>{{event.venue}}</li>
+    </ul>
+    {{/if}}
     </div>
     </div>
     </div>

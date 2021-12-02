@@ -18,7 +18,9 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/:id', withAuth, async (req, res) => {
     try {
-        const eventData = await Event.findByPk(req.params.id);
+        const eventData = await Event.findByPk({
+            where: req.params.id
+        });
 
         res.status(200).json(eventData);
     } catch (err) {
