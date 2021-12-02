@@ -18,11 +18,10 @@
         <h3 class="event-list text-center">Planned Events</h3>
         <hr>
 
-        <div class="profile-card-container">
+        <d class="profile-card-container">
           <div class="row d-flex justify-content-center align-self-normal"></div>
           {{#each events as |event|}}
-            <div class="col-sm-12 col-md-6 col-lg-4">
-              <div class="card profile-card p-4 my-2">
+              <div class="card profile-card p-4 m-2 col-sm-12 col-md-6 col-lg-4">
                 {{!-- CARD TODO - MAKE IMAGE
                 DYNAMIC)!!!!-----------------------------------------------------------------------------------}}
                 <img src="../../assets/venues/watsons-bay.jpeg" class="card-img-top" alt="...">
@@ -33,7 +32,7 @@
                   <button class="btn btn-sm btn-outline-danger delete-event-btn fw-bold" data-id="{{event.id}}">DELETE</button>
                 </div>
               </div>
-            </div>
+            </d
          
           {{/each}}
            </div>
@@ -43,8 +42,7 @@
         {{!-- ADD NEW EVENT CARD --}}
         <div class="add-new-event-card-container" id="add-new-event-card" class="toggle-content p-2" aria-hidden="false">
           <div class="row d-flex justify-content-center align-self-normal">
-            <div class="col-sm-12 col-md-6 col-lg-4">
-              <div class="card profile-card p-4 my-2">
+              <div class="card profile-card p-4 my-2 col-sm-12 col-md-6 col-lg-4">
                 <div class="card-body text-center">
                   {{!-- <h4><a href="/event/{{event.id}}">{{event.name}}</a></h4> --}}
                   <h1 class="add d-flex justify-content-center align-self-center">+</h1>
