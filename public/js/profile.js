@@ -78,3 +78,20 @@ document
   });
   
 
+// ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
+const toggle = document.querySelector('.register-login-toggle');
+  
+toggle.addEventListener('click', (submit) =>{
+  submit.preventDefault();
+  console.log('clicked!')
+  const contents = document.querySelectorAll('.toggle-content')
+  console.log(contents)
+  contents.forEach(content => {
+    console.log(content)
+    const ariaHidden = content.getAttribute('aria-hidden')
+
+    console.log(content)
+    content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
+  })
+
+});  
