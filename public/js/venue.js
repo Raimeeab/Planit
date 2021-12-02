@@ -41,13 +41,13 @@ loadVenueById = async (venue) => {
     console.log(response);
 };
 
-document
-    .querySelector('#nav-venues')
-    .addEventListener('click', loadVenues);
+// document
+//     .querySelector('#nav-venues')
+//     .addEventListener('click', loadVenues);
 
-document
-    .querySelector('.venue-id')
-    .addEventListener('click', loadVenueById);
+// document
+//     .querySelector('.venue-id')
+//     .addEventListener('click', loadVenueById);
 
 
 // If event venue_id = null, then ignore the cost of venue 
