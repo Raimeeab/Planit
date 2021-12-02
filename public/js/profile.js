@@ -78,6 +78,7 @@ document
   });
   
 
+
 // If event venue_id = null, then ignore the cost of venue 
 // && the event should always get all the vendors that belong to this event 
 // Only conditionally does it get the cost from the venue 
@@ -85,3 +86,23 @@ document
 // Front end - when you have all venues rendered (cost information will be provided)
 // Conditionally state does the user want to include venues or not and if so, 
 // include the cost of venues with vendors as a whole 
+
+
+// ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
+const toggle = document.querySelector('.add-event-toggle');
+  
+toggle.addEventListener('click', (submit) =>{
+  submit.preventDefault();
+  console.log('clicked!')
+  const contents = document.querySelectorAll('.toggle-content')
+  console.log(contents)
+  contents.forEach(content => {
+    console.log(content)
+    const ariaHidden = content.getAttribute('aria-hidden')
+
+    console.log(content)
+    content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
+  })
+
+});  
+

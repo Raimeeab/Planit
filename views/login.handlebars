@@ -1,6 +1,6 @@
 {{!-- ACCOUNT LOGIN --}}
-<div id="login/register-handlebar">
-  <div id="login-container" class="toggle-content" aria-hidden="false">
+<main id="login/register-handlebar">
+  <section id="login-container" class="toggle-content p-2" aria-hidden="false">
     <h2 class="text-center">Login</h2>
     <form class="form login-form">
       <div class="mb-3">
@@ -16,17 +16,16 @@
         <label class="form-check-label" for="exampleCheck1">Keep Me Logged In</label>
       </div>
       <button type="submit"
-        class="btn btn-outline-primary d-flex justify-content-center align-item-center">Submit</button>
+        class="btn btn-outline-primary d-flex justify-content-center align-item-center fw-bold">Submit</button>
     </form>
     <div>
       <a class="register-login-toggle" aria-controls="toggle-content" href="">Register New Account</a>
     </div>
-  </div>
+  </section>
+
 
   {{!-- REGISTER ACCOUNT --}}
-
-
-  <div id="Register-container" class="toggle-content" aria-hidden="true">
+  <section id="register-container" class="toggle-content p-2" aria-hidden="true">
     <h2 class="text-center">Register</h2>
     <form class="logout-form signup-form">
       <div class="mb-3">
@@ -37,7 +36,6 @@
         <label for="email-signup" class="form-label">Email address</label>
         <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp">
       </div>
-
       <div class="col-auto">
         <label for="password-signup" class="col-form-label">Password</label>
       </div>
@@ -45,50 +43,21 @@
         <input type="password" id="password-signup" class="form-control" aria-describedby="passwordHelpInline">
       </div>
       <div class="col-auto">
-        <span id="passwordHelpInline" class="form-text">
+        <span id="passwordHelpInline" class="form-text text-dark">
           Must be 8 characters minimum
         </span>
       </div>
-
       <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Keep Me Logged In</label>
       </div>
       <button type="submit"
-        class="btn btn-outline-primary d-flex justify-content-center align-item-center">Submit</button>
+        class="btn btn-outline-primary d-flex justify-content-center align-item-center fw-bold">Submit</button>
     </form>
     <div>
       <a class="register-login-toggle" aria-controls="toggle-content" href="">Register New Account</a>
     </div>
-</div>
-
-
-
-
-    {{!-- <div class="toggle-content" aria-hidden="true">
-      <h2>Register</h2>
-
-      <form class="logout-form signup-form">
-        <div class="form-group">
-          <label for="name-signup">name:</label>
-          <input class="form-input" type="text" id="name-signup" />
-        </div>
-        <div class="form-group">
-          <label for="email-signup">email:</label>
-          <input class="form-input" type="text" id="email-signup" />
-        </div>
-        <div class="form-group">
-          <label for="password-signup">password:</label>
-          <input class="form-input" type="password" id="password-signup" />
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary" type="submit">signup</button>
-        </div>
-      </form>
-      <div>
-        <a class="register-login-toggle" aria-controls="toggle-content" href="">Register New Account</a>
-      </div>
-    </div> --}}
-  
+  </section>
+</main>
 
   <script src="./js/login.js"></script>
