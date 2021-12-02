@@ -89,7 +89,7 @@ p {
 .toggle-content[aria-hidden="false"] {
   display: block
 }
-
+/* LOGIN */
 #login-container {
   margin-top: 45%;
   width: 115%;
@@ -97,15 +97,39 @@ p {
   border-radius: 10px;
 }
 
+/* REGISTER */
+#register-container {
+  margin-top: 45%;
+  width: 115%;
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+}
 
+/* PROFILE HANDLEBAR ---------------------------------------------------------------------- */
 
+.profile-card{
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
 
+.profile-card:hover{
+  transform: scale(1.01);
+  box-shadow: 1px 2px 10px black;
+}
 
+/* TODO - DOES NOT REMOVE UNDERLINE */
+.h4-event-name {
+  text-decoration: none;
+}
 
+/* THIS WILL DISPLAY CARDS NEXT TO EACH OTHER HOWEVER THEY ARE A WEIRD SIZE */
+.profile-card-container {
+  display:flex
+}
 
-
-
-
-
-
+.add {
+  /* font-size: larger; */
+  margin-bottom: 50px;
+}
 
