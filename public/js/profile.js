@@ -1,11 +1,4 @@
-const eventName = document.querySelector('#event-name').value.trim();
-const eventType = document.querySelector('#event-type');
-const eventBudget = document.querySelector('#event-budget').value.trim();
-const attendees = document.querySelector('#event-guest').value.trim();
 
-// Used to dictate if event needs venue
-const venueYes = document.querySelector('#venue-yes');
-const venueNo = document.querySelector('#venue-no');
 
 // Used to display venue details (if selected)
 // const eventVenue = 
@@ -13,23 +6,39 @@ const venueNo = document.querySelector('#venue-no');
 const newFormHandler = async (event) => {
   event.preventDefault();
 
+  const name = document.querySelector('#new-event-name').value.trim();
+const type = document.querySelector('#new-event-type').value.trim();
+const budget = document.querySelector('#new-event-budget').value.trim();
+const attendees = document.querySelector('#new-event-guests').value.trim();
+const date = document.querySelector('#new-event-date').value.trim();
+// Used to dictate if event needs venue
+const venueYes = document.querySelector('.venue-yes');
+const venueNo = document.querySelector('.venue-no');
 
-  if (eventName && eventBudget && attendees) {
+console.log(date)
+  // if (name && type && attendees && budget && date) {
     const response = await fetch(`/api/events`, {
       method: 'POST',
-      body: JSON.stringify({ eventName, eventBudget, attendees }),
+      body: JSON.stringify({ name, type, budget, attendees, date }),
       headers: {
         'Content-Type': 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to create event');
-    };
+      }
+    
+    })
+    console.log('added')
+    console.log(date)
+    console.log(type)
+    location.reload();
   };
-};
+//     });
+
+//     if (response.ok) {
+//       document.location.replace('/homepage');
+//     } else {
+//       alert('Failed to create event');
+//     };
+//   };
+// };
 
 const viewEvent = async (event) => {
   const response = await fetch(`/api/events/:id`, {
@@ -66,9 +75,9 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.new-event-form')
-  .addEventListener('submit', newFormHandler);
+// document
+//   .querySelector('.new-event-form')
+//   .addEventListener('submit', newFormHandler);
 
 
 document
@@ -88,21 +97,23 @@ document
 // include the cost of venues with vendors as a whole 
 
 
-// ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
-const toggle = document.querySelector('.add-event-toggle');
+// // ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
+// const toggle = document.querySelector('.add-event-toggle');
   
-toggle.addEventListener('click', (submit) =>{
-  submit.preventDefault();
-  console.log('clicked!')
-  const contents = document.querySelectorAll('.toggle-content')
-  console.log(contents)
-  contents.forEach(content => {
-    console.log(content)
-    const ariaHidden = content.getAttribute('aria-hidden')
+document.querySelector('.submitbutton').addEventListener('click', newFormHandler) 
+// =>{
+//   submit.preventDefault();
+//   newFormHandler();
+//   console.log('clicked!')
+//   const contents = document.querySelectorAll('.toggle-content')
+//   console.log(contents)
+//   contents.forEach(content => {
+//     console.log(content)
+//     const ariaHidden = content.getAttribute('aria-hidden')
 
-    console.log(content)
-    content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
-  })
+//     console.log(content)
+//     content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
+//   })
 
-});  
+// });  
 
