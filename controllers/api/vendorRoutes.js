@@ -62,6 +62,8 @@ router.put('/:id', async (req, res) => {
      };
   });
 
+
+// Query to display vendors based on budget
 router.get('/budget/:budget', async (req, res) => {
   try {
     const budget = req.params.budget;
@@ -81,7 +83,7 @@ router.get('/budget/:budget', async (req, res) => {
     res.status(500).json({
       message: "an error occurred",
       err
-    })
+    });
   }
 });
 
