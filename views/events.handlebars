@@ -42,15 +42,16 @@
         <section class="card toggle-content p-2 m-2" aria-hidden="true">
             <title>{{name}}</title>
             <div class="card-body my-10">
+                {{!-- {{> venue-details }} --}}
 
                 <span class="venue-id" href="/venues/{{id}}">
-                    <h3 class="venue-name text-center">{{name}}</h3>
+                    <h3 class="venue-name text-center">{{venue.name}}</h3>
                 </span>
-                <img class="venue-img" src="assets/venues/{{image}}" alt="{{name}}" />
+                <img class="venue-img" src="assets/venues/{{venue.image}}" alt="{{venue.name}}" />
                 <p class="venue-description text-center">{{venue.description}}</p>
-                {{!--
-            </div class="venue-toggle" aria-controls="toggle-content"> --}}
-            {{!-- <div class="toggle-content p-2" aria-hidden="true"> --}}
+                
+            </div class="venue-toggle" aria-controls="toggle-content">
+            <div class="toggle-content p-2" aria-hidden="true">
                 <p class="venue-cap">Maximum capacity: {{venue.capacity}}</p>
                 <p class="venue-price">Starting price: {{venue.price}}</p>
                 <p class="venue-no">Contact number: {{venue.number}}</p>
@@ -60,10 +61,10 @@
             </div>    
         </section>
         {{!-- VENDORS ------------------------------------------------------------}}
-        <section class="card toggle-content p-2 m-2" aria-hidden="true">
+        {{!-- <section class="card toggle-content p-2 m-2" aria-hidden="true">
             <title>{{name}}</title>
             <div class="card-body">
-                {{!-- <img class="vendor-img" src="assets/vendors/{{vendor.image}}" alt="{{vendor.name}}" /> --}}
+                <img class="vendor-img" src="assets/vendors/{{vendor.image}}" alt="{{vendor.name}}" />
                 <p class="vendor-desc">{{description}}</p>
                 <p class="vendor-price">Starting price: {{price}}</p>
                 <p class="vendor-no">Contact number: {{number}}</p>
@@ -71,7 +72,7 @@
                 <button class="btn btn-sm btn-outline-primary fw-bold add-vendor-toggle"
                         aria-controls="toggle-content">ADD</button>
             </div>
-        </section>
+        </section> --}}
     </div>
 </section>
 
@@ -82,5 +83,3 @@
 
 
 <script src="./js/event.js"></script>
-<script src="./js/vendor.js"></script>
-<script src="./js/venue.js"></script>

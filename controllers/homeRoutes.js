@@ -116,7 +116,7 @@ router.get('/events/:id', withAuth, async (req, res) => {
     const eventData = await Event.findByPk(req.params.id);
 
     const event = eventData.get({ plain: true });
-
+  
     res.render('events', { event });
   } catch (err) {
     console.log(err);

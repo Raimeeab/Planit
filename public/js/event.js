@@ -41,6 +41,31 @@ const loadEvent = async (event) => {
 
 };
 
+const availableVenues = async () => {
+    try { 
+        const venueId = document.querySelector('.venue-id')
+        const venueName = document.querySelector('.venue-name');
+        const venueImage = document.querySelector('.venue-img')
+        const venueCap = document.querySelector('.venue-cap');
+        const venueDesc = document.querySelector('.event-desc');
+        const venueNo = document.querySelector('.venue-no');
+        const venueEmail = document.querySelector('.venue-email');
+        const venuePrice = document.querySelector('.venue-price');
+
+        const res = await fetch('/venues', {
+            method: 'GET', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        const viewVenues = await res.json()
+
+
+    } catch (err){
+
+    }
+}
+
 
 // NEWLY CREATED EVENT CARD DETAILS + ADD VENUE + ADD VENDOR ----------------------------------------------------------------------
 // HIDE CARDS/SHOW VENUES 
