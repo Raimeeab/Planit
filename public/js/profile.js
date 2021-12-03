@@ -54,7 +54,7 @@ const viewEvent = async (event) => {
 //   const Eventdata = await Event.findByPk(req.params.id)
 //   const event = Eventdata.get({ plain: true });
   if (response.ok) {
-    document.location.replace(`/events/${id}`);
+    document.location.replace(`/events/`);
   } else {
     alert('Failed to view event');
   };
