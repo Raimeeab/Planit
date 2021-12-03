@@ -108,5 +108,18 @@ router.get('/venues/:id', async (req, res) => {
   };
 });
 
+router.get('/events/:id', async (req, res) => {
+  try {
+    const eventData = await Event.findByPk(req.params.id);
+
+    const event = eventData.get({ plain: true });
+
+    res.render('events', { event });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
 module.exports = router;
 
