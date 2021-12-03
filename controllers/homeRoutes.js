@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Venue, Vendor, User, Event } = require('../models');
+
+// Verify user is logged into an account
 const withAuth = require('../utils/withAuth');
 
 router.get('/', async (req, res) => {
@@ -107,6 +109,20 @@ router.get('/venues/:id', async (req, res) => {
       res.status(500).json(err);
   };
 });
+
+// GET one event 
+router.get('/events/:id', withAuth, async (req, res) => {
+  try {
+    const eventData = await Event.findByPk(req.params.id);
+
+    const event = eventData.get({ plain: true });
+
+    res.render('events', { event });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;
 
