@@ -15,64 +15,68 @@
       <div class="row mb-2 col-12 d-flex justify-content-center align-items-center my-3">
         {{#if events.length}}
         {{!-- <div class="col-12 d-flex justify-content-center align-items-center my-3"></div> --}}
-          <h3 class="event-list text-center">Planned Events</h3>
-          <hr>
+        <h3 class="event-list text-center">Planned Events</h3>
+        <hr>
 
-          <class="profile-card-container">
-            <div class="row d-flex justify-content-center align-self-normal">
-              {{#each events as |event|}}
+        <div class="profile-card-container">
+          <div class="row d-flex justify-content-center align-self-normal">
+            {{#each events as |event|}}
             <div class="card profile-card p-4 m-2 col-sm-12 col-md-6 col-lg-4">
-            {{!-- CARD TODO - MAKE IMAGE DYNAMIC)!!!!-----------------------------------------------------------------------------------}}
+              {{!-- CARD TODO - MAKE IMAGE
+              DYNAMIC)!!!!-----------------------------------------------------------------------------------}}
               <img src="../../assets/venues/watsons-bay.jpeg" class="card-img-top" alt="...">
               <div class="card-body text-center">
                 <h4 class="h4-event-name"><a href="/events/{{event.id}}">{{event.name}}</a></h4>
               </div>
               <div class="d-flex justify-content-center">
-                <button class="btn btn-sm btn-outline-danger delete-event-btn fw-bold" data-id="{{event.id}}">DELETE</button>
+                <button class="btn btn-sm btn-outline-danger delete-event-btn fw-bold"
+                  data-id="{{event.id}}">DELETE</button>
               </div>
-            </div> 
-          {{/each}} {{!-- ADD NEW EVENT CARD --}} 
-           <div id="add-new-event-card" class="card add-new-event-card p-4 m-2 col-sm-12 col-md-6 col-lg-4"  class="toggle-content p-2" aria-hidden="false"> 
-            <img src="../../assets/venues/watsons-bay.jpeg" class="card-img-top" alt="...">
-            <div class="card-body text-center">
-              <h4 class="h4-event-name">Add New Event</h4>
             </div>
-            <div class="d-flex justify-content-center">
-              <button class="btn btn-sm btn-outline-primary delete-event-btn fw-bold add-event-toggle" aria-controls="toggle-content">ADD</button>
+            {{/each}} {{!-- ADD NEW EVENT CARD --}}
+            <div id="add-new-event-card" class="card add-new-event-card p-4 m-2 col-sm-12 col-md-6 col-lg-4">
+              <img src="../../assets/venues/watsons-bay.jpeg" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h4 class="h4-event-name">Add New Event</h4>
+              </div>
+              <div class="d-flex justify-content-center">
+                <button class="btn btn-sm btn-outline-primary fw-bold add-event-toggle" aria-controls="toggle-content">ADD</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    {{/if}}
+      {{/if}}
 
-
-
-    {{#each events as |event|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/events/{{event.id}}">{{event.name}}</a></h4>
+      {{!-- {{#each events as |event|}}
+      <div class="row mb-2">
+        <div class="col-md-8">
+          <h4><a href="/events/{{event.id}}">{{event.name}}</a></h4>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-sm btn-danger delete-event-btn" data-id="{{event.id}}">DELETE</button>
+        </div>
+        {{/each}}
       </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger delete-event-btn" data-id="{{event.id}}">DELETE</button>
-      </div>
-    {{/each}}
     </div>
     </div>
-    </div>
+  </section> --}}
+
+
+
   </section>
 
   {{!-- CREATE A NEW EVENT SECTION --}}
   <section id="create-new-event-section" class="toggle-content p-2" aria-hidden="true">
     <div class="container my-5 py-5">
-      <div class="row mb-5">
-        <div class="col-12 d-flex justify-content-center align-items-center my-3">
-          <h3>Create a New Event</h3>
+      <div class="row mb-5 d-flex justify-content-center align-items-center">
+        <div class="col-12  my-3">
+          <h3 class="text-center">Create a New Event</h3>
           <hr>
 
         </div>
         <div class="row d-flex justify-content-center align-self-normal">
-          <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="col-sm-12 col-md-10 col-lg-8">
             <div class="card p-4 my-2">
               <form class="form new-event-form">
                 {{!-- EVENT SELECT --}}
@@ -92,14 +96,16 @@
                 <div class="form-group">
                   <div class="mb-3">
                     <label for="new-event-type" class="form-label">Event Type</label>
-                    <input type="text" class="form-control" id="new-event-type"  name="new-event-type" aaria-describedby="newEventNameHelp">
+                    <input type="text" class="form-control" id="new-event-type" name="new-event-type"
+                      aaria-describedby="newEventNameHelp">
                   </div>
                 </div>
                 {{!-- EVENT NAME --}}
                 <div class="form-group">
                   <div class="mb-3">
                     <label for="new-event-name" class="form-label">Event Name</label>
-                    <input type="text" class="form-control" id="new-event-name"  name="new-event-name" aaria-describedby="newEventNameHelp">
+                    <input type="text" class="form-control" id="new-event-name" name="new-event-name"
+                      aaria-describedby="newEventNameHelp">
                   </div>
                 </div>
                 {{!-- EVENT BUDGET --}}
@@ -108,7 +114,8 @@
                   <input class="form-input" type="number" id="event-budget" name="event-budget" /> --}}
                   <div class="mb-3">
                     <label for="new-event-budget" class="form-label">Event Budget</label>
-                    <input type="text" class="form-control" id="new-event-budget" name="new-event-budget" a aria-describedby="newEventBudgetHelp">
+                    <input type="text" class="form-control" id="new-event-budget" name="new-event-budget" a
+                      aria-describedby="newEventBudgetHelp">
                   </div>
                 </div>
                 {{!-- EVENT GUESTS --}}
@@ -116,39 +123,45 @@
                   {{!-- TODO: Need to be edited in front end js --}}
                   <div class="mb-3">
                     <label for="new-event-guests" class="form-label">Number of Guests</label>
-                    <input type="text" class="form-control" id="new-event-guests"  name="new-event-guests" aria-describedby="newEventGuestsHelp">
+                    <input type="text" class="form-control" id="new-event-guests" name="new-event-guests"
+                      aria-describedby="newEventGuestsHelp">
                   </div>
                 </div>
-                  {{!-- EVENT DATE --}}
-                  <div class="form-group">
-                    {{!-- TODO: Need to be edited in front end js --}}
-                    <div class="mb-3">
-                      <label for="new-event-date" class="form-label">Event Date</label>
-                      <input type="date" class="form-control" id="new-event-date" name="new-event-date" aria-describedby="newEventGuestsHelp">
-                    </div>
+
+                {{!-- EVENT DATE --}}
+                <div class="form-group">
+                  {{!-- TODO: Need to be edited in front end js --}}
+                  <div class="mb-3">
+                    <label for="new-event-date" class="form-label">Event Date</label>
+                    <input type="text" class="form-control" id="new-event-date" name="new-event-date"
+                      aria-describedby="newEventGuestsHelp">
+
                   </div>
-                  {{!-- EVENT VENUE REQUIRED --}}
-                  <div class="form-group py-2">
-                    <label for="event-venue">Does the event need a venue?</label>
-                    {{!-- TODO: Need to be edited in front end js --}}
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      <label class="form-check-label" for="inlineCheckbox1">Yes</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox2">No</label>
-                    </div>
+                </div>
+                {{!-- EVENT VENUE REQUIRED --}}
+                <div class="form-group py-2">
+                  <label for="event-venue">Does the event need a venue?</label>
+                  {{!-- TODO: Need to be edited in front end js --}}
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Yes</label>
                   </div>
-                  <div class="form-group d-flex justify-content-center pt-3">
-                    <button type="submit" class="submitbutton" data-id="{{event.id}}">Create</button>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">No</label>
+
                   </div>
-                </form>
-              </div>
+                </div>
+                <div class="form-group d-flex justify-content-center pt-3">
+                  <button type="submit" class="submitbutton btn btn-sm btn-outline-primary delete-event-btn fw-bold">Create</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section class="add-event-toggle" aria-controls="toggle-content">
 </main>

@@ -91,7 +91,7 @@ document
     button.addEventListener('click', delButtonHandler);
   });
   
-
+   
 
 // If event venue_id = null, then ignore the cost of venue 
 // && the event should always get all the vendors that belong to this event 
@@ -103,22 +103,22 @@ document
 
 
 // // ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
-// const toggle = document.querySelector('.add-event-toggle');
-  
-document.querySelector('.submitbutton').addEventListener('click', newFormHandler) 
-// =>{
-//   submit.preventDefault();
-//   newFormHandler();
-//   console.log('clicked!')
-//   const contents = document.querySelectorAll('.toggle-content')
-//   console.log(contents)
-//   contents.forEach(content => {
-//     console.log(content)
-//     const ariaHidden = content.getAttribute('aria-hidden')
+document.querySelector('.submitbutton').addEventListener('click', newFormHandler)
 
-//     console.log(content)
-//     content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
-//   })
+const toggle = document.querySelector('.add-event-toggle');
+ 
+toggle.addEventListener('click', (submit) =>{
+  submit.preventDefault();
+  console.log('clicked!')
+  const contents = document.querySelectorAll('.toggle-content')
+  console.log(contents)
+  contents.forEach(content => {
+    console.log(content)
+    const ariaHidden = content.getAttribute('aria-hidden')
 
-// });  
+    console.log(content)
+    content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
+  })
+
+});  
 

@@ -81,8 +81,8 @@ p {
 }
 
 /* LOGIN/REGISTER HANDLEBAR ------------------------------------------------------------------- */
-/* 
-.toggle-content {
+
+/* .toggle-content {
    display:none;
 } 
 
@@ -134,3 +134,7 @@ p {
   margin-bottom: 50px;
 }
 
+/* VENUE-DETAILS HANDLEBAR */
+.venue-name {
+  font-size: 45px;
+}
