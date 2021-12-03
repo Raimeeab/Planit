@@ -1,4 +1,4 @@
-const loadVendors = async (venue) => {
+const loadVendors = async (vendor) => {
     const vendorType = document.querySelector('.vendor-type');
     const vendorName = document.querySelector('.vendor-name');
     const vendorDesc = document.querySelector('.vendor-desc');
@@ -6,7 +6,7 @@ const loadVendors = async (venue) => {
     // const vendorEmail = document.querySelector('.vendor-email');
     // const vendorPrice = document.querySelector('.vendor-price');
 
-    const response = await fetch(`/venues`, {
+    const response = await fetch(`/vendors`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -14,9 +14,9 @@ const loadVendors = async (venue) => {
     });
 
     // if (response.ok) {
-    //     document.location.replace('/venues');
+    //     document.location.replace('/vendors');
     // } else {
-    //     alert('Failed to display venues')
+    //     alert('Failed to display vendors')
     // };
 };
 
@@ -35,3 +35,4 @@ const loadVendorById = async (vendor) => {
     })
     
 }
+
