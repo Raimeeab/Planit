@@ -33,9 +33,9 @@ router.post('/', withAuth, async (req, res) => {
             ...req.body, 
             user_id: req.session.user_id
         });
-        console.log(newEvent);
-        res.status(200).json(newEvent);
-        
+        console.log(newEvent.dataValues);
+        res.status(200).json(newEvent.dataValues);
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -48,15 +48,42 @@ router.post('/profile', withAuth, async (req, res) => {
             ...req.body, 
             user_id: req.session.user_id
         });
-        console.log(newEvent);
         res.status(200).json(newEvent);
-        
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    };
-});
+              
+          } catch (err) {
+              console.log(err);
+              res.status(500).json(err);
+          };
+      });
 
+router.post('/create', withAuth, async(req, res) => {
+    const userData = await User.findByPk(req.session.user_id)
+    const user = userData.get({ plain: true });
+    console.log(user)
+    let mailOptions = {
+      from: 'adrian@vitae.video',
+      to: user.email,
+      subject: 'Best Email Ever',
+      text: 'Your next event has been BOOOKED!! you rock.'
+    };
+    
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'adrian@vitae.video',
+        pass: 'NEWPassword!@###'
+      }
+    });
+    
+    transporter.sendMail(mailOptions, (error, info) => {
+      if(error) {
+        console.log(error);
+      } else {
+        console.log('Email send: ' + info.response)
+      }
+    })
+})      
+      
 router.delete('/:id', withAuth, async(req, res) => {
     try {
         const eventData = await Event.destroy({
