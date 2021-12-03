@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Venue = require('../../models/venue');
+const { Op } = require('sequelize');
 
 router.post('/', async (req, res) => {
     try {
@@ -45,6 +46,51 @@ router.put('/:id', async (req, res) => {
     } catch (err) {
       res.status(500).json(err);
      };
+});
+
+// Query to display venues based on capacity
+router.get('/capacity/:capacity', async (req, res) => {
+  try {
+    const capacity = req.params.capacity;
+  
+    const venueCapacity = await Venue.findAll({
+      where: {
+        capacity: {
+          [Op.lte]: capacity
+        }
+      }
+    });
+  
+    res.status(200).json(venueCapacity);
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: "an error occurred",
+      err
+    });
+  }
+});
+
+// Query to display venues based on budget
+router.get('/budget/:budget', async (req, res) => {
+  try {
+    const budget = req.params.budget;
+  
+    const venueChoices = await Venue.findAll({
+      where: {
+        price: {
+          [Op.lte]: budget
+        }
+      }
+    });
+
+    res.status(200).json(venueChoices);
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err)
+  }
 });
 
 module.exports = router;
