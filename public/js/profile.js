@@ -28,7 +28,9 @@ console.log(date)
     console.log('added')
     console.log(date)
     console.log(type)
-    location.reload();
+    console.log(event)
+    // viewEvent();
+    viewEvent()
   };
 //     });
 
@@ -41,19 +43,22 @@ console.log(date)
 // };
 
 const viewEvent = async (event) => {
-  const response = await fetch(`/api/events/:id`, {
+  const response = await fetch(`api/events/:id`, {
     method: 'GET',
-    body: JSON.stringify({ eventName, eventType, eventBuget, attendees, eventVenue }),
+    // body: JSON.stringify({ name, type, budget, attendees, date }),
     headers: {
       'Content-Type': 'application/json',
     },
   });
-
+// app.get('/profile', async (req, res) => {
+//   const Eventdata = await Event.findByPk(req.params.id)
+//   const event = Eventdata.get({ plain: true });
   if (response.ok) {
-    document.location.replace('/profile/events/:id');
+    document.location.replace(`/events/${id}`);
   } else {
     alert('Failed to view event');
   };
+  
 
 };
 
