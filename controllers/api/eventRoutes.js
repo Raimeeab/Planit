@@ -33,9 +33,9 @@ router.post('/', withAuth, async (req, res) => {
             ...req.body, 
             user_id: req.session.user_id
         });
-        console.log(newEvent);
-        res.status(200).json(newEvent);
-        
+        console.log(newEvent.dataValues);
+        res.status(200).json(newEvent.dataValues);
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Vendor = require('../../models/vendor');
+const { Op } = require('sequelize');
 
 router.get('/:id', async (req, res) => {
     try {
@@ -60,5 +61,28 @@ router.put('/:id', async (req, res) => {
       res.status(500).json(err);
      };
   });
+
+router.get('/budget/:budget', async (req, res) => {
+  try {
+    const budget = req.params.budget;
+  
+    const vendorChoices = await Vendor.findAll({
+      where: {
+        price: {
+          [Op.lte]: budget
+        }
+      }
+    });
+  
+    res.status(200).json(vendorChoices);
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: "an error occurred",
+      err
+    })
+  }
+});
 
 module.exports = router;

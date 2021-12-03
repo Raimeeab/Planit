@@ -1,21 +1,15 @@
-
-
-// Used to display venue details (if selected)
-// const eventVenue = 
-
 const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#new-event-name').value.trim();
-const type = document.querySelector('#new-event-type').value.trim();
-const budget = document.querySelector('#new-event-budget').value.trim();
-const attendees = document.querySelector('#new-event-guests').value.trim();
-const date = document.querySelector('#new-event-date').value.trim();
-// Used to dictate if event needs venue
-const venueYes = document.querySelector('.venue-yes');
-const venueNo = document.querySelector('.venue-no');
+  const type = document.querySelector('#event-type').value.trim();
+  const budget = document.querySelector('#new-event-budget').value.trim();
+  const attendees = document.querySelector('#new-event-guests').value.trim();
+  const date = document.querySelector('#new-event-date').value.trim();
+  // Used to dictate if event needs venue
+  const venueYes = document.querySelector('.venue-yes');
+  const venueNo = document.querySelector('.venue-no');
 
-console.log(date)
   // if (name && type && attendees && budget && date) {
     const response = await fetch(`/api/events`, {
       method: 'POST',
@@ -23,44 +17,36 @@ console.log(date)
       headers: {
         'Content-Type': 'application/json',
       }
-    
-    })
-    console.log('added')
-    console.log(date)
-    console.log(type)
-    console.log(event)
-    // viewEvent();
-    viewEvent()
-  };
-//     });
+    });
 
-//     if (response.ok) {
-//       document.location.replace('/homepage');
-//     } else {
-//       alert('Failed to create event');
-//     };
+    const newEvent = await response.json();
+
+    if (response.ok) {
+      document.location.replace(`/events/${newEvent.id}`);
+    } else {
+      alert('Failed to create event');
+    };
+};
+
+// const viewEvent = async (event) => {
+//   const response = await fetch(`api/events/:id`, {
+//     method: 'GET',
+//     // body: JSON.stringify({ name, type, budget, attendees, date }),
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   });
+// // app.get('/profile', async (req, res) => {
+// //   const Eventdata = await Event.findByPk(req.params.id)
+// //   const event = Eventdata.get({ plain: true });
+//   if (response.ok) {
+//     document.location.replace(`/events`);
+//   } else {
+//     alert('Failed to view event');
 //   };
-// };
-
-const viewEvent = async (event) => {
-  const response = await fetch(`api/events/:id`, {
-    method: 'GET',
-    // body: JSON.stringify({ name, type, budget, attendees, date }),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-// app.get('/profile', async (req, res) => {
-//   const Eventdata = await Event.findByPk(req.params.id)
-//   const event = Eventdata.get({ plain: true });
-  if (response.ok) {
-    document.location.replace(`/events/`);
-  } else {
-    alert('Failed to view event');
-  };
   
 
-};
+// };
 
 
 
@@ -103,7 +89,7 @@ document
 
 
 // // ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
-document.querySelector('.submitbutton').addEventListener('click', newFormHandler)
+document.querySelector('#create-event-form').addEventListener('submit', newFormHandler)
 
 const toggle = document.querySelector('.add-event-toggle');
  
