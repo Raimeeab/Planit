@@ -36,7 +36,7 @@ body {
 
 /* Navbar */
 .navbar{
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   z-index: 1;
 }
@@ -81,14 +81,14 @@ p {
 }
 
 /* LOGIN/REGISTER HANDLEBAR ------------------------------------------------------------------- */
-
+/* 
 .toggle-content {
    display:none;
-}
+} 
 
 .toggle-content[aria-hidden="false"] {
   display: block
-}
+}  */
 
 /* LOGIN */
 #login-container {

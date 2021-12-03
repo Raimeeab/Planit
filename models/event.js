@@ -18,8 +18,8 @@ Event.init(
       allowNull: false,
     },
     type: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
     budget: {
       type: DataTypes.DECIMAL(10, 2),

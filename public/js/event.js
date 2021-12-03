@@ -1,6 +1,7 @@
 // const moment = require('moment');
 
 const loadEvent = async (event) => {
+
     try {  
          // {"id":2,"name":"Koren's Hens Party","type":"Hens","budget":"1000.00","attendees":30,"date":"4/12/2021","venue_id":null,"user_id":1}
         const eventName = document.querySelector('.event-name');
@@ -26,11 +27,12 @@ const loadEvent = async (event) => {
         //     }
         // };
 
-        if (response.ok) {
-            document.location.replace('/events');
-        } else {
-            alert('Failed to display event')
-        };
+            if (response.ok) {
+              document.location.replace('/events');
+            } else {
+              alert('Failed to create project');
+            }
+          
 
     } catch (err){
         res.status(500).json(err);
@@ -38,7 +40,5 @@ const loadEvent = async (event) => {
     };
 
 };
-
-
 
 
