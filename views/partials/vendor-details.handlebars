@@ -1,11 +1,22 @@
-<section class="card">
-    <title>{{name}}</title>
-    <div class="card-body">
-        {{!-- <img class="vendor-img" src="assets/vendors/{{vendor.image}}" alt="{{vendor.name}}"/> --}}
-        <p class="vendor-desc">{{description}}</p>
-        <p class="vendor-price">Starting price: {{price}}</p>
-        <p class="vendor-no">Contact number: {{number}}</p>
-        <p class="vendor-email">Email: {{email}}</p>
+<section class="container vendor-card p-2 m-3 d-flex justify-content-center">
+    <div class="vendor-card-body d-flex justify-content-center ">
+        {{!-- <title class="text-center">{{name}}</title> --}}
+        <div class="p-2 col-sm-12 col-md-10 col-lg-10">
+            <span class="vendor-id" href="/vendors/{{id}}">
+                <h2 class="vendor-name text-center">{{name}}</h2>
+            </span>
+            <div class="d-flex">
+                <div class="d-flex flex-direction-colum align-content-center align-self-center p-4">
+                    <img class="vendor-img flex-start align-content-center" src="assets/vendors/{{image}}" alt="{{name}}" />
+                </div>
+                <div>
+                    <p class="vendor-desc">{{description}}</p>
+                    <p class="vendor-price">Starting price: {{price}}</p>
+                    <p class="vendor-no">Contact number: {{number}}</p>
+                    <p class="vendor-email">Email: {{email}}</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
