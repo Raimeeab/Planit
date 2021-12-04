@@ -39,25 +39,13 @@
             </div>
         </div>
         {{!-- VENUES ---------------------------------------------------------------}}
-
-        <section class="container ">
-            <h1>Venues</h1>
-            <section class="row justify-center ">
-                <!-- For each painting that belongs to this gallery, the painting-details partial is used to render each painting's data -->
-                {{#each venues as |venue|}}
-                {{> venue-details}}
-                {{/each}}
-            </section>
-        </section>
-
-
         {{!-- <section class="card toggle-content p-2 m-2" aria-hidden="true">
             <title>{{name}}</title>
             <div class="card-body my-10">
                 {{!-- {{> venue-details }} --}}
 
                 {{!-- <span class="venue-id" href="/venues/{{id}}">
-                    <h3 class="venue-name text-center">{{name}}</h3>
+                    <h3 class="venue-name text-center">{{venue.name}}</h3>
                 </span>
                 <img class="venue-img" src="assets/venues/{{venue.image}}" alt="{{venue.name}}" />
                 <p class="venue-description text-center">{{description}}</p>
@@ -71,13 +59,19 @@
                 <p class="venue-no">Contact number: {{venue.number}}</p>
                 <p class="venue-email">Email: {{venue.email}}</p>
                 <button class="btn btn-sm btn-outline-primary fw-bold add-venue-toggle"
-                    aria-controls="toggle-content">ADD</button> --}} --}}
-
-                {{!-- {{/each}} --}}
-                {{!--
-            </div>
-        </section> --}} --}}
-
+                    aria-controls="toggle-content">ADD</button>
+            </div>    
+        </section> --}}
+<section class="add-vendor-toggle" aria-hidden="true">
+    {{#each vendors as |vendor|}}
+    {{>vendor-details}}
+    {{/each}}
+</section>
+<section class="add-venue-toggle" aria-hidden="true">
+     {{#each venues as |venue|}}
+    {{>venue-details}}
+      {{/each}}
+      </section>
         {{!-- VENDORS ------------------------------------------------------------}}
         {{!-- <section class="card toggle-content p-2 m-2" aria-hidden="true">
             <title>{{name}}</title>
@@ -91,14 +85,12 @@
                     aria-controls="toggle-content">ADD</button>
             </div>
         </section> --}}
-    </div>
-</section>
+   
 
 
+{{!-- <script src="./js/vendor.js"></script>
+
+<script src="./js/venue.js"></script> --}}
 
 
-
-
-
-<script src="./js/event.js"></script>
-<script src="./js/venue.js"></script>
+<script src="/js/event.js"></script>

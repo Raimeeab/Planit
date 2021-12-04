@@ -2,7 +2,6 @@
 
 const loadEvent = async (event) => {
   try {  
-        // {"id":2,"name":"Koren's Hens Party","type":"Hens","budget":"1000.00","attendees":30,"date":"4/12/2021","venue_id":null,"user_id":1}
       const eventName = document.querySelector('.event-name');
       const eventType = document.querySelector('.event-type');
       const eventDate = document.querySelector('.event-date');
@@ -11,16 +10,16 @@ const loadEvent = async (event) => {
       const eventVenue = document.querySelector('.event-venue');
       const userId = document.querySelector('.user-id')
 
-      const response = await fetch(`/events/:id`, {
-          method: 'GET',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-      });
+    //   const response = await fetch(`/events/:id`, {
+    //       method: 'GET',
+    //       headers: {
+    //           'Content-Type': 'application/json',
+    //       },
+    //   });
 
       const viewEvent = await response.json();
       
-      const loadVendors = async (vendor) => {
+      const vendorsByBudget = async (vendor) => {
     
         const response = await fetch(`/vendors/budget/${event.budget}`, {
             method: 'GET',
@@ -29,25 +28,39 @@ const loadEvent = async (event) => {
             },
         });
       };
-    
-      // const eventCountdown = async () => {
-      //     try {
-      //         
-      //     } catch (err) {
-      //         console.log('error with countdown:', err);
-      //     }
-      // };
-
-        if (response.ok) {
-          document.location.replace('/events');
-        } else {
-          alert('Failed to create project');
-        }
+      
+      // TODO: figure out why this isn't working 
+      const venueByBudget = async (venue) => {
         
+        const response = await fetch (`/venues/budget/${venue.budget}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+      };
+
+      const venueByCapacity = async (venue) => {
+
+        const capacity = await fetch (`/venues/capacity/${venue.capacity}`, {
+          method: 'GET', 
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+      };
+
+
+    if (response.ok) {
+      document.location.replace('/events');
+    } else {
+      alert('Failed to create event');
+    }
 
   } catch (err){
       res.status(500).json(err);
-      console.log('error with displaying content:',err);
+      console.log('error with displaying content:', err);
   };
 
 };
@@ -73,7 +86,8 @@ const availableVenues = async () => {
 
 
     } catch (err){
-
+      console.log(err);
+      res.status(500).json(err);
     }
 }
 
@@ -85,7 +99,6 @@ const showVendors = () => {
     console.log(err);
   }
 }
-
 // NEWLY CREATED EVENT CARD DETAILS + ADD VENUE + ADD VENDOR ----------------------------------------------------------------------
 // HIDE CARDS/SHOW VENUES 
 const toggle = document.querySelector('.add-venue-toggle');
@@ -106,9 +119,9 @@ toggle.addEventListener('click', (submit) =>{
 });  
 
 // HIDE CARDS/SHOW VENDORS
-const toggle = document.querySelector('.add-vendor-toggle');
+const toggle2 = document.querySelector('.add-vendor-toggle');
 
-toggle.addEventListener('click', (submit) =>{
+toggle2.addEventListener('click', (submit) =>{
     submit.preventDefault();
     console.log('clicked!')
     const contents = document.querySelectorAll('.toggle-content')

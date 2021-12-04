@@ -18,14 +18,25 @@ const newFormHandler = async (event) => {
         'Content-Type': 'application/json',
       }
     });
-
     const newEvent = await response.json();
-
     if (response.ok) {
       document.location.replace(`/events/${newEvent.id}`);
     } else {
       alert('Failed to create event');
     };
+
+    const emailsend = await fetch('/api/create/:id', {
+      method: 'POST',
+      body: JSON.stringify({ name, type, budget, attendees, date }),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+    // if (response.ok) {
+    //   document.location.replace(`/events/${newEvent.id}`);
+    // } else {
+    //   alert('Failed to create event');
+    // };
 };
 
 // const viewEvent = async (event) => {
@@ -91,7 +102,7 @@ document
 // // ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
 document.querySelector('#create-event-form').addEventListener('submit', newFormHandler)
 
-const toggle = document.querySelector('.add-event-toggle');
+const toggle = document.querySelector('.toggle-content');
  
 toggle.addEventListener('click', (submit) =>{
   submit.preventDefault();
