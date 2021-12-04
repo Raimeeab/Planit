@@ -39,12 +39,12 @@
             </div>
         </div>
         {{!-- VENUES ---------------------------------------------------------------}}
-        <section class="card toggle-content p-2 m-2" aria-hidden="true">
+        {{!-- <section class="card toggle-content p-2 m-2" aria-hidden="true">
             <title>{{name}}</title>
             <div class="card-body my-10">
                 {{!-- {{> venue-details }} --}}
 
-                <span class="venue-id" href="/venues/{{id}}">
+                {{!-- <span class="venue-id" href="/venues/{{id}}">
                     <h3 class="venue-name text-center">{{venue.name}}</h3>
                 </span>
                 <img class="venue-img" src="assets/venues/{{venue.image}}" alt="{{venue.name}}" />
@@ -59,7 +59,17 @@
                 <button class="btn btn-sm btn-outline-primary fw-bold add-venue-toggle"
                     aria-controls="toggle-content">ADD</button>
             </div>    
-        </section>
+        </section> --}}
+<section class="add-vendor-toggle" aria-hidden="true">
+    {{#each vendors as |vendor|}}
+    {{>vendor-details}}
+    {{/each}}
+</section>
+<section class="add-venue-toggle" aria-hidden="true">
+     {{#each venues as |venue|}}
+    {{>venue-details}}
+      {{/each}}
+      </section>
         {{!-- VENDORS ------------------------------------------------------------}}
         {{!-- <section class="card toggle-content p-2 m-2" aria-hidden="true">
             <title>{{name}}</title>
@@ -73,13 +83,12 @@
                         aria-controls="toggle-content">ADD</button>
             </div>
         </section> --}}
-    </div>
-</section>
+   
 
 
+{{!-- <script src="./js/vendor.js"></script>
+
+<script src="./js/venue.js"></script> --}}
 
 
-
-
-
-<script src="./js/event.js"></script>
+<script src="/js/event.js"></script>

@@ -40,18 +40,17 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 
-router.post('/api/create', withAuth, async(req, res) => {
+router.post('/api/create/:id', withAuth, async(req, res) => {
   const userData = await User.findByPk(req.session.user_id)
-  const eventData = Event.findByPk(req.params.id)
-  const event = eventData.get({ plain: true });
   const user = userData.get({ plain: true });
+  // console.log(EventData)
   console.log(user)
   let mailOptions = {
     from: 'adrian@vitae.video',
     to: user.email,
     subject: 'New Event Created',
     text: `Hey there ${user.name}, it’s our first message sent with Nodemailer`,
-    html: `<b><h4>Hey there ${user.name}!<h4> </b><br> Your event details are as follows:</b><br>  Name: ${event.name} </b><br>  Type: ${event.type}`,
+    html: `<b><h4>Hey there ${user.name}!<h4> </b><br> Your event details are as follows:</b><br>  Name:  </b><br>  Type: `,
     
 };
   
@@ -130,6 +129,7 @@ router.get('/venues', async (req, res) => {
   };
 });
 
+
 // GET one venue
 router.get('/venues/:id', async (req, res) => {
   try {
@@ -144,19 +144,25 @@ router.get('/venues/:id', async (req, res) => {
   };
 });
 
-// GET one event 
 router.get('/events/:id', withAuth, async (req, res) => {
   try {
+    const vendorData = await Vendor.findAll();
     const eventData = await Event.findByPk(req.params.id);
+    const venueData = await Venue.findAll();
+      const venues = venueData.map((venue) => venue.get({ plain: true }));
+        const event = eventData.get({ plain: true });
+    const vendors = vendorData.map((vendor) => vendor.get({ plain: true }));
+    res.render('events', { vendors, event, venues,
+      logged_in: req.session.logged_in });
 
-    const event = eventData.get({ plain: true });
-  
-    res.render('events', { event });
-  } catch (err) {
+} catch (err) {
     console.log(err);
     res.status(500).json(err);
-  }
-})
+};
+});
+
+
+
 
 module.exports = router;
 
