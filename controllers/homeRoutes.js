@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const nodemailer = require('nodemailer');
 const { Venue, Vendor, User, Event } = require('../models');
 
 // Verify user is logged into an account
@@ -37,6 +38,39 @@ router.get('/profile', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
 });
+
+
+router.post('/api/create', withAuth, async(req, res) => {
+  const userData = await User.findByPk(req.session.user_id)
+  const eventData = Event.findByPk(req.params.id)
+  const event = eventData.get({ plain: true });
+  const user = userData.get({ plain: true });
+  console.log(user)
+  let mailOptions = {
+    from: 'adrian@vitae.video',
+    to: user.email,
+    subject: 'New Event Created',
+    text: `Hey there ${user.name}, it’s our first message sent with Nodemailer`,
+    html: `<b><h4>Hey there ${user.name}!<h4> </b><br> Your event details are as follows:</b><br>  Name: ${event.name} </b><br>  Type: ${event.type}`,
+    
+};
+  
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'adrian@vitae.video',
+      pass: 'NEWPassword!@###'
+    }
+  });
+  
+  transporter.sendMail(mailOptions, (error, info) => {
+    if(error) {
+      console.log(error);
+    } else {
+      console.log('Email send: ' + info.response)
+    }
+  })
+})    
   
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
