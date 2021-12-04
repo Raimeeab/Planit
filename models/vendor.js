@@ -57,7 +57,11 @@ Vendor.init(
           key: "id",
           unique: false,
         },
-      },
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
   },
   {
     sequelize,

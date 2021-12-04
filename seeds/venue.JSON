@@ -15,7 +15,7 @@
         "capacity": 150,
         "price": 1000,
         "email": "info@12micron.com.au",
-        "image": "12-Micron-Barangaroo.jpeg"
+        "image": "12-micron-barangaroo.jpg"
     },
     {
         "name": "Royal Randwick",
@@ -24,7 +24,7 @@
         "capacity": 90,
         "price": 600,
         "email": "info@royalrandwick.com.au",
-        "image": "Royal-Randwick.jpeg"
+        "image": "royal-randwick-1.jpg"
     },
     {
         "name": "Binbadgen",
@@ -42,7 +42,7 @@
         "capacity": 60,
         "price": 400,
         "email": "manly@qstation.com.au",
-        "image": "Q-Station-Manly.jpeg"
+        "image": "q-station-manly.jpg"
     },
     {
         "name": "San Martin Akuna Bay",
@@ -51,7 +51,7 @@
         "capacity": 90,
         "price": 550,
         "email": "www.sanmartin.com.au",
-        "image": "San-Martin-Akuna-Bay.jpeg"
+        "image": "San-Martin-Akuna-Bay-1.jpg"
     },
     {
         "name": "Park Hyatt Sydney",
@@ -60,6 +60,6 @@
         "capacity": 120,
         "price": 1000,
         "email": "sydney@parkhyatt.com.au",
-        "image": "Park-Hyatt-Sydney.jpeg"
+        "image": "park-hyatt-sydney.jpg"
     }
 ]

@@ -5,6 +5,7 @@ const loadVendors = async (vendor) => {
     // const vendorNo = document.querySelector('.vendor-no');
     // const vendorEmail = document.querySelector('.vendor-email');
     // const vendorPrice = document.querySelector('.vendor-price');
+    const VendorImage = document.querySelector('.vendor-img');
 
     const response = await fetch(`/vendors`, {
         method: 'GET',
@@ -26,8 +27,10 @@ const loadVendorById = async (vendor) => {
     const vendorNo = document.querySelector('.vendor-no');
     const vendorEmail = document.querySelector('.vendor-email');
     const vendorPrice = document.querySelector('.vendor-price');
+    const VendorImage = document.querySelector('.vendor-img');
 
-    const response = await fetch ('/venues/:id', {
+    // NICK WAS HERE AND CHANGED THIS FROM /venues/:id
+    const response = await fetch ('/vendors/:id', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
