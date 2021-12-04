@@ -2,12 +2,12 @@
     <title>{{name}}</title>
     <div class="card-body my-10">
 
-        {{!-- <div class="toggle-content p-2" aria-hidden="false"> --}}
+        <div class="toggle-content p-2" aria-hidden="false">
             <span class="venue-id" href="/venues/{{id}}"><h3 class="venue-name text-center">{{name}}</h3></span>
             <img class="venue-img" src="assets/venues/{{image}}" alt="{{name}}" />
             <p class="venue-description text-center">{{description}}</p>
-        {{!-- </div class="venue-toggle" aria-controls="toggle-content"> --}}
-        {{!-- <div class="toggle-content p-2" aria-hidden="true"> --}}
+        </div class="venue-toggle" aria-controls="toggle-content"> 
+        <div class="toggle-content p-2" aria-hidden="true">
             <p class="venue-cap">Maximum capacity: {{capacity}}</p>
             <p class="venue-price">Starting price: {{price}}</p>
             <p class="venue-no">Contact number: {{number}}</p>
