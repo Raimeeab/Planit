@@ -39,27 +39,45 @@
             </div>
         </div>
         {{!-- VENUES ---------------------------------------------------------------}}
-        <section class="card toggle-content p-2 m-2" aria-hidden="true">
+
+        <section class="container ">
+            <h1>Venues</h1>
+            <section class="row justify-center ">
+                <!-- For each painting that belongs to this gallery, the painting-details partial is used to render each painting's data -->
+                {{#each venues as |venue|}}
+                {{> venue-details}}
+                {{/each}}
+            </section>
+        </section>
+
+
+        {{!-- <section class="card toggle-content p-2 m-2" aria-hidden="true">
             <title>{{name}}</title>
             <div class="card-body my-10">
                 {{!-- {{> venue-details }} --}}
 
-                <span class="venue-id" href="/venues/{{id}}">
-                    <h3 class="venue-name text-center">{{venue.name}}</h3>
+                {{!-- <span class="venue-id" href="/venues/{{id}}">
+                    <h3 class="venue-name text-center">{{name}}</h3>
                 </span>
                 <img class="venue-img" src="assets/venues/{{venue.image}}" alt="{{venue.name}}" />
-                <p class="venue-description text-center">{{venue.description}}</p>
-                
+                <p class="venue-description text-center">{{description}}</p>
+
+
             </div class="venue-toggle" aria-controls="toggle-content">
             <div class="toggle-content p-2" aria-hidden="true">
-                <p class="venue-cap">Maximum capacity: {{venue.capacity}}</p>
+                {{!-- {{#each venues as |venue|}} --}}
+                {{!-- <p class="venue-cap">Maximum capacity: {{venue.capacity}}</p>
                 <p class="venue-price">Starting price: {{venue.price}}</p>
                 <p class="venue-no">Contact number: {{venue.number}}</p>
                 <p class="venue-email">Email: {{venue.email}}</p>
                 <button class="btn btn-sm btn-outline-primary fw-bold add-venue-toggle"
-                    aria-controls="toggle-content">ADD</button>
-            </div>    
-        </section>
+                    aria-controls="toggle-content">ADD</button> --}} --}}
+
+                {{!-- {{/each}} --}}
+                {{!--
+            </div>
+        </section> --}} --}}
+
         {{!-- VENDORS ------------------------------------------------------------}}
         {{!-- <section class="card toggle-content p-2 m-2" aria-hidden="true">
             <title>{{name}}</title>
@@ -70,7 +88,7 @@
                 <p class="vendor-no">Contact number: {{number}}</p>
                 <p class="vendor-email">Email: {{email}}</p>
                 <button class="btn btn-sm btn-outline-primary fw-bold add-vendor-toggle"
-                        aria-controls="toggle-content">ADD</button>
+                    aria-controls="toggle-content">ADD</button>
             </div>
         </section> --}}
     </div>
@@ -83,3 +101,4 @@
 
 
 <script src="./js/event.js"></script>
+<script src="./js/venue.js"></script>
