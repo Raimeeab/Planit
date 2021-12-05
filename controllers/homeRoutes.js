@@ -149,29 +149,27 @@ router.get('/venues/:id', async (req, res) => {
 
 // ADRIAN"S NEW PUT CODE
 
-router.put('/events/:id', withAuth, async(req, res) => {
-  try {
-      const eventData = await Event.update({ venue_id: req.body.venue_id }, { where: {id: req.params.id,} });
-      res.status(200).json(eventData);
-  } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-  }
+router.put('/events/:id', withAuth, async(req,res) => {
+    try {
+        const addVenue = await Event.update( req.body, {
+            where: {
+                id: req.params.id
+            }
+        })
+        res.status(200).json(addVenue);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
-
 //-----------------------------------------------------------
 
 
 router.get('/events/:id', withAuth, async (req, res) => {
   try {
-    const vendorData = await Vendor.findAll();
     const eventData = await Event.findByPk(req.params.id);
-    const venueData = await Venue.findAll();
-      const venues = venueData.map((venue) => venue.get({ plain: true }));
         const event = eventData.get({ plain: true });
-    const vendors = vendorData.map((vendor) => vendor.get({ plain: true }));
-    res.render('events', { vendors, event, venues,
-      logged_in: req.session.logged_in });
+    res.render('events', { event });
 
 } catch (err) {
     console.log(err);

@@ -71,6 +71,38 @@ router.delete('/:id', withAuth, async(req, res) => {
     }
 });
 
+router.post('/api/create', withAuth, async(req, res) => {
+    const userData = await User.findByPk(req.session.user_id)
+    const user = userData.get({ plain: true });
+    const EventData = req.body
+    // console.log(EventData)
+    console.log(user)
+    let mailOptions = {
+      from: 'adrian@vitae.video',
+      to: user.email,
+      subject: 'New Event Created',
+      text: `Hey there ${user.name}, it’s our first message sent with Nodemailer`,
+      html: `<b><h4>Hey there ${user.name}!<h4> </b><br> Your event details are as follows:<br><br>  Name:${EventData.name}  <br>  Type:${EventData.type} <br>  Budget:${EventData.budget} <br>  Date:${EventData.date} <br>  Attendees:${EventData.attendees} <br><br> Make sure to add it to your calendar!!`,
+      
+  };
+    
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'adrian@vitae.video',
+        pass: 'NEWPassword!@###'
+      }
+    });
+    
+    transporter.sendMail(mailOptions, (error, info) => {
+      if(error) {
+        console.log(error);
+      } else {
+        console.log('Email send: ' + info.response)
+      }
+    })
+  })    
+    
 // ADRIAN"S NEW PUT CODE
 
 

@@ -102,40 +102,40 @@ const showVendors = () => {
 
 // NEWLY CREATED EVENT CARD DETAILS + ADD VENUE + ADD VENDOR ----------------------------------------------------------------------
 // HIDE CARDS/SHOW VENUES 
-// const toggle = document.querySelector('.add-venue-toggle');
+const toggle = document.querySelector('.add-venue-toggle');
  
-// toggle.addEventListener('click', (submit) =>{
-//   submit.preventDefault();
-//   console.log('clicked!')
-//   const contents = document.querySelectorAll('.toggle-content')
-//   console.log(contents)
-//   contents.forEach(content => {
-//     console.log(content)
-//     const ariaHidden = content.getAttribute('aria-hidden')
+toggle.addEventListener('click', (submit) =>{
+  submit.preventDefault();
+  console.log('clicked!')
+  const contents = document.querySelectorAll('.toggle-content')
+  console.log(contents)
+  contents.forEach(content => {
+    console.log(content)
+    const ariaHidden = content.getAttribute('aria-hidden')
 
-//     console.log(content)
-//     content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
-//   })
+    console.log(content)
+    content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
+  })
 
-// });  
+});  
 
 // HIDE CARDS/SHOW VENDORS
-// const toggle = document.querySelector('.add-vendor-toggle');
+const toggle = document.querySelector('.add-vendor-toggle');
 
-// toggle.addEventListener('click', (submit) =>{
-//     submit.preventDefault();
-//     console.log('clicked!')
-//     const contents = document.querySelectorAll('.toggle-content')
-//     console.log(contents)
-//     contents.forEach(content => {
-//       console.log(content)
-//       const ariaHidden = content.getAttribute('aria-hidden')
+toggle.addEventListener('click', (submit) =>{
+    submit.preventDefault();
+    console.log('clicked!')
+    const contents = document.querySelectorAll('.toggle-content')
+    console.log(contents)
+    contents.forEach(content => {
+      console.log(content)
+      const ariaHidden = content.getAttribute('aria-hidden')
   
-//       console.log(content)
-//       content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
-//     })
+      console.log(content)
+      content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
+    })
   
-//   });  
+  });  
 
   // VENUE INFORMATION -------------------------------------------------------
   loadVenues = async (venue) => {
@@ -226,12 +226,12 @@ const loadVendorById = async (vendor) => {
 
 
 
-//   let eventID = document.getElementById('eventID').textContent
+//   const eventID = document.getElementById('eventID').textContent
 
-//   const response = await put (`/venue/${eventID}`, {
-//     method: 'PUT',
+//   const response = await get(`/venue/${eventID}`, {
+//     method: 'GET',
 //     body: JSON.stringify({
-//       venue_id:0
+//       venue_id
 //     }),
 //     headers: {
 //         'Content-Type': 'application/json',
@@ -239,7 +239,7 @@ const loadVendorById = async (vendor) => {
 // })
 
 
-const addVenue = async (venue) => {
+const addVenue = async (venue, event) => {
 //   venue.preventDefault()
   const addVenue = document.querySelector('#add-venue');
 
@@ -248,8 +248,17 @@ const addVenue = async (venue) => {
       body: JSON.stringify({ venue }),
       headers: {
           'Content-Type': 'application/json',
-      },
+      }, 
   })
+  const responseevent = await fetch(`/events/:id`, {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
+
+  const eventID = document.getElementById('eventID').textContent
+eventID.textContent = event.venue_id
 console.log(venue.name)
   console.log(response);
 }
