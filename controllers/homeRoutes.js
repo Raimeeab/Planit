@@ -5,10 +5,6 @@ const { Venue, Vendor, User, Event } = require('../models');
 // Verify user is logged into an account
 const withAuth = require('../utils/withAuth');
 
-// Budget helpers 
-const {vendorsByBuget, venuesByCapacity, venuesByBudget, vendorsByBudget } = require('../public/js/apihelpers');
-const { route } = require('./api/venueRoutes');
-
 router.get('/', async (req, res) => {
     try {
         res.render('homepage');
@@ -159,14 +155,49 @@ router.get('/events/:id', withAuth, async (req, res) => {
 });
 
 // GET suitable vendors by budget 
-router.get('/events/:id/vendors/:budget', withAuth, vendorsByBudget, async (req, res) => {
+router.get('/events/:id/vendors/:budget', withAuth, async (req, res) => {
   try {
-    
-    
-
+    const budget = req.params.budget;
+  
+    const vendorChoices = await Vendor.findAll({
+      where: {
+        price: {
+          [Op.lte]: budget
+        }
+      }
+    });
+  
+    res.render('budget', { vendorChoices });
+  
   } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  };
 
-  }
-})
+});
+
+
+// router.get('/events/:id/venues', withAuth, venueByCapacity, venuesByBudget, async (req, res) => {
+//   try {
+//     const budget = req.params.budget;
+  
+//     const venueChoices = await Venue.findAll({
+//       where: {
+//         price: {
+//           [Op.lte]: budget
+//         }
+//       }
+//     });
+
+//     res.status(200).json(venueChoices);
+    
+
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   };
+
+// });
+
 module.exports = router;
 
