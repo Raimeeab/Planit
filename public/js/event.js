@@ -213,7 +213,6 @@ const loadVendorById = async (vendor) => {
   const vendorPrice = document.querySelector('.vendor-price');
   const VendorImage = document.querySelector('.vendor-img');
 
-  // NICK WAS HERE AND CHANGED THIS FROM /venues/:id
   const response = await fetch ('/vendors/:id', {
       method: 'GET',
       headers: {
@@ -222,3 +221,32 @@ const loadVendorById = async (vendor) => {
   })
   
 }
+
+// THIS IS ADDING THE EVENTLISTENER TO THE VENUE ADD BUTTON
+
+// document.getElementById('addVenueBtn').addEventListener('click', (submit) => {
+//   submit.preventDefault();
+//   console.log('clicked!')
+
+//   let eventID = document.getElementById('eventID').textContent
+
+//   const response = await put (`/venue/${eventID}`, {
+//     method: 'PUT',
+//     body: JSON.stringify({
+//       venue_id:1
+//     }),
+//     headers: {
+//         'Content-Type': 'application/json',
+//     },
+// })
+
+// });
+
+
+
+
+
+
+
+
+
