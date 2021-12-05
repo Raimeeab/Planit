@@ -71,13 +71,13 @@ p {
 
 /* LOGIN/REGISTER HANDLEBAR ------------------------------------------------------------------- */
 
-.toggle-content {
+/* .toggle-content {
    display:none;
 } 
 
 .toggle-content[aria-hidden="false"] {
   display: block
-} 
+}  */
 
 /* LOGIN */
 #login-container {
@@ -144,7 +144,7 @@ h2 {
 
 .venue-img {
   display:block;
-  width: auto;
+  max-width: 100%;
 }
 
 .venue-description, .venue-cap, .venue-price, .venue-no, .venue-email {
