@@ -37,7 +37,10 @@ const loadVendorById = async (vendor) => {
         },
     })
     
-}
+};
+
+
+
 
 
 

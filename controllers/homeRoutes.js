@@ -39,7 +39,7 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 });
 
-
+// API CANNOT BE IN HOMEROUTE
 router.post('/api/create', withAuth, async(req, res) => {
   const userData = await User.findByPk(req.session.user_id)
   const eventData = Event.findByPk(req.params.id)
@@ -156,7 +156,19 @@ router.get('/events/:id', withAuth, async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-})
+});
+
+// GET all suitable vendors & venues 
+// router.get('/planevent/:id', withAuth, async (req, res) => {
+//   try {
+
+
+//     res.render('planevent', {  });
+//   } catch {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// } )
 
 module.exports = router;
 

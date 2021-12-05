@@ -1,43 +1,122 @@
-const newFormHandler = async (event) => {
-  event.preventDefault();
+// Global variables 
 
-  const name = document.querySelector('#new-event-name').value.trim();
-  const type = document.querySelector('#event-type').value.trim();
-  const budget = document.querySelector('#new-event-budget').value.trim();
-  const attendees = document.querySelector('#new-event-guests').value.trim();
+
+// POST event details to db
+const postNewEvent = async (event) => {
+  const eventName = document.querySelector('#new-event-name').value.trim();
+  const type = document.querySelector('#event-type').value;
+  const eventBudget = document.querySelector('#new-event-budget').value.trim();
+  const eventCapacity = document.querySelector('#new-event-guests').value.trim();
   const date = document.querySelector('#new-event-date').value.trim();
-  // Used to dictate if event needs venue
-  const venueYes = document.querySelector('.venue-yes');
-  const venueNo = document.querySelector('.venue-no');
+  const venue = document.querySelector("#venue-true").checked;
 
-  // if (name && type && attendees && budget && date) {
-    const response = await fetch(`/api/events`, {
-      method: 'POST',
-      body: JSON.stringify({ name, type, budget, attendees, date }),
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    });
-    const newEvent = await response.json();
-    if (response.ok) {
-      document.location.replace(`/events/${newEvent.id}`);
+  console.log(eventName);
+  console.log(type)
+  console.log(eventBudget)
+  console.log(eventCapacity)
+  console.log(date)
+
+  event.preventDefault();
+  const response = await fetch(`/api/events`, {
+    method: 'POST',
+    body: JSON.stringify({ eventName, type, eventBudget, eventCapacity, date }),
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  });
+
+  const newEvent = await response.json();
+  if (newEvent.ok) {
+      document.location.replace(`/planevent/${event.id}`);
     } else {
-      alert('Failed to create event');
-    };
+      alert("An error has occurred");
+  };
 
-    const emailsend = await fetch('/api/create', {
-      method: 'POST',
-      body: JSON.stringify({ name, type, budget, attendees, date }),
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    });
-    // if (response.ok) {
-    //   document.location.replace(`/events/${newEvent.id}`);
-    // } else {
-    //   alert('Failed to create event');
-    // };
-};
+}
+
+// GET route for the filtered info by buget 
+// const suitableVendorVenue = async (vendors) => {
+//   vendors.preventDefault();
+//   const selectedchoices = {};
+  
+//   // Concatinate the objects - in order to pass one object into the handlebar section 
+//   const fetchVendor = await fetch (`/api/vendors/budget/${eventBudget}`, {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     }
+//   });
+  
+//   fetchVendor.push(selectedchoices);
+  
+//   console.log(fetchVendor)
+  
+//   if (venue) {
+//     const fetchVenue = await fetch (`/api/venues/budget/${eventBudget}`, {
+//       method: 'GET',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       }
+//     });
+    
+//     const fetchVenueCap = await fetch (`/api/venues/capacity/${eventCapacity}`, {
+//       method: 'GET',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       }
+//     });
+    
+//     fetchVenue.push(selectedchoices);
+//     fetchVenueCap.push(selectedchoices);
+//     console.log(fetchVenue);
+//     console.log(fetchVenueCap);
+
+//   }; 
+
+// }; 
+
+document
+  .querySelector('#create-event-form')
+  .addEventListener('submit', postNewEvent);
+// suitableVendorVenue,
+
+// const newFormHandler = async (event) => {
+//   event.preventDefault();
+
+//   const name = document.querySelector('#new-event-name').value.trim();
+//   const type = document.querySelector('#event-type').value.trim();
+//   const budget = document.querySelector('#new-event-budget').value.trim();
+//   const attendees = document.querySelector('#new-event-guests').value.trim();
+//   const date = document.querySelector('#new-event-date').value.trim();
+
+//   // if (name && type && attendees && budget && date) {
+//     const response = await fetch(`/api/events`, {
+//       method: 'POST',
+//       body: JSON.stringify({ name, type, budget, attendees, date }),
+//       headers: {
+//         'Content-Type': 'application/json',
+//       }
+//     });
+//     const newEvent = await response.json();
+//     if (response.ok) {
+//       document.location.replace(`/events/${newEvent.id}`);
+//     } else {
+//       alert('Failed to create event');
+//     };
+
+//     const emailsend = await fetch('/api/create', {
+//       method: 'POST',
+//       body: JSON.stringify({ name, type, budget, attendees, date }),
+//       headers: {
+//         'Content-Type': 'application/json',
+//       }
+//     });
+//     // if (response.ok) {
+//     //   document.location.replace(`/events/${newEvent.id}`);
+//     // } else {
+//     //   alert('Failed to create event');
+//     // };
+// };
 
 // const viewEvent = async (event) => {
 //   const response = await fetch(`api/events/:id`, {
@@ -55,11 +134,7 @@ const newFormHandler = async (event) => {
 //   } else {
 //     alert('Failed to view event');
 //   };
-  
-
 // };
-
-
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -100,7 +175,7 @@ document
 
 
 // // ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
-document.querySelector('add-event-form').addEventListener('submit', newFormHandler)
+// document.querySelector('#create-event-form').addEventListener('submit', newFormHandler)
 
 const toggle = document.querySelector('.toggle-content');
  
@@ -118,4 +193,6 @@ toggle.addEventListener('click', (submit) =>{
   })
 
 });  
+
+
 
