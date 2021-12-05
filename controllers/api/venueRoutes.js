@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Venue = require('../../models/venue');
 const { Op } = require('sequelize');
 
-xrouter.post('/', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
 
         const newVenue = await Venue.create(req.body);
@@ -93,5 +93,7 @@ router.get('/budget/:budget', async (req, res) => {
     res.status(500).json(err)
   }
 });
+
+
 
 module.exports = router;

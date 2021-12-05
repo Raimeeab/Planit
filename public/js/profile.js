@@ -1,79 +1,30 @@
-// Global variables 
-
-
 // POST event details to db
 const postNewEvent = async (event) => {
-  const eventName = document.querySelector('#new-event-name').value.trim();
+  const name = document.querySelector('#new-event-name').value.trim();
   const type = document.querySelector('#event-type').value;
-  const eventBudget = document.querySelector('#new-event-budget').value.trim();
-  const eventCapacity = document.querySelector('#new-event-guests').value.trim();
+  const budget = document.querySelector('#new-event-budget').value.trim();
+  const attendees = document.querySelector('#new-event-guests').value.trim();
   const date = document.querySelector('#new-event-date').value.trim();
   const venue = document.querySelector("#venue-true").checked;
 
-  console.log(eventName);
-  console.log(type)
-  console.log(eventBudget)
-  console.log(eventCapacity)
-  console.log(date)
 
   event.preventDefault();
-  const response = await fetch(`/api/events`, {
-    method: 'POST',
-    body: JSON.stringify({ eventName, type, eventBudget, eventCapacity, date }),
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  });
+ // if (name && type && attendees && budget && date) {
+    const response = await fetch(`/api/events`, {
+      method: 'POST',
+      body: JSON.stringify({ name, type, budget, attendees, date }),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+    const newEvent = await response.json();
 
-  const newEvent = await response.json();
-  if (newEvent.ok) {
-      document.location.replace(`/planevent/${event.id}`);
+    if (response.ok) {
+      document.location.replace(`/events/${newEvent.id}`);
     } else {
-      alert("An error has occurred");
-  };
-
+      alert('Failed to create event');
+    };
 }
-
-// GET route for the filtered info by buget 
-// const suitableVendorVenue = async (vendors) => {
-//   vendors.preventDefault();
-//   const selectedchoices = {};
-  
-//   // Concatinate the objects - in order to pass one object into the handlebar section 
-//   const fetchVendor = await fetch (`/api/vendors/budget/${eventBudget}`, {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     }
-//   });
-  
-//   fetchVendor.push(selectedchoices);
-  
-//   console.log(fetchVendor)
-  
-//   if (venue) {
-//     const fetchVenue = await fetch (`/api/venues/budget/${eventBudget}`, {
-//       method: 'GET',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       }
-//     });
-    
-//     const fetchVenueCap = await fetch (`/api/venues/capacity/${eventCapacity}`, {
-//       method: 'GET',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       }
-//     });
-    
-//     fetchVenue.push(selectedchoices);
-//     fetchVenueCap.push(selectedchoices);
-//     console.log(fetchVenue);
-//     console.log(fetchVenueCap);
-
-//   }; 
-
-// }; 
 
 document
   .querySelector('#create-event-form')
@@ -82,7 +33,6 @@ document
 
 // const newFormHandler = async (event) => {
 //   event.preventDefault();
-
 //   const name = document.querySelector('#new-event-name').value.trim();
 //   const type = document.querySelector('#event-type').value.trim();
 //   const budget = document.querySelector('#new-event-budget').value.trim();
@@ -136,6 +86,10 @@ document
 //   };
 // };
 
+// document
+//   .querySelector('.new-event-form')
+//   .addEventListener('submit', newFormHandler);
+
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -152,19 +106,12 @@ const delButtonHandler = async (event) => {
   }
 };
 
-// document
-//   .querySelector('.new-event-form')
-//   .addEventListener('submit', newFormHandler);
-
-
 document
   .querySelectorAll('.delete-event-btn') 
   .forEach((button) => {
     button.addEventListener('click', delButtonHandler);
   });
   
-   
-
 // If event venue_id = null, then ignore the cost of venue 
 // && the event should always get all the vendors that belong to this event 
 // Only conditionally does it get the cost from the venue 
@@ -177,7 +124,7 @@ document
 // // ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
 // document.querySelector('#create-event-form').addEventListener('submit', newFormHandler)
 
-const toggle = document.querySelector('.toggle-content');
+const toggle = document.querySelector('.add-toggle-content');
  
 toggle.addEventListener('click', (submit) =>{
   submit.preventDefault();
@@ -194,5 +141,45 @@ toggle.addEventListener('click', (submit) =>{
 
 });  
 
+// GET route for the filtered info by buget 
+// const suitableVendorVenue = async (vendors) => {
+//   vendors.preventDefault();
+//   const selectedchoices = {};
+  
+//   // Concatinate the objects - in order to pass one object into the handlebar section 
+//   const fetchVendor = await fetch (`/api/vendors/budget/${eventBudget}`, {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     }
+//   });
+  
+//   fetchVendor.push(selectedchoices);
+  
+//   console.log(fetchVendor)
+  
+//   if (venue) {
+//     const fetchVenue = await fetch (`/api/venues/budget/${eventBudget}`, {
+//       method: 'GET',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       }
+//     });
+    
+//     const fetchVenueCap = await fetch (`/api/venues/capacity/${eventCapacity}`, {
+//       method: 'GET',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       }
+//     });
+    
+//     fetchVenue.push(selectedchoices);
+//     fetchVenueCap.push(selectedchoices);
+//     console.log(fetchVenue);
+//     console.log(fetchVenueCap);
+
+//   }; 
+
+// }; 
 
 

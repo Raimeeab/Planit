@@ -5,6 +5,10 @@ const { Venue, Vendor, User, Event } = require('../models');
 // Verify user is logged into an account
 const withAuth = require('../utils/withAuth');
 
+// Budget helpers 
+const {vendorsByBuget, venuesByCapacity, venuesByBudget, vendorsByBudget } = require('../public/js/apihelpers');
+const { route } = require('./api/venueRoutes');
+
 router.get('/', async (req, res) => {
     try {
         res.render('homepage');
@@ -45,7 +49,6 @@ router.post('/api/create', withAuth, async(req, res) => {
   const eventData = Event.findByPk(req.params.id)
   const event = eventData.get({ plain: true });
   const user = userData.get({ plain: true });
-  console.log(user)
   let mailOptions = {
     from: 'adrian@vitae.video',
     to: user.email,
@@ -86,8 +89,6 @@ router.get('/login', (req, res) => {
 // GET all vendors
 router.get('/vendors', async (req, res) => {
   try {
-    const budget = req.query.budget;
-
     const vendorData = await Vendor.findAll();
 
     const vendors = vendorData.map((vendor) => vendor.get({ plain: true })); 
@@ -116,7 +117,6 @@ router.get('/vendors/:id', async (req, res) => {
 // GET all venues
 router.get('/venues', async (req, res) => {
   try {
-    const budget = req.query.budget;
 
     const venueData = await Venue.findAll();
 
@@ -158,17 +158,15 @@ router.get('/events/:id', withAuth, async (req, res) => {
   }
 });
 
-// GET all suitable vendors & venues 
-// router.get('/planevent/:id', withAuth, async (req, res) => {
-//   try {
+// GET suitable vendors by budget 
+router.get('/events/:id/vendors/:budget', withAuth, vendorsByBudget, async (req, res) => {
+  try {
+    
+    
 
+  } catch (err) {
 
-//     res.render('planevent', {  });
-//   } catch {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// } )
-
+  }
+})
 module.exports = router;
 

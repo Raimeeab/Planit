@@ -1,5 +1,3 @@
-// const moment = require('moment');
-
 const loadEvent = async (event) => {
   try {  
       const eventName = document.querySelector('.event-name');
@@ -7,7 +5,7 @@ const loadEvent = async (event) => {
       const eventDate = document.querySelector('.event-date');
       const eventBudget = document.querySelector('.event-budget');
       const eventGuests = document.querySelector('.event-guests');
-      const eventVenue = document.querySelector('.event-venue');
+      const venue = document.querySelector('.venue-yes');
       const userId = document.querySelector('.user-id')
 
       const response = await fetch(`/events/:id`, {
@@ -18,38 +16,37 @@ const loadEvent = async (event) => {
       });
 
       const viewEvent = await response.json();
-      
-      const vendorsByBudget = async (vendor) => {
+      res.status(200)
+      // const vendorsByBudget = async (vendor) => {
     
-        const response = await fetch(`/vendors/budget/${event.budget}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-      };
+      //   const response = await fetch(`/vendors/budget/${event.budget}`, {
+      //       method: 'GET',
+      //       headers: {
+      //           'Content-Type': 'application/json',
+      //       },
+      //   });
+      // };
       
-      // TODO: figure out why this isn't working 
-      const venueByBudget = async (venue) => {
+      // const venueByBudget = async (venue) => {
         
-        const response = await fetch (`/venues/budget/${venue.budget}`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
+      //   const response = await fetch (`/venues/budget/${venue.budget}`, {
+      //     method: 'GET',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //   });
 
-      };
+      // };
 
-      const venueByCapacity = async (venue) => {
+      // const venueByCapacity = async (venue) => {
 
-        const capacity = await fetch (`/venues/capacity/${venue.capacity}`, {
-          method: 'GET', 
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-      };
+      //   const capacity = await fetch (`/venues/capacity/${venue.capacity}`, {
+      //     method: 'GET', 
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //   });
+      // };
 
 
     // if (response.ok) {

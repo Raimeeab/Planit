@@ -2,10 +2,7 @@ const loadVendors = async (vendor) => {
     const vendorType = document.querySelector('.vendor-type');
     const vendorName = document.querySelector('.vendor-name');
     const vendorDesc = document.querySelector('.vendor-desc');
-    // const vendorNo = document.querySelector('.vendor-no');
-    // const vendorEmail = document.querySelector('.vendor-email');
-    // const vendorPrice = document.querySelector('.vendor-price');
-    const VendorImage = document.querySelector('.vendor-img');
+    const vendorImage = document.querySelector('.vendor-img');
 
     const response = await fetch(`/vendors`, {
         method: 'GET',
@@ -14,11 +11,11 @@ const loadVendors = async (vendor) => {
         },
     });
 
-    // if (response.ok) {
-    //     document.location.replace('/vendors');
-    // } else {
-    //     alert('Failed to display vendors')
-    // };
+    if (response.ok) {
+        document.location.replace('/vendors');
+    } else {
+        alert('Failed to display vendors')
+    };
 };
 
 const loadVendorById = async (vendor) => {
@@ -27,15 +24,20 @@ const loadVendorById = async (vendor) => {
     const vendorNo = document.querySelector('.vendor-no');
     const vendorEmail = document.querySelector('.vendor-email');
     const vendorPrice = document.querySelector('.vendor-price');
-    const VendorImage = document.querySelector('.vendor-img');
+    const vendorImage = document.querySelector('.vendor-img');
 
-    // NICK WAS HERE AND CHANGED THIS FROM /venues/:id
     const response = await fetch ('/vendors/:id', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
         },
-    })
+    });
+
+    if (response.ok) {
+        document.location.replace('/vendors/:id');
+    } else {
+        alert('Failed to display vendors')
+    };
     
 };
 

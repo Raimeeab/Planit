@@ -11,11 +11,11 @@
         },
     });
 
-    // if (response.ok) {
-    //     document.location.replace('/venues');
-    // } else {
-    //     alert('Failed to display venues')
-    // };
+    if (response.ok) {
+        document.location.replace('/venues');
+    } else {
+        alert('Failed to display venues')
+    };
 };
 
 loadVenueById = async (venue) => {
@@ -32,7 +32,13 @@ loadVenueById = async (venue) => {
         headers: {
             'Content-Type': 'application/json',
         },
-    })
+    });
+
+    if (response.ok) {
+        document.location.replace('/venues/:id');
+    } else {
+        alert('Failed to display venues/:id')
+    };
     
     console.log(response);
 };
