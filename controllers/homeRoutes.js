@@ -40,7 +40,7 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 
-router.post('/api/create', withAuth, async(req, res) => {
+router.post('/api/create/:id', withAuth, async(req, res) => {
   const userData = await User.findByPk(req.session.user_id)
   const eventData = Event.findByPk(req.params.id)
   const event = eventData.get({ plain: true });
@@ -157,6 +157,26 @@ router.get('/events/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 })
+
+// ADRIAN ADDED THIS TO GET THE VENUES/VENDORS TO DISPLAY ON EVENT.HANDLEBARS
+
+// router.get('/events/:id', withAuth, async (req, res) => {
+//   try {
+//     const vendorData = await Vendor.findAll();
+//     const eventData = await Event.findByPk(req.params.id);
+//     const venueData = await Venue.findAll();
+//       const venues = venueData.map((venue) => venue.get({ plain: true }));
+//         const event = eventData.get({ plain: true });
+//     const vendors = vendorData.map((vendor) => vendor.get({ plain: true }));
+//     res.render('events', { vendors, event, venues,
+//       logged_in: req.session.logged_in });
+
+// } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+// };
+// });
+
 
 module.exports = router;
 
