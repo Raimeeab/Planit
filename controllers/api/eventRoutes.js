@@ -115,24 +115,24 @@ router.delete('/:id', withAuth, async (req, res) => {
 //     }
 // });
 
-router.get('/:id', withAuth, async (req, res) => {
-    try {
-        const vendorData = await Vendor.findAll();
-        const eventData = await Event.findByPk(req.params.id);
-        const venueData = await Venue.findAll();
+// router.get('/:id', withAuth, async (req, res) => {
+//     try {
+//         const vendorData = await Vendor.findAll();
+//         const eventData = await Event.findByPk(req.params.id);
+//         const venueData = await Venue.findAll();
 
-        const venues = venueData.map((venue) => venue.get({ plain: true }));
-        const event = eventData.get({ plain: true });
+//         const venues = venueData.map((venue) => venue.get({ plain: true }));
+//         const event = eventData.get({ plain: true });
 
-        const vendors = vendorData.map((vendor) => vendor.get({ plain: true }));
-        res.render('events', {
-            vendors, event, venues,
-            logged_in: req.session.logged_in
-        });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    };
-});
+//         const vendors = vendorData.map((vendor) => vendor.get({ plain: true }));
+//         res.render('events', {
+//             vendors, event, venues,
+//             logged_in: req.session.logged_in
+//         });
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json(err);
+//     };
+// });
 
 module.exports = router;

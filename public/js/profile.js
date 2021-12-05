@@ -99,10 +99,10 @@ document
 // include the cost of venues with vendors as a whole 
 
 
-// // ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
+// ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
 document.querySelector('#create-event-form').addEventListener('submit', newFormHandler)
 
-const toggle = document.querySelector('.toggle-content');
+const toggle = document.querySelector('.add-event-toggle');
  
 toggle.addEventListener('click', (submit) =>{
   submit.preventDefault();
