@@ -171,7 +171,12 @@ h2 {
   font-weight: 500;
 }
 
-
+/* EVENTS HANDLEBAR */
+.event-vendor-img {
+  height: 250px;
+  max-width: 100%;
+  border-radius: 10px;
+}
 
 
 

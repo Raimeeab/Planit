@@ -14,74 +14,98 @@
                         <p class="event-date">{{event.date}}</p>
                         <p class="event-budget">{{event.budget}}</p>
                         <p class="event-guests">{{event.attendees}}</p>
+                        <p id="eventID">{{event.id}}</p>
                     </div>
                 </div>
             </div>
             <div id="add-new-event-card" class="card add-new-event-card p-4 m-2 col-sm-12 col-md-6 col-lg-3">
-                <img src="../../assets/venues/watsons-bay.jpeg" class="card-img-top" alt="...">
+                <img src="../../assets/venues/royal-randwick-1.jpg" class="card-img-top" alt="...">
                 <div class="card-body text-center">
                     <h4 class="h4-event-name">Add Venue</h4>
                 </div>
+                <div class="form-group input-group mb-3">
+                    <label class="input-group-text" for="event-type">Venue</label>
+                    <select class="form-select" aria-label="event-type" id="event-type" name="event-type">
+                        <option selected>None</option>
+                        <option value="Watson Bay">Watsons Bay Hotel</option>
+                        <option value="12-Micron Barangaroo">12-Micron Barangaroo</option>
+                        <option value="Royal Randwick">Royal Randwick</option>
+                        <option value="Binbadgen">Binbadgen</option>
+                        <option value="Q Station Manly">Q Station Manly</option>
+                        <option value="San Martin Akuna Bay">San Martin Akuna Bay</option>
+                        <option value="Park Hyatt Sydney">Park Hyatt Sydney</option>
+                    </select>
+                </div>
                 <div class="d-flex justify-content-center">
-                    <button class="btn btn-sm btn-outline-primary fw-bold add-venue-toggle"
-                        aria-controls="toggle-content"><a href="/events/venues">ADD</a></button>
+                    <button id="add-venue" class="btn btn-sm btn-outline-primary fw-bold add-venue-toggle"
+                        aria-controls="toggle-content">ADD</button>
                 </div>
             </div>
             <div id="add-new-event-card" class="card add-new-event-card p-4 m-2 col-sm-12 col-md-6 col-lg-3">
-                <img src="../../assets/venues/watsons-bay.jpeg" class="card-img-top" alt="...">
+                <img src="../../assets/vendors/Show-and-Band.jpg" class="card-img-top event-vendor-img" alt="...">
                 <div class="card-body text-center">
                     <h4 class="h4-event-name">Add Vendor</h4>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <button class="btn btn-sm btn-outline-primary fw-bold add-vendor-toggle"
-                        aria-controls="toggle-content"><a href="/events/vendors">ADD</a></button>
+                <div class="mb-2">
+                    <label class="input-group-text" for="event-type">Entertainment</label>
+                    <select class="form-select" aria-label="event-type" id="event-type" name="event-type">
+                        <option selected>None</option>
+                        <option value="Baker Boy">Baker Boy</option>
+                        <option value="DJ Syndey">DJ Syndey</option>
+                        <option value="Let's Groove Tonight">Let's Groove Tonight</option>
+                        <option value="Excité Live Stunt Show & Band">Excité Live Stunt Show & Band</option>
+                        <option value="Storbe DJ">Storbe DJ</option>
+                        <option value="Bachelor">Bachelor</option>
+                        <option value="Other">Other</option>
+                        <option value="Christening">Christening</option>
+                        <option value="Hens">Hens</option>
+                        <option value="Bachelor">Bachelor</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <label class="input-group-text" for="event-type">Catering</label>
+                    <select class="form-select" aria-label="event-type" id="event-type" name="event-type">
+                        <option selected>None</option>
+                        <option value="The Batter Co">The Batter Co</option>
+                        <option value="FeeDee">FeeDee</option>
+                        <option value="Goodness Gracious">Goodness Gracious</option>
+                        <option value="Bespoke Catering">Bespoke Catering</option>
+                        <option value="One Pot Catering">One Pot Catering</option>
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <label class="input-group-text" for="event-type">Florist</label>
+                    <select class="form-select" aria-label="event-type" id="event-type" name="event-type">
+                        <option selected>None</option>
+                        <option value="Sydney Florist">Sydney Florist</option>
+                        <option value="Fresh Flowers">Fresh Flowers</option>
+                        <option value="Flower Merchants">Flower Merchants</option>
+                        <option value="Floraly">Floraly</option>
+                    </select>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-sm btn-outline-primary fw-bold add-vendor-toggle"
+                            aria-controls="toggle-content">ADD</button>
+                    </div>
                 </div>
             </div>
+            {{!-- VENUES ---------------------------------------------------------------}}
+            <section class="add-venue-toggle" aria-hidden="true">
+                {{#each venues as |venue|}}
+                {{>venue-details}}
+                {{/each}}
+            </section>
+            {{!-- VENDORS --------------------------------------------------------------}}
+            <section class="add-vendor-toggle" aria-hidden="true">
+                {{#each vendors as |vendor|}}
+                {{>vendor-details}}
+
+                {{/each}}
+            </section>
+
+
         </div>
-        {{!-- VENUES ---------------------------------------------------------------}}
-        <section class="card toggle-content p-2 m-2" aria-hidden="true">
-            <title>{{name}}</title>
-            <div class="card-body my-10">
-                {{!-- {{> venue-details }} --}}
-
-                <span class="venue-id" href="/venues/{{id}}">
-                    <h3 class="venue-name text-center">{{venue.name}}</h3>
-                </span>
-                <img class="venue-img" src="assets/venues/{{venue.image}}" alt="{{venue.name}}" />
-                <p class="venue-description text-center">{{description}}</p>
-
-
-            </div class="venue-toggle" aria-controls="toggle-content">
-            <div class="toggle-content p-2" aria-hidden="true">
-                {{!-- {{#each venues as |venue|}} --}}
-                {{!-- <p class="venue-cap">Maximum capacity: {{venue.capacity}}</p>
-                <p class="venue-price">Starting price: {{venue.price}}</p>
-                <p class="venue-no">Contact number: {{venue.number}}</p>
-                <p class="venue-email">Email: {{venue.email}}</p>
-                <button class="btn btn-sm btn-outline-primary fw-bold add-venue-toggle"
-                    aria-controls="toggle-content">ADD</button>
-            </div>    
-        </section>
-        {{!-- VENDORS ------------------------------------------------------------}}
-        {{!-- <section class="card toggle-content p-2 m-2" aria-hidden="true">
-            <title>{{name}}</title>
-            <div class="card-body">
-                <img class="vendor-img" src="assets/vendors/{{vendor.image}}" alt="{{vendor.name}}" />
-                <p class="vendor-desc">{{description}}</p>
-                <p class="vendor-price">Starting price: {{price}}</p>
-                <p class="vendor-no">Contact number: {{number}}</p>
-                <p class="vendor-email">Email: {{email}}</p>
-                <button class="btn btn-sm btn-outline-primary fw-bold add-vendor-toggle"
-                    aria-controls="toggle-content">ADD</button>
-            </div>
-        </section> --}}
-    </div>
 </section>
-
-
-
-
-
 
 
 <script src="./js/event.js"></script>
