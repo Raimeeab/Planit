@@ -10,12 +10,12 @@ const loadEvent = async (event) => {
       const eventVenue = document.querySelector('.event-venue');
       const userId = document.querySelector('.user-id')
 
-    //   const response = await fetch(`/events/:id`, {
-    //       method: 'GET',
-    //       headers: {
-    //           'Content-Type': 'application/json',
-    //       },
-    //   });
+      const response = await fetch(`/events/:id`, {
+          method: 'GET',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+      });
 
       const viewEvent = await response.json();
       
@@ -52,11 +52,11 @@ const loadEvent = async (event) => {
       };
 
 
-    if (response.ok) {
-      document.location.replace('/events');
-    } else {
-      alert('Failed to create event');
-    }
+    // if (response.ok) {
+    //   document.location.replace('/events');
+    // } else {
+    //   alert('Failed to create event');
+    // }
 
   } catch (err){
       res.status(500).json(err);
@@ -99,6 +99,7 @@ const showVendors = () => {
     console.log(err);
   }
 }
+
 // NEWLY CREATED EVENT CARD DETAILS + ADD VENUE + ADD VENDOR ----------------------------------------------------------------------
 // HIDE CARDS/SHOW VENUES 
 const toggle = document.querySelector('.add-venue-toggle');
@@ -119,9 +120,9 @@ toggle.addEventListener('click', (submit) =>{
 });  
 
 // HIDE CARDS/SHOW VENDORS
-const toggle2 = document.querySelector('.add-vendor-toggle');
+const toggle = document.querySelector('.add-vendor-toggle');
 
-toggle2.addEventListener('click', (submit) =>{
+toggle.addEventListener('click', (submit) =>{
     submit.preventDefault();
     console.log('clicked!')
     const contents = document.querySelectorAll('.toggle-content')
