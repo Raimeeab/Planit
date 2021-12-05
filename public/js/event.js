@@ -224,24 +224,34 @@ const loadVendorById = async (vendor) => {
 
 // THIS IS ADDING THE EVENTLISTENER TO THE VENUE ADD BUTTON
 
-// document.getElementById('addVenueBtn').addEventListener('click', (submit) => {
-//   submit.preventDefault();
-//   console.log('clicked!')
+document.getElementById('add-venue').addEventListener('submit', addVenue) 
 
 //   let eventID = document.getElementById('eventID').textContent
 
 //   const response = await put (`/venue/${eventID}`, {
 //     method: 'PUT',
 //     body: JSON.stringify({
-//       venue_id:1
+//       venue_id:0
 //     }),
 //     headers: {
 //         'Content-Type': 'application/json',
 //     },
 // })
 
-// });
 
+const addVenue = async (venue) => {
+  venue.preventDefault()
+  const addVenue = document.querySelector('#add-venue');
+
+  const response = await fetch ('/events/:id', {
+      method: 'PUT',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+  })
+
+  console.log(response);
+}
 
 
 

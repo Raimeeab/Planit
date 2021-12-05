@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const Venue = require('../../models/venue');
+const Event = require('../../models/event');
+const withAuth = require('../../utils/withAuth')
 const { Op } = require('sequelize');
+
 
 router.post('/', async (req, res) => {
     try {
@@ -92,5 +95,24 @@ router.get('/budget/:budget', async (req, res) => {
     res.status(500).json(err)
   }
 });
+
+router.put('/event/:id', withAuth, async (req,res) => {
+  try { 
+    const addVenue = await Event.update(req.body, {
+      where: {
+          id: req.params.id
+      }
+  })
+  res.status(200).json(addVenue);
+} catch (err) {
+  console.log(err);
+  res.status(500).json(err);
+}
+});
+
+
+
+
+
 
 module.exports = router;
