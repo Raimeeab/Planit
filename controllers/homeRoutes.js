@@ -151,9 +151,7 @@ router.get('/venues/:id', async (req, res) => {
 
 router.put('/events/:id', withAuth, async(req, res) => {
   try {
-      const eventData = await Event.update({
-          ...req.body,
-      })
+      const eventData = await Event.update({ venue_id: req.body.venue_id }, { where: {id: req.params.id,} });
       res.status(200).json(eventData);
   } catch (err) {
       console.log(err);
