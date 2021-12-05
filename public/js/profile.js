@@ -100,7 +100,7 @@ document
 
 
 // // ADD EVENT CARD/ ADD EVENT FORM ----------------------------------------------------------------------
-document.querySelector('#create-event-form').addEventListener('submit', newFormHandler)
+document.querySelector('add-event-form').addEventListener('submit', newFormHandler)
 
 const toggle = document.querySelector('.toggle-content');
  

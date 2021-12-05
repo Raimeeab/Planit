@@ -144,7 +144,7 @@ h2 {
 
 .venue-img {
   display:block;
-  width: auto;
+  max-width: 100%;
 }
 
 .venue-description, .venue-cap, .venue-price, .venue-no, .venue-email {
