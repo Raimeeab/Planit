@@ -1,9 +1,9 @@
 const sequelize = require('../config/connection');
 const { User, Venue, Vendor, EventVendors, Event } = require('../models');
-const userData = require('./user.json'); //changed it to user.json
-const vendorData = require('./vendor.json');
-const venueData = require('./venue.json');
-const eventData = require('./event.json');
+const userData = require('./userData.json'); 
+const vendorData = require('./vendorData.json');
+const venueData = require('./venueData.json');
+const eventData = require('./eventData.json');
 const eventVendorData = require('./eventVendors.json');
 
 const seedDatabase = async () => {
