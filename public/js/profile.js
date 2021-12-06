@@ -54,7 +54,7 @@ const newFormHandler = async (event) => {
       alert('Failed to create event');
     };
 
-    const emailsend = await fetch('/api/create', {
+    const emailsend = await fetch('/api/events/create', {
       method: 'POST',
       body: JSON.stringify({ name, type, budget, attendees, date }),
       headers: {

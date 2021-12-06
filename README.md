@@ -17,11 +17,12 @@
 
 <a name="description"></a>
 ## 📝 Description
-Dear unorganised event planner, we've got you covered! This application will help you find suitable venues and vendors based on your number of guests and the budget you've set, whatever the occassion may be. 
+Dear unorganised event planner, we've got you covered! This application will create and manage all of your upcoming events in the same place.
+Choose from your favourite vendors and venues.
 
-Link to the [site]()
+Link to the [site](https://planit-events.herokuapp.com/)
 
-![app-demo]()
+![app-demo](public/assets/demos/app-demo.gif)
 
 <a name="user"></a>
 ## 🕹 User-story
