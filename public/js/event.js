@@ -99,9 +99,9 @@ const showVendors = () => {
 
 // NEWLY CREATED EVENT CARD DETAILS + ADD VENUE + ADD VENDOR ----------------------------------------------------------------------
 // HIDE CARDS/SHOW VENUES 
-const toggle = document.querySelector('.add-venue-toggle');
+const toggleVenue = document.querySelector('.add-venue-toggle');
  
-toggle.addEventListener('click', (submit) =>{
+toggleVenue.addEventListener('click', (submit) =>{
   submit.preventDefault();
   console.log('clicked!')
   const contents = document.querySelectorAll('.toggle-content')
@@ -117,9 +117,9 @@ toggle.addEventListener('click', (submit) =>{
 });  
 
 // HIDE CARDS/SHOW VENDORS
-const toggle = document.querySelector('.add-vendor-toggle');
+const toggleVendor = document.querySelector('.add-vendor-toggle');
 
-toggle.addEventListener('click', (submit) =>{
+toggleVendor.addEventListener('click', (submit) =>{
     submit.preventDefault();
     console.log('clicked!')
     const contents = document.querySelectorAll('.toggle-content')
@@ -209,17 +209,32 @@ const loadVendorById = async (vendor) => {
   const vendorEmail = document.querySelector('.vendor-email');
   const vendorPrice = document.querySelector('.vendor-price');
   const VendorImage = document.querySelector('.vendor-img');
-
+  
   const response = await fetch ('/vendors/:id', {
-      method: 'GET',
-      headers: {
-          'Content-Type': 'application/json',
-      },
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
   })
   
 }
 
-// THIS IS ADDING THE EVENTLISTENER TO THE VENUE ADD BUTTON
+const addVenue = async (venue) => {
+  venue.preventDefault();
+  const addVenue = document.querySelector('#add-venue');
+  const eventId = addVenue.getAttribute('data-eventid');
+  const venueSelect = document.querySelector('#venue-id');
+  const venueId = venueSelect.value;
+
+  const response = await fetch (`/events/${eventId}/venues/${venueId}`, {
+      method: 'PUT',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+  });
+
+  console.log(response);
+};
 
 document.getElementById('add-venue').addEventListener('submit', addVenue) 
 
@@ -236,22 +251,6 @@ document.getElementById('add-venue').addEventListener('submit', addVenue)
 // })
 
 
-const addVenue = async (venue) => {
-  venue.preventDefault();
-  const addVenue = document.querySelector('#add-venue');
-  const eventId = addVenue.getAttribute('data-eventid');
-  const venueSelect = document.querySelector('#venue-id');
-  const venueId = venueSelect.value;
-
-  const response = await fetch (`/events/${eventId}/venues/${venueId}`, {
-      method: 'PUT',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-  })
-
-  console.log(response);
-}
 
 
 
