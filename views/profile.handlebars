@@ -68,7 +68,11 @@
   </section>
 
   {{!-- CREATE A NEW EVENT SECTION --}}
+  {{#if events.length}}
   <section id="create-new-event-section" class="toggle-content p-2" aria-hidden="true">
+    {{else}}
+    <section id="create-new-event-section" class="toggle-content p-2" aria-hidden="false">
+    {{/if}}
     <div class="container my-2 py-2">
       <div class="row mb-5 d-flex justify-content-center align-items-center">
         <div class="col-12  my-3">

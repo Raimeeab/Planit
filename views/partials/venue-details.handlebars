@@ -2,7 +2,7 @@
     <div class="card-body d-flex justify-content-center ">
         <title>{{name}}</title>
 
-        <div class="row toggle-content p-2 col-sm-12 col-md-10 col-lg-10" aria-hidden="false">
+        <div class="row p-2 col-sm-12 col-md-10 col-lg-10">
             <span class="venue-id" href="/venues/{{id}}">
                 <h3 class="venue-name text-center">{{name}}</h3>
             </span>
@@ -13,14 +13,14 @@
                 <div>
                     <p class="venue-description text-center">{{description}}</p>
                 </div>
-                <div class="toggle-content p-2" aria-hidden="true">
+                <div class="p-2" aria-hidden="true">
                     <p class="venue-cap">Maximum capacity: {{capacity}}</p>
                     <p class="venue-price">Starting price: {{price}}</p>
                     <p class="venue-no">Contact number: {{number}}</p>
                     <p class="venue-email">Email: {{email}}</p>
                 </div>
             </div>
-        </div class="venue-toggle" aria-controls="toggle-content">
+        </div class="venue-toggle">
     </div>
 </section>
 
