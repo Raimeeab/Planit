@@ -32,14 +32,10 @@ Link to the [site]()
 `THEN I am prompted with questions regarding my event.` <br>
 `WHEN I complete the prompts,` <br>
 `THEN I am presented with potential venues and vendors depending on my budget. `<br>
-`WHEN I set an event date, `<br>
-`THEN I can see a countdown timer for that event.` <br>
-<!-- `WHEN I click back to my current event,` <br>
-`THEN I am able to adjust and update any of my details.` <br> -->
 `WHEN I click on previous events,` <br>
 `THEN I can see all my booked in details for that event.` <br>
-<!-- `WHEN I click on vendors or venues,` <br> 
-`THEN I am able to see all the vendors and venues available for hire in the database.` <br> -->
+`WHEN I click on vendors or venues,` <br> 
+`THEN I am able to see all the vendors and venues available for hire in the database.` <br>
 
 <a name="technologies"></a>
 ## 🕹 Technologies used 
@@ -53,7 +49,6 @@ Link to the [site]()
 - Dotenv 
 - Handlebars 
 - Bootstrap CSS 
-<!-- moment/ countdown.js -->
 - Nodemailer 
 - bycrypt 
 - eslint
@@ -97,7 +92,7 @@ Link to the [site]()
 
 <a name="usage"></a>
 ## 🖥 Usage 
-This application allows the user to create an account and input event details to get suitable venues and vendors. The user can then contact them directly to check availability. Once the desired vendors and venue are selected, the user would an event card with all their details. <!-- , along with a countdown timer to their event date. -->
+This application allows the user to create an account and input event details to get suitable venues and vendors. The user can then contact them directly to check availability. Once the desired vendors and venue are selected, the user would an event card with all their details.
 
 <a name="contributors"></a>
 ## 👥 Contributors

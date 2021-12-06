@@ -155,26 +155,26 @@ router.get('/events/:id', withAuth, async (req, res) => {
 });
 
 // GET suitable vendors by budget 
-router.get('/events/:id/vendors/:budget', withAuth, async (req, res) => {
-  try {
-    const budget = req.params.budget;
+// router.get('/events/:id/vendors/:budget', withAuth, async (req, res) => {
+//   try {
+//     const budget = req.params.budget;
   
-    const vendorChoices = await Vendor.findAll({
-      where: {
-        price: {
-          [Op.lte]: budget
-        }
-      }
-    });
+//     const vendorChoices = await Vendor.findAll({
+//       where: {
+//         price: {
+//           [Op.lte]: budget
+//         }
+//       }
+//     });
   
-    res.render('budget', { vendorChoices });
+//     res.render('budget', { vendorChoices });
   
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  };
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   };
 
-});
+// });
 
 
 // router.get('/events/:id/venues', withAuth, venueByCapacity, venuesByBudget, async (req, res) => {

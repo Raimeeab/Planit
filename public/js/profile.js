@@ -1,45 +1,15 @@
 // POST event details to db
-const postNewEvent = async (event) => {
-  const name = document.querySelector('#new-event-name').value.trim();
-  const type = document.querySelector('#event-type').value;
-  const budget = document.querySelector('#new-event-budget').value.trim();
-  const attendees = document.querySelector('#new-event-guests').value.trim();
-  const date = document.querySelector('#new-event-date').value.trim();
-  const venue = document.querySelector("#venue-true").checked;
-
-
-  event.preventDefault();
- // if (name && type && attendees && budget && date) {
-    const response = await fetch(`/api/events`, {
-      method: 'POST',
-      body: JSON.stringify({ name, type, budget, attendees, date }),
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    });
-    const newEvent = await response.json();
-
-    if (response.ok) {
-      document.location.replace(`/events/${newEvent.id}`);
-    } else {
-      alert('Failed to create event');
-    };
-}
-
-document
-  .querySelector('#create-event-form')
-  .addEventListener('submit', postNewEvent);
-// suitableVendorVenue,
-
-// const newFormHandler = async (event) => {
-//   event.preventDefault();
+// const postNewEvent = async (event) => {
 //   const name = document.querySelector('#new-event-name').value.trim();
-//   const type = document.querySelector('#event-type').value.trim();
+//   const type = document.querySelector('#event-type').value;
 //   const budget = document.querySelector('#new-event-budget').value.trim();
 //   const attendees = document.querySelector('#new-event-guests').value.trim();
 //   const date = document.querySelector('#new-event-date').value.trim();
+//   const venue = document.querySelector("#venue-true").checked;
 
-//   // if (name && type && attendees && budget && date) {
+
+//   event.preventDefault();
+//  // if (name && type && attendees && budget && date) {
 //     const response = await fetch(`/api/events`, {
 //       method: 'POST',
 //       body: JSON.stringify({ name, type, budget, attendees, date }),
@@ -48,25 +18,55 @@ document
 //       }
 //     });
 //     const newEvent = await response.json();
+
 //     if (response.ok) {
 //       document.location.replace(`/events/${newEvent.id}`);
 //     } else {
 //       alert('Failed to create event');
 //     };
+// }
 
-//     const emailsend = await fetch('/api/create', {
-//       method: 'POST',
-//       body: JSON.stringify({ name, type, budget, attendees, date }),
-//       headers: {
-//         'Content-Type': 'application/json',
-//       }
-//     });
-//     // if (response.ok) {
-//     //   document.location.replace(`/events/${newEvent.id}`);
-//     // } else {
-//     //   alert('Failed to create event');
-//     // };
-// };
+// document
+//   .querySelector('#create-event-form')
+//   .addEventListener('submit', postNewEvent);
+// suitableVendorVenue,
+
+const newFormHandler = async (event) => {
+  event.preventDefault();
+  const name = document.querySelector('#new-event-name').value.trim();
+  const type = document.querySelector('#event-type').value.trim();
+  const budget = document.querySelector('#new-event-budget').value.trim();
+  const attendees = document.querySelector('#new-event-guests').value.trim();
+  const date = document.querySelector('#new-event-date').value.trim();
+
+  // if (name && type && attendees && budget && date) {
+    const response = await fetch(`/api/events`, {
+      method: 'POST',
+      body: JSON.stringify({ name, type, budget, attendees, date }),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+    const newEvent = await response.json();
+    if (response.ok) {
+      document.location.replace(`/events/${newEvent.id}`);
+    } else {
+      alert('Failed to create event');
+    };
+
+    const emailsend = await fetch('/api/create', {
+      method: 'POST',
+      body: JSON.stringify({ name, type, budget, attendees, date }),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+    // if (response.ok) {
+    //   document.location.replace(`/events/${newEvent.id}`);
+    // } else {
+    //   alert('Failed to create event');
+    // };
+};
 
 // const viewEvent = async (event) => {
 //   const response = await fetch(`api/events/:id`, {
