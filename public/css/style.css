@@ -71,13 +71,13 @@ p {
 
 /* LOGIN/REGISTER HANDLEBAR ------------------------------------------------------------------- */
 
-/* .toggle-content {
+.toggle-content {
    display:none;
 } 
 
 .toggle-content[aria-hidden="false"] {
   display: block
-}  */
+} 
 
 /* LOGIN */
 #login-container {
