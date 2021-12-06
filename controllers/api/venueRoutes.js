@@ -54,6 +54,7 @@ router.put('/:id', async (req, res) => {
 // Query to display venues based on capacity
 router.get('/capacity/:capacity', async (req, res) => {
   try {
+    console.log("testing")
     const capacity = req.params.capacity;
   
     const venueCapacity = await Venue.findAll({

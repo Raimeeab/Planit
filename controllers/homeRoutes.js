@@ -39,13 +39,12 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 });
 
-
-router.post('/api/create/:id', withAuth, async(req, res) => {
+// API CANNOT BE IN HOMEROUTE
+router.post('/api/create', withAuth, async(req, res) => {
   const userData = await User.findByPk(req.session.user_id)
   const eventData = Event.findByPk(req.params.id)
   const event = eventData.get({ plain: true });
   const user = userData.get({ plain: true });
-  console.log(user)
   let mailOptions = {
     from: 'adrian@vitae.video',
     to: user.email,
@@ -86,8 +85,6 @@ router.get('/login', (req, res) => {
 // GET all vendors
 router.get('/vendors', async (req, res) => {
   try {
-    const budget = req.query.budget;
-
     const vendorData = await Vendor.findAll();
 
     const vendors = vendorData.map((vendor) => vendor.get({ plain: true })); 
@@ -116,7 +113,6 @@ router.get('/vendors/:id', async (req, res) => {
 // GET all venues
 router.get('/venues', async (req, res) => {
   try {
-    const budget = req.query.budget;
 
     const venueData = await Venue.findAll();
 
@@ -156,7 +152,52 @@ router.get('/events/:id', withAuth, async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-})
+});
+
+// GET suitable vendors by budget 
+// router.get('/events/:id/vendors/:budget', withAuth, async (req, res) => {
+//   try {
+//     const budget = req.params.budget;
+  
+//     const vendorChoices = await Vendor.findAll({
+//       where: {
+//         price: {
+//           [Op.lte]: budget
+//         }
+//       }
+//     });
+  
+//     res.render('budget', { vendorChoices });
+  
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   };
+
+// });
+
+
+// router.get('/events/:id/venues', withAuth, venueByCapacity, venuesByBudget, async (req, res) => {
+//   try {
+//     const budget = req.params.budget;
+  
+//     const venueChoices = await Venue.findAll({
+//       where: {
+//         price: {
+//           [Op.lte]: budget
+//         }
+//       }
+//     });
+
+//     res.status(200).json(venueChoices);
+    
+
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   };
+
+// });
 
 // ADRIAN ADDED THIS TO GET THE VENUES/VENDORS TO DISPLAY ON EVENT.HANDLEBARS
 
