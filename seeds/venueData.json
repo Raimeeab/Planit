@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Watsons Bay Hotel",
+        "description": "Grounded on the sandy shoreline of one of Sydney’s most iconic harbour beaches, Watsons Bay Boutique Hotel sings out to those in search of endless summers, postcard panoramas and our specialty: unhurried happiness.",
+        "number": "0293375444",
+        "capacity": 200,
+        "price": 4000,
+        "email": "info@watsonsbayhotel.com.au",
+        "image": "watsons-bay.jpeg"
+    },
+    {
+        "name": "12-Micron Barangaroo",
+        "description": "Light-filled space, stylish finishes and sublime views delivering a premium experience for all types of events.",
+        "number": "0282188877",
+        "capacity": 150,
+        "price": 1000,
+        "email": "info@12micron.com.au",
+        "image": "12-micron-barangaroo.jpg"
+    },
+    {
+        "name": "Royal Randwick",
+        "description": "Royal Randwick is the jewel in the crown of Sydney's venues. Enjoy modern, luxurious facilities and world-class service in a prestigious and historic setting.",
+        "number": "0279071299",
+        "capacity": 90,
+        "price": 600,
+        "email": "info@royalrandwick.com.au",
+        "image": "royal-randwick-1.jpg"
+    },
+    {
+        "name": "Binbadgen",
+        "description": "Located in the heart of Pokolbin, offering a visually spectacular location, Bimbadgen provides the perfect backdrop for your special day.",
+        "number": " 0249984650",
+        "capacity": 350,
+        "price": 1500,
+        "email": "info@binbadgen.com.au",
+        "image": "Binbadgen.jpeg"
+    },
+    {
+        "name": "Q Station Manly",
+        "description": "Q Station offers a range of incredible experiences, from boutique hotel accommodation, stunning venues, modern conference facilities and an amazing restaurant, as well as Sydney's best ghost and history tours.",
+        "number": "0294661500",
+        "capacity": 60,
+        "price": 400,
+        "email": "manly@qstation.com.au",
+        "image": "q-station-manly.jpg"
+    },
+    {
+        "name": "San Martin Akuna Bay",
+        "description": "San Martin is a premium venue location nestles in preistine national park surrounds.",
+        "number": "0218964392",
+        "capacity": 90,
+        "price": 550,
+        "email": "www.sanmartin.com.au",
+        "image": "San-Martin-Akuna-Bay-1.jpg"
+    },
+    {
+        "name": "Park Hyatt Sydney",
+        "description": "Park Hyatt Sydney offers contemporary luxury in an iconic location for the discerning meeting and event planner.",
+        "number": "0292561234",
+        "capacity": 120,
+        "price": 1000,
+        "email": "sydney@parkhyatt.com.au",
+        "image": "park-hyatt-sydney.jpg"
+    }
+]

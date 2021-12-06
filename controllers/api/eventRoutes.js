@@ -1,5 +1,7 @@
 const router = require('express').Router();
+const nodemailer = require('nodemailer');
 const Event = require('../../models/event');
+const User = require('../../models/user');
 const withAuth = require('../../utils/withAuth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -56,16 +58,18 @@ router.post('/profile', withAuth, async (req, res) => {
     };
 });
 
-router.post('/create', withAuth, async (req, res) => {
+router.post('/create', withAuth, async(req, res) => {
     const userData = await User.findByPk(req.session.user_id)
     const user = userData.get({ plain: true });
+    const EventData = req.body
     console.log(user)
     let mailOptions = {
-        from: 'adrian@vitae.video',
-        to: user.email,
-        subject: 'Best Email Ever',
-        text: 'Your next event has been BOOOKED!! you rock.'
-    };
+      from: 'adrian@vitae.video',
+      to: user.email,
+      subject: 'New Event Created',
+      text: `Hey there ${user.name}, it’s our first message sent with Nodemailer`,
+      html: `<b><h4>Hey there ${user.name}!<h4> </b><br> Your event details are as follows:<br><br>  Name:${EventData.name}  <br>  Type:${EventData.type} <br>  Budget:${EventData.budget} <br>  Date:${EventData.date} <br>  Attendees:${EventData.attendees} <br><br> Make sure to add it to your calendar!!`,
+  };
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -101,19 +105,21 @@ router.delete('/:id', withAuth, async (req, res) => {
 
 // THIS IS TO UPDATE THIS CREATED EVENT CARD WITH THE SELECTED VENUE
 
-// router.put('/venue/:id', withAuth, async(req,res) => {
-//     try {
-//         const addVenue = await Event.update( req.body, {
-//             where: {
-//                 id: req.params.id
-//             }
-//         })
-//         res.status(200).json(addVenue);
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json(err);
-//     }
-// });
+router.put('/:id/venue/:venue_id', withAuth, async(req,res) => {
+    try {
+        const addVenue = await Event.update({
+            venue_id: req.params.venue_id
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        res.status(200).json(addVenue);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 // router.get('/:id', withAuth, async (req, res) => {
 //     try {

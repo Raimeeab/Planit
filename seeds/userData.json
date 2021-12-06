@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Koren Blair",
+        "email": "koren@yahoo.com",
+        "password": "Shishkabab334"
+    },
+    {
+        "id": 2,
+        "name": "Newton Glessner",
+        "email": "glessner@gmail.com",
+        "password": "Potatofry!"
+    },
+    {
+        "id": 3,
+        "name": "Afia Hoyt",
+        "email": "afia_hoyt@hotmail.com",
+        "password": "PinkBathrobe7"
+    },
+    {
+        "id": 4,
+        "name": "Lancer Compton",
+        "email": "lanc_comp@hotmail.com",
+        "password": "BananachoLate20"
+    },
+    {
+        "id": 5,
+        "name": "Valerie Felder",
+        "email": "vfelder@gmail.com",
+        "password": "BlueBoy03"
+    },
+    {
+        "id": 6,
+        "name": "Micheal Scott",
+        "email": "mscott@dundermifflin.com",
+        "password": "CathrineZeta69"
+    }, 
+    {
+        "id": 7,
+        "name": "Dwight Schrute",
+        "email": "dschrute@dundermifflin.com",
+        "password": "assitantRegionalManager"
+    }
+]
