@@ -237,10 +237,13 @@ document.getElementById('add-venue').addEventListener('submit', addVenue)
 
 
 const addVenue = async (venue) => {
-  venue.preventDefault()
+  venue.preventDefault();
   const addVenue = document.querySelector('#add-venue');
+  const eventId = addVenue.getAttribute('data-eventid');
+  const venueSelect = document.querySelector('#venue-id');
+  const venueId = venueSelect.value;
 
-  const response = await fetch ('/events/:id', {
+  const response = await fetch (`/events/${eventId}/venues/${venueId}`, {
       method: 'PUT',
       headers: {
           'Content-Type': 'application/json',

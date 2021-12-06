@@ -105,19 +105,21 @@ router.delete('/:id', withAuth, async (req, res) => {
 
 // THIS IS TO UPDATE THIS CREATED EVENT CARD WITH THE SELECTED VENUE
 
-// router.put('/venue/:id', withAuth, async(req,res) => {
-//     try {
-//         const addVenue = await Event.update( req.body, {
-//             where: {
-//                 id: req.params.id
-//             }
-//         })
-//         res.status(200).json(addVenue);
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json(err);
-//     }
-// });
+router.put('/:id/venue/:venue_id', withAuth, async(req,res) => {
+    try {
+        const addVenue = await Event.update({
+            venue_id: req.params.venue_id
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        res.status(200).json(addVenue);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 // router.get('/:id', withAuth, async (req, res) => {
 //     try {
