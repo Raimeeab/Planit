@@ -20,7 +20,6 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // changed user_email to email/ commented out user_name
     email: {
       type: DataTypes.STRING,
       allowNull: false,

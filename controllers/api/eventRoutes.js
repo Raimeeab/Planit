@@ -2,7 +2,6 @@ const router = require('express').Router();
 const nodemailer = require('nodemailer');
 const Event = require('../../models/event');
 const User = require('../../models/user');
-const Vendor = require('../../models/vendor');
 const withAuth = require('../../utils/withAuth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -104,8 +103,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
 });
 
-// THIS IS TO UPDATE THIS CREATED EVENT CARD WITH THE SELECTED VENUE
-
+// UPDATE venue_id to event_id 
 router.put('/:id/venues/:venue_id', withAuth, async(req,res) => {
     try {
         const addVenue = await Event.update({
@@ -122,16 +120,18 @@ router.put('/:id/venues/:venue_id', withAuth, async(req,res) => {
     }
 });
 
+// Below is our attempt to create the event-vendor update.. 
+
 // router.put('/:id/vendors/:vendor_id', withAuth, async(req,res) => {
 //     try {
-//         const addVendor = await Vendor.update({
+//         const addEventVendor = await EventVendors.create({
             
 //         })
 //     } catch (err) {
 //         console.log(err);
 //         res.status(500).json(err);
 //     }
-// })
+// });
 
 // router.get('/:id', withAuth, async (req, res) => {
 //     try {

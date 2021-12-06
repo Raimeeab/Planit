@@ -1,14 +1,10 @@
 <section class="container ">
     <h1>Venues</h1>
   <section class="row justify-center ">
-    <!-- For each painting that belongs to this gallery, the painting-details partial is used to render each painting's data -->
-    {{#each venues as |venue|}}
-    
-    
+    {{#each venues as |venue|}}   
     {{> venue-details}}
     {{/each}}
   </section>
 </section>
-
 
 <script src="./js/venue.js"></script>
