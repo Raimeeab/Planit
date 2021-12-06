@@ -9,12 +9,10 @@
   </div>
 
   {{!-- CURRENT PLANNED EVENT SECTION --}}
-  {{!-- TODO: TOGGLE --}}
   <section id="current-event-section" class="toggle-content p-2" aria-hidden="false">
     <div class="container my-2 py-2">
       <div class="row mb-2 col-12 d-flex justify-content-center align-items-center my-3">
         {{#if events.length}}
-        {{!-- <div class="col-12 d-flex justify-content-center align-items-center my-3"></div> --}}
         <h3 class="event-list text-center">Planned Events</h3>
         <hr>
 
@@ -22,8 +20,6 @@
           <div class="row d-flex justify-content-center align-self-normal">
             {{#each events as |event|}}
             <div class="card profile-card p-4 m-2 col-sm-12 col-md-6 col-lg-4">
-              {{!-- CARD TODO - MAKE IMAGE
-              DYNAMIC)!!!!-----------------------------------------------------------------------------------}}
               <img src="../../assets/venues/watsons-bay.jpeg" class="card-img-top" alt="...">
               <div class="card-body text-center">
                 <h4 class="h4-event-name"><a href="/events/{{event.id}}">{{event.name}}</a></h4>
@@ -47,22 +43,6 @@
         </div>
       </div>
       {{/if}}
-
-      {{!-- {{#each events as |event|}}
-      <div class="row mb-2">
-        <div class="col-md-8">
-          <h4><a href="/events/{{event.id}}">{{event.name}}</a></h4>
-        </div>
-        <div class="col-md-4">
-          <button class="btn btn-sm btn-danger delete-event-btn" data-id="{{event.id}}">DELETE</button>
-        </div>
-        {{/each}}
-      </div>
-    </div>
-    </div>
-  </section> --}}
-
-
 
   </section>
 
@@ -93,13 +73,6 @@
                     <option value="Other">Other</option>
                   </select>
                 </div>
-                {{!-- <div class="form-group"> --}}
-                  {{!-- <div class="mb-3">
-                    <label for="new-event-type" class="form-label">Event Type</label>
-                    <input type="text" class="form-control" id="new-event-type" name="new-event-type"
-                      aaria-describedby="newEventNameHelp">
-                  </div>
-                </div> --}}
                 {{!-- EVENT NAME --}}
                 <div class="form-group">
                   <div class="mb-3">
@@ -110,8 +83,6 @@
                 </div>
                 {{!-- EVENT BUDGET --}}
                 <div class="form-group">
-                  {{!-- <label for="event-budget">Buget ($):</label>
-                  <input class="form-input" type="number" id="event-budget" name="event-budget" /> --}}
                   <div class="mb-3">
                     <label for="new-event-budget" class="form-label">Event Budget</label>
                     <input type="text" class="form-control" id="new-event-budget" name="new-event-budget" a
@@ -120,7 +91,6 @@
                 </div>
                 {{!-- EVENT GUESTS --}}
                 <div class="form-group">
-                  {{!-- TODO: Need to be edited in front end js --}}
                   <div class="mb-3">
                     <label for="new-event-guests" class="form-label">Number of Guests</label>
                     <input type="text" class="form-control" id="new-event-guests" name="new-event-guests"
@@ -129,7 +99,6 @@
                 </div>
                 {{!-- EVENT DATE --}}
                 <div class="form-group">
-                  {{!-- TODO: Need to be edited in front end js --}}
                   <div class="mb-3">
                     <label for="new-event-date" class="form-label">Event Date</label>
                     <input type="date" class="form-control" id="new-event-date" name="new-event-date"

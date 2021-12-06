@@ -17,8 +17,7 @@
 
 <a name="description"></a>
 ## 📝 Description
-Dear unorganised event planner, we've got you covered! This application will create and manage all of your upcoming events in the same place.
-Choose from your favourite vendors and venues.
+Dear unorganised event planner, we've got you covered! This application will create and manage all of your upcoming events in the same place by helping you choose from your favourite vendors and venues.
 
 Link to the [site](https://planit-events.herokuapp.com/)
 
@@ -27,14 +26,12 @@ Link to the [site](https://planit-events.herokuapp.com/)
 <a name="user"></a>
 ## 🕹 User-story
 `As a user,` <br>
-`WHEN I am create an account,` <br>
-`THEN I am able to create a new event and view previous events made.`<br>
 `WHEN I create an account,` <br>
+`THEN I am able to create a new event and view previous events made.`<br>
+`WHEN I click on add event,` <br>
 `THEN I am prompted with questions regarding my event.` <br>
 `WHEN I complete the prompts,` <br>
-`THEN I am presented with potential venues and vendors depending on my budget. `<br>
-`WHEN I click on previous events,` <br>
-`THEN I can see all my booked in details for that event.` <br>
+`THEN I am presented with potential venues and vendors for my event. `<br>
 `WHEN I click on vendors or venues,` <br> 
 `THEN I am able to see all the vendors and venues available for hire in the database.` <br>
 
@@ -88,12 +85,22 @@ Link to the [site](https://planit-events.herokuapp.com/)
 - POST/ PUT routes: <br>
     `http://localhost:3001/api/venues/:id`<br>
     `http://localhost:3001/api/vendors/:id` <br>
+    `http://localhost:3001/api/events/:id/venue/:venue_id`<br>
 
 ![insomina-demo](public/assets/demos/insomnia-demo.gif)
 
+- Query venue capacity by number of guests: 
+    `http://localhost:3001/api/venues/capacity/:capacity`<br>
+
+- Query venue & vendor prices by user budget: 
+    `http://localhost:3001/api/venues/budget/:budget`<br>
+    `http://localhost:3001/api/vendors/budget/:budget`<br>
+
+![insomina-queries](public/assets/demos/query-insomnia.gif)
+
 <a name="usage"></a>
 ## 🖥 Usage 
-This application allows the user to create an account and input event details to get suitable venues and vendors. The user can then contact them directly to check availability. Once the desired vendors and venue are selected, the user would an event card with all their details.
+This application allows the user to create an account and input event details to get suitable venues and vendors. The user can then contact them directly to check availability. Once the desired vendors and venue are selected, the user an event card will be created with all their details.
 
 <a name="contributors"></a>
 ## 👥 Contributors

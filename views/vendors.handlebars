@@ -4,10 +4,8 @@
     <div class="row">
 
       <section class="flex-row justify-center py-2">
-        <!-- For each painting that belongs to this gallery, the painting-details partial is used to render each painting's data -->
         {{#each vendors as |vendor|}}
         <h2 class="vendor-type">{{vendor.type}}</h2>
-
         {{> vendor-details}}
         {{/each}}
       </section>
