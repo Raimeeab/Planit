@@ -1,6 +1,6 @@
 const sequelize = require('../config/connection');
 const { User, Venue, Vendor, EventVendors, Event } = require('../models');
-const userData = require('./user.json');
+const userData = require('./user.json'); //changed it to user.json
 const vendorData = require('./vendor.json');
 const venueData = require('./venue.json');
 const eventData = require('./event.json');
