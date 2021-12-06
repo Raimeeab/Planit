@@ -28,7 +28,7 @@
                     <select class="form-select" aria-label="venue-type" id="venue-id" name="venue-type">
                         {{!-- Change it to #each loop --}}
                         <option selected>None</option>
-                        <option value="Watson Bay">Watsons Bay Hotel</option>
+                        <option value="Watson Bay" >Watsons Bay Hotel</option>
                         <option value="12-Micron Barangaroo">12-Micron Barangaroo</option>
                         <option value="Royal Randwick">Royal Randwick</option>
                         <option value="Binbadgen">Binbadgen</option>
@@ -90,24 +90,9 @@
                     </div>
                 </div>
             </div>
-            {{!-- VENUES ---------------------------------------------------------------}}
-            <section class="add-venue-toggle" aria-hidden="true">
-                {{#each venues as |venue|}}
-                {{>venue-details}}
-                {{/each}}
-            </section>
-            {{!-- VENDORS --------------------------------------------------------------}}
-            <section class="add-vendor-toggle" aria-hidden="true">
-                {{#each vendors as |vendor|}}
-                {{>vendor-details}}
-
-                {{/each}}
-            </section>
-
-
         </div>
 </section>
 
 
 
-<script src="./js/event.js"></script>
+<script src="/js/event.js"></script>

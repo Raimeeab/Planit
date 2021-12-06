@@ -99,40 +99,40 @@ const showVendors = () => {
 
 // NEWLY CREATED EVENT CARD DETAILS + ADD VENUE + ADD VENDOR ----------------------------------------------------------------------
 // HIDE CARDS/SHOW VENUES 
-const toggle = document.querySelector('.add-venue-toggle');
+// const toggleVenue = document.querySelector('.add-venue-toggle');
  
-toggle.addEventListener('click', (submit) =>{
-  submit.preventDefault();
-  console.log('clicked!')
-  const contents = document.querySelectorAll('.toggle-content')
-  console.log(contents)
-  contents.forEach(content => {
-    console.log(content)
-    const ariaHidden = content.getAttribute('aria-hidden')
+// toggleVenue.addEventListener('click', (submit) =>{
+//   submit.preventDefault();
+//   console.log('clicked!')
+//   const contents = document.querySelectorAll('.toggle-content')
+//   console.log(contents)
+//   contents.forEach(content => {
+//     console.log(content)
+//     const ariaHidden = content.getAttribute('aria-hidden')
 
-    console.log(content)
-    content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
-  })
+//     console.log(content)
+//     content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
+//   })
 
-});  
+// });  
 
 // HIDE CARDS/SHOW VENDORS
-const toggle = document.querySelector('.add-vendor-toggle');
+// const toggleVendor = document.querySelector('.add-vendor-toggle');
 
-toggle.addEventListener('click', (submit) =>{
-    submit.preventDefault();
-    console.log('clicked!')
-    const contents = document.querySelectorAll('.toggle-content')
-    console.log(contents)
-    contents.forEach(content => {
-      console.log(content)
-      const ariaHidden = content.getAttribute('aria-hidden')
+// toggleVendor.addEventListener('click', (submit) =>{
+//     submit.preventDefault();
+//     console.log('clicked!')
+//     const contents = document.querySelectorAll('.toggle-content')
+//     console.log(contents)
+//     contents.forEach(content => {
+//       console.log(content)
+//       const ariaHidden = content.getAttribute('aria-hidden')
   
-      console.log(content)
-      content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
-    })
+//       console.log(content)
+//       content.setAttribute('aria-hidden', ariaHidden === 'true' ? 'false' : 'true') 
+//     })
   
-  });  
+//   });  
 
   // VENUE INFORMATION -------------------------------------------------------
   loadVenues = async (venue) => {
@@ -209,19 +209,40 @@ const loadVendorById = async (vendor) => {
   const vendorEmail = document.querySelector('.vendor-email');
   const vendorPrice = document.querySelector('.vendor-price');
   const VendorImage = document.querySelector('.vendor-img');
-
+  
   const response = await fetch ('/vendors/:id', {
-      method: 'GET',
-      headers: {
-          'Content-Type': 'application/json',
-      },
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
   })
   
 }
 
-// THIS IS ADDING THE EVENTLISTENER TO THE VENUE ADD BUTTON
+const addVenue = async (venue) => {
+  venue.preventDefault();
+  const addVenue = document.querySelector('#add-venue');
+  const eventId = addVenue.getAttribute('data-eventid');
+  const venueSelect = document.querySelector('#venue-id');
+  const venueId = venueSelect.value;
+
+  const response = await fetch (`api/events/${eventId}/venues/${venueId}`, {
+      method: 'PUT',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+  });
+
+  console.log(response);
+};
 
 document.getElementById('add-venue').addEventListener('submit', addVenue) 
+
+
+// const addVendor = async (vendor) => {
+//    const response = await fetch (`api/events/${}/vendors/${}`)
+// }
+
 
 //   let eventID = document.getElementById('eventID').textContent
 
@@ -236,22 +257,6 @@ document.getElementById('add-venue').addEventListener('submit', addVenue)
 // })
 
 
-const addVenue = async (venue) => {
-  venue.preventDefault();
-  const addVenue = document.querySelector('#add-venue');
-  const eventId = addVenue.getAttribute('data-eventid');
-  const venueSelect = document.querySelector('#venue-id');
-  const venueId = venueSelect.value;
-
-  const response = await fetch (`/events/${eventId}/venues/${venueId}`, {
-      method: 'PUT',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-  })
-
-  console.log(response);
-}
 
 
 
